@@ -1,0 +1,11 @@
+.Solutions{
+  background-color: red;
+  .sdfsdf{
+    background-color: green;
+  }
+  :global{
+    .demo{
+      background-color: blue;
+    }
+  }
+}

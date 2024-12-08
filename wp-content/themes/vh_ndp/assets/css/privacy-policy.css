@@ -1,0 +1,35 @@
+h1{
+  color: #131316;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin-top: 20px;
+}
+
+h2{
+  color: #131316;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.main .page{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+ol{
+  padding-inline-start: 23px
+}
+
+.wrap ol li a{
+  display: inline-block;
+}
+.wrap{
+  max-width: 744px !important;
+}

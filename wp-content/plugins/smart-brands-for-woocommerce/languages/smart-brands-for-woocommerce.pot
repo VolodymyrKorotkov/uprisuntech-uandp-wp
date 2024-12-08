@@ -1,0 +1,746 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Smart Brands for WooCommerce v1.0.3\n"
+"POT-Creation-Date: 2023-02-13 16:58+0600\n"
+"PO-Revision-Date: 2023-02-13 16:59+0600\n"
+"Last-Translator: \n"
+"Language-Team: ShapedPlugin <support@shapedplugin.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;_n;_nx;_n_noop;esc_html__;esc_html_e;"
+"esc_html_x;esc_attr__;esc_attr_e;esc_attr_x;number_format_i18n;date_i18n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: core/Admin/Admin.php:98 core/Admin/Admin.php:113
+msgid "Add New"
+msgstr ""
+
+#: core/Admin/Admin.php:99 core/Admin/Settings/Settings.php:36
+#: core/Admin/Settings/Settings.php:42
+msgid "Settings"
+msgstr ""
+
+#: core/Admin/Admin.php:111 core/Admin/Admin.php:112 core/Admin/Admin.php:118
+msgid "Brands Views"
+msgstr ""
+
+#: core/Admin/Admin.php:114 core/Admin/Brands/Brands.php:49
+msgid "Add New Brand"
+msgstr ""
+
+#: core/Admin/Admin.php:115
+msgid "Edit Views"
+msgstr ""
+
+#: core/Admin/Admin.php:116
+msgid "New Views"
+msgstr ""
+
+#: core/Admin/Admin.php:119
+msgid "View Smart Brands Shortcode"
+msgstr ""
+
+#: core/Admin/Admin.php:120
+msgid "Search Smart Brands Shortcode"
+msgstr ""
+
+#: core/Admin/Admin.php:121
+msgid "No Smart Brands Shortcode Found"
+msgstr ""
+
+#: core/Admin/Admin.php:122
+msgid "No Smart Brands Shortcode Found in Trash"
+msgstr ""
+
+#: core/Admin/Admin.php:125
+msgid "Smart Brands"
+msgstr ""
+
+#: core/Admin/Admin.php:170
+msgid "View updated."
+msgstr ""
+
+#: core/Admin/Admin.php:171
+msgid "View published."
+msgstr ""
+
+#: core/Admin/Admin.php:186
+msgid "Brand added."
+msgstr ""
+
+#: core/Admin/Admin.php:187
+msgid "Brand deleted."
+msgstr ""
+
+#: core/Admin/Admin.php:188
+msgid "Brand updated."
+msgstr ""
+
+#: core/Admin/Admin.php:205 core/Admin/Admin.php:206
+msgid "Help"
+msgstr ""
+
+#: core/Admin/Admin.php:221
+msgid "Welcome to Smart Brands for WooCommerce!"
+msgstr ""
+
+#: core/Admin/Admin.php:224
+msgid ""
+"Thank you for installing Smart Brands for WooCommerce! You're now running "
+"the most popular Smart Brands for WooCommerce plugin"
+msgstr ""
+
+#: core/Admin/Admin.php:287 core/Admin/Views/General.php:87
+msgid "Name"
+msgstr ""
+
+#: core/Admin/Admin.php:288
+msgid "Shortcode"
+msgstr ""
+
+#: core/Admin/Admin.php:289 core/Admin/Views/General.php:86
+msgid "Date"
+msgstr ""
+
+#: core/Admin/Admin.php:303
+msgid "Shortcode Copied to Clipboard!"
+msgstr ""
+
+#: core/Admin/Admin.php:325
+msgid "Logo"
+msgstr ""
+
+#: core/Admin/Admin.php:354 core/Admin/Brands/Brand_Configs.php:42
+msgid "Brand logo"
+msgstr ""
+
+#: core/Admin/Brands/Brand_Configs.php:47
+msgid "Brand banner link"
+msgstr ""
+
+#: core/Admin/Brands/Brand_Configs.php:48
+msgid "The link of the brand banner"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:42 core/Admin/Brands/Brands.php:44
+msgid "Brands"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:43
+msgid "Brand"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:45
+msgid "All Brands"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:46
+msgid "Edit Brand"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:47
+msgid "View Brand"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:48
+msgid "Update Brand"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:50
+msgid "New Brand Name"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:51
+msgid "Parent Brand"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:52
+msgid "Parent Brand:"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:53
+msgid "Search Brands"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:54
+msgid "Popular Brands"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:55
+msgid "Separate brands with commas"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:56
+msgid "Add or remove brands"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:57
+msgid "Choose from the most used brands"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:58
+msgid "No brands found"
+msgstr ""
+
+#: core/Admin/Brands/Brands.php:59
+msgid "Go to Brands"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS.php:527
+msgid "Are you sure?"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS.php:528
+#, php-format
+msgid "Please enter %s or more characters"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS.php:529
+msgid "Searching..."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS.php:530
+msgid "No results found."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS.php:631
+msgid "Oops! Not allowed."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS.php:695
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS.php:698
+msgid "Field not found!"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Metabox.php:361
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:812
+#: core/Admin/Framework/fields/button_set/button_set.php:85
+#: core/Admin/Framework/fields/checkbox/checkbox.php:102
+#: core/Admin/Framework/fields/select/select.php:134
+#: core/Admin/Framework/functions/actions.php:55
+msgid "No data available."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Metabox.php:378
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:717
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:836
+msgid "Reset"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Metabox.php:379
+msgid "update post"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Metabox.php:379
+msgid "Cancel"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:333
+msgid "Error while saving the changes."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:412
+msgid "Settings successfully imported."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:424
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:439
+msgid "Default settings restored."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:501
+msgid "Settings saved."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:710
+msgid "show all settings"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:712
+msgid "Search..."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:715
+msgid "Save Settings"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:715
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:834
+msgid "Saving..."
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:716
+msgid "Reset Tab"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:716
+msgid "Are you sure to reset all the settings of this tab?"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:717
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:836
+msgid "Reset All"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:717
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:836
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:834
+msgid "Save"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:835
+msgid "Reset Section"
+msgstr ""
+
+#: core/Admin/Framework/Classes/SPF_SMART_BRANDS_Options.php:835
+msgid "Are you sure to reset this section options?"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:52
+#: core/Admin/Framework/fields/spacing/spacing.php:53
+msgid "top"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:53
+#: core/Admin/Framework/fields/spacing/spacing.php:54
+msgid "right"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:54
+#: core/Admin/Framework/fields/spacing/spacing.php:55
+msgid "bottom"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:55
+#: core/Admin/Framework/fields/spacing/spacing.php:56
+msgid "left"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:56
+#: core/Admin/Framework/fields/column/column.php:59
+#: core/Admin/Framework/fields/spacing/spacing.php:57
+msgid "all"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:81
+msgid "Solid"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:82
+msgid "Dashed"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:83
+msgid "Dotted"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:84
+msgid "Double"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:85
+msgid "Inset"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:86
+msgid "Outset"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:87
+msgid "Groove"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:88
+msgid "Ridge"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:89
+msgid "None"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:105
+#: core/Admin/Framework/fields/border/border.php:130
+msgid "Width"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:143
+msgid "Style"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:161
+msgid "Color"
+msgstr ""
+
+#: core/Admin/Framework/fields/border/border.php:171
+msgid "Hover Color"
+msgstr ""
+
+#: core/Admin/Framework/fields/column/column.php:54
+msgid "Large Desktop"
+msgstr ""
+
+#: core/Admin/Framework/fields/column/column.php:55
+msgid "Desktop"
+msgstr ""
+
+#: core/Admin/Framework/fields/column/column.php:56
+msgid "Small Desktop"
+msgstr ""
+
+#: core/Admin/Framework/fields/column/column.php:57
+msgid "Tablet"
+msgstr ""
+
+#: core/Admin/Framework/fields/column/column.php:58
+msgid "Mobile"
+msgstr ""
+
+#: core/Admin/Framework/fields/media/media.php:54
+msgid "Upload"
+msgstr ""
+
+#: core/Admin/Framework/fields/media/media.php:55
+msgid "Remove"
+msgstr ""
+
+#: core/Admin/Framework/fields/media/media.php:89
+msgid "Not selected"
+msgstr ""
+
+#: core/Admin/Framework/fields/switcher/switcher.php:46
+msgid "On"
+msgstr ""
+
+#: core/Admin/Framework/fields/switcher/switcher.php:47
+msgid "Off"
+msgstr ""
+
+#: core/Admin/Framework/functions/actions.php:32
+#: core/Admin/Framework/functions/actions.php:80
+#: core/Admin/Framework/functions/actions.php:108
+msgid "Error: Invalid nonce verification."
+msgstr ""
+
+#: core/Admin/Framework/functions/actions.php:112
+msgid "Error: Invalid term ID."
+msgstr ""
+
+#: core/Admin/Framework/functions/actions.php:118
+msgid "Error: You do not have permission to do that."
+msgstr ""
+
+#: core/Admin/Framework/functions/validate.php:29
+#: core/Admin/Framework/functions/validate.php:101
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: core/Admin/Framework/functions/validate.php:45
+#: core/Admin/Framework/functions/validate.php:124
+msgid "Please enter a valid number."
+msgstr ""
+
+#: core/Admin/Framework/functions/validate.php:63
+#: core/Admin/Framework/functions/validate.php:145
+msgid "This field is required."
+msgstr ""
+
+#: core/Admin/Framework/functions/validate.php:81
+#: core/Admin/Framework/functions/validate.php:165
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: core/Admin/Settings/BasicSettings.php:38
+msgid "Basic Settings"
+msgstr ""
+
+#: core/Admin/Settings/BasicSettings.php:44
+msgid "Brands Taxonomy Slug"
+msgstr ""
+
+#: core/Admin/Settings/BasicSettings.php:45
+msgid "Rewrite slug for plugin's brand taxonomy."
+msgstr ""
+
+#: core/Admin/Settings/BasicSettings.php:46
+msgid "product-brands"
+msgstr ""
+
+#: core/Admin/Settings/BasicSettings.php:52
+msgid "Brand Label[Brand :]"
+msgstr ""
+
+#: core/Admin/Settings/BasicSettings.php:53
+msgid "The text before the brand name."
+msgstr ""
+
+#: core/Admin/Settings/BasicSettings.php:54
+msgid "Brand : "
+msgstr ""
+
+#: core/Admin/Settings/CustomStyle.php:38
+#: core/Admin/Settings/CustomStyle.php:44
+msgid "Custom CSS"
+msgstr ""
+
+#: core/Admin/Settings/LoopPage.php:38
+msgid "Loop Page Settings"
+msgstr ""
+
+#: core/Admin/Settings/LoopPage.php:44
+msgid "Brand in Product Loop Page"
+msgstr ""
+
+#: core/Admin/Settings/LoopPage.php:45
+msgid "Show/hide brand in the product loop or shop page."
+msgstr ""
+
+#: core/Admin/Settings/LoopPage.php:46 core/Admin/Settings/ProductPage.php:47
+msgid "show"
+msgstr ""
+
+#: core/Admin/Settings/LoopPage.php:47 core/Admin/Settings/ProductPage.php:48
+msgid "hide"
+msgstr ""
+
+#: core/Admin/Settings/ProductPage.php:38
+msgid "Product Page Settings"
+msgstr ""
+
+#: core/Admin/Settings/ProductPage.php:45
+msgid "Brand in Product Page"
+msgstr ""
+
+#: core/Admin/Settings/ProductPage.php:46
+msgid "Show/hide brand in the product single page."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:38
+msgid "Carousel Controls"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:44
+msgid "AutoPlay"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:45
+msgid "On/Off auto play."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:46 core/Admin/Views/Carousel.php:64
+#: core/Admin/Views/Carousel.php:73 core/Admin/Views/Carousel.php:83
+#: core/Admin/Views/Carousel.php:93 core/Admin/Views/General.php:60
+#: core/Admin/Views/General.php:107
+msgid "Enabled"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:47 core/Admin/Views/Carousel.php:74
+#: core/Admin/Views/Carousel.php:84 core/Admin/Views/Carousel.php:94
+#: core/Admin/Views/General.php:61 core/Admin/Views/General.php:108
+msgid "Disabled"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:54
+msgid "AutoPlay Speed"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:55
+msgid "Set autoplay speed in millisecond."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:63
+msgid "Sliding Speed"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:71
+msgid "Pause on Hover"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:72
+msgid "Enabled/Disabled Pause on Hover."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:81
+msgid "Infinite Loop"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:82
+msgid "Enable/Disable Infinite Loop."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:91
+msgid "Free Mode"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:92
+msgid "Enable/Disable Free Mode."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:101
+msgid "Slide To Scroll"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:102
+msgid "Number of brand(s) to scroll at a time."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:115
+msgid "Navigation"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:116
+msgid "Show/Hide carousel navigation."
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:117 core/Admin/Views/Carousel.php:127
+#: core/Admin/Views/Display.php:46
+msgid "Show"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:118 core/Admin/Views/Carousel.php:128
+#: core/Admin/Views/Display.php:47
+msgid "Hide"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:125
+msgid "Pagination"
+msgstr ""
+
+#: core/Admin/Views/Carousel.php:126
+msgid "Show/Hide carousel pagination."
+msgstr ""
+
+#: core/Admin/Views/Display.php:38
+msgid "Display Options"
+msgstr ""
+
+#: core/Admin/Views/Display.php:44
+msgid "Brand Section Title"
+msgstr ""
+
+#: core/Admin/Views/Display.php:45
+msgid "Show/Hide Brand section title."
+msgstr ""
+
+#: core/Admin/Views/Display.php:54
+msgid "Section Title Margin"
+msgstr ""
+
+#: core/Admin/Views/Display.php:55
+msgid "Set margin for section title."
+msgstr ""
+
+#: core/Admin/Views/Display.php:58 core/Admin/Views/Display.php:83
+msgid "px"
+msgstr ""
+
+#: core/Admin/Views/Display.php:59
+msgid "em"
+msgstr ""
+
+#: core/Admin/Views/Display.php:77
+msgid "Space Between Brand"
+msgstr ""
+
+#: core/Admin/Views/Display.php:78
+msgid "Set space in pixel between Brand."
+msgstr ""
+
+#: core/Admin/Views/Display.php:93
+msgid "Border"
+msgstr ""
+
+#: core/Admin/Views/Display.php:94
+msgid "Set border for Product brand."
+msgstr ""
+
+#: core/Admin/Views/Display.php:106
+msgid "Radius"
+msgstr ""
+
+#: core/Admin/Views/Display.php:107
+msgid "Set border radius."
+msgstr ""
+
+#: core/Admin/Views/General.php:38
+msgid "General Options"
+msgstr ""
+
+#: core/Admin/Views/General.php:45
+msgid "Layout"
+msgstr ""
+
+#: core/Admin/Views/General.php:46
+msgid "Choose a layout"
+msgstr ""
+
+#: core/Admin/Views/General.php:50
+msgid "Carousel"
+msgstr ""
+
+#: core/Admin/Views/General.php:58
+msgid "Product Count"
+msgstr ""
+
+#: core/Admin/Views/General.php:59
+msgid "It shows the number of products associated with each brand."
+msgstr ""
+
+#: core/Admin/Views/General.php:68
+msgid "Column(s)"
+msgstr ""
+
+#: core/Admin/Views/General.php:69
+msgid "Set number of row in different devices for responsive view."
+msgstr ""
+
+#: core/Admin/Views/General.php:82
+msgid "Order By"
+msgstr ""
+
+#: core/Admin/Views/General.php:83
+msgid "Select an order by option."
+msgstr ""
+
+#: core/Admin/Views/General.php:85
+msgid "Random"
+msgstr ""
+
+#: core/Admin/Views/General.php:94
+msgid "Order"
+msgstr ""
+
+#: core/Admin/Views/General.php:96
+msgid "Ascending"
+msgstr ""
+
+#: core/Admin/Views/General.php:97
+msgid "Descending"
+msgstr ""
+
+#: core/Admin/Views/General.php:100
+msgid "Select an order option."
+msgstr ""
+
+#: core/Admin/Views/General.php:105
+msgid "Preloader"
+msgstr ""
+
+#: core/Admin/Views/General.php:106
+msgid "Smart brands will be hidden until page load completed and ajax pagination."
+msgstr ""
+
+#: core/Admin/Views/Views.php:35
+msgid "Views Generator Header"
+msgstr ""
+
+#: core/Admin/Views/Views.php:57
+msgid "Views Generator Settings"
+msgstr ""

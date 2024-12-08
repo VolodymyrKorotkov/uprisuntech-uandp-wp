@@ -1,0 +1,455 @@
+.about-us {
+  display: flex;
+  padding: 64px 0px;
+  border-bottom: 1px solid #efedf1;
+}
+.about-us .about-us-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+.about-us .about-us-right img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.about-us .about-us-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  margin-right: 40px;
+  min-height: 372px;
+}
+.about-us .about-us-left .as_breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.about-us .about-us-left .as_breadcrumbs .as_breadcrumbs-item-separator {
+  margin: 0px 8px;
+}
+.about-us .about-us-left .as_breadcrumbs .as_breadcrumbs-item {
+  color: black;
+  text-decoration: none;
+}
+.about-us .about-us-left .as_breadcrumbs .as_breadcrumbs-item.active {
+  color: #77777a;
+}
+.about-us .about-us-left .about-us-title {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  margin: 0;
+  margin-bottom: 32px;
+}
+.about-us .about-us-left p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+.about-us-green-energy {
+  display: flex;
+  padding: 64px 0px;
+}
+.about-us-green-energy .about-us-green-energy-bg {
+  position: absolute;
+  left: 0;
+}
+.about-us-green-energy .about-us-green-energy-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 40px;
+}
+.about-us-green-energy .about-us-green-energy-title span {
+  color: #2a59bd;
+}
+.about-us-green-energy .about-us-green-energy-text1 {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+.about-us-green-energy .about-us-green-energy-text2 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 56px;
+}
+.about-us-green-energy .about-us-green-energy-text2 a {
+  color: #2a59bd;
+}
+.about-us-green-energy .about-us-green-energy-items {
+  margin-top: 64px;
+}
+.about-us-green-energy .about-us-green-energy-items .col-md-3:first-child {
+  padding-left: calc(1.5rem * .5);
+}
+.about-us-green-energy .about-us-green-energy-items .col-md-3:last-child {
+  padding-right: calc(1.5rem * .5);
+}
+.about-us-green-energy .about-us-green-energy-items .col-md-3 {
+  padding-left: 0;
+  padding-right: 0;
+  align-items: stretch;
+  display: flex;
+}
+.about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item {
+  border-radius: 24px;
+  padding: 20px;
+  padding-bottom: 16px;
+  background-color: rgba(42, 89, 189, 1.0);
+  min-height: 156px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item.op1 {
+  background-color: #eef0ff;
+}
+.about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item.op2 {
+  background-color: #dae2ff;
+}
+.about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item.op3 {
+  background-color: #b2c5ff;
+}
+.about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item.op4 p {
+  color: white;
+}
+.about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item p {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #131316;
+}
+.about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.about-us-key-organizations {
+  background-color: #f5f5f6;
+  border-radius: 24px;
+  padding: 112px 0px;
+  display: flex;
+}
+.about-us-key-organizations .col-md-6 {
+  align-items: stretch;
+  display: flex;
+}
+.about-us-key-organizations .about-us-key-organizations-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  color: #131316;
+  margin-bottom: 40px;
+}
+.about-us-key-organizations .about-us-key-organizations-item {
+  border-radius: 12px;
+  background: #fff;
+ /* M3/Elevation Light/1 */
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about-us-key-organizations .about-us-key-organizations-item .about-us-key-organizations-item-img {
+  padding: 24px 0px;
+  height: 92px;
+}
+.about-us-key-organizations .about-us-key-organizations-item .about-us-key-organizations-item-img img {
+  max-height: 40px;
+  width: 100%;
+}
+.about-us-key-organizations .about-us-key-organizations-item .about-us-key-organizations-item-title {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  color: #131316;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.about-us-key-organizations .about-us-key-organizations-item p {
+  margin: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  flex: auto;
+}
+.about-us-key-organizations .about-us-key-organizations-item a {
+  display: flex;
+  margin-left: -20px;
+  padding: 14px 20px;
+  align-items: center;
+  border-radius: 100px;
+  color: #2a59bd;
+  text-decoration: none;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+.about-us-key-organizations .about-us-key-organizations-item a img {
+  margin-left: 8px;
+  max-width: 100%;
+  max-height: 100%;
+}
+.about-us-key-organizations .about-us-key-organizations-item a:hover {
+  background: #eae8f0;
+}
+.about-us-our-team {
+  margin-top: 112px;
+  margin-bottom: 64px;
+  display: flex;
+}
+.about-us-our-team .about-us-our-team-title {
+  margin-bottom: 40px;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  color: #131316;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item {
+  margin-bottom: 1.5rem;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item .about-us-our-team-item-avatar {
+  margin-bottom: 20px;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item .about-us-our-team-item-avatar img {
+  max-width: 120px;
+  max-height: 120px;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item .about-us-our-team-item-name {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: #131316;
+  margin-bottom: 4px;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item .about-us-our-team-item-job {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #2a59bd;
+  margin-bottom: 12px;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item .about-us-our-team-item-desc {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #77777a;
+  margin-bottom: 12px;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item .about-us-our-team-item-social {
+  display: flex;
+  align-items: center;
+}
+.about-us-our-team .about-us-our-team-items .about-us-our-team-item .about-us-our-team-item-social a + a {
+  margin-left: 16px;
+}
+.about-us-contact-us {
+  display: flex;
+  padding-bottom: 112px;
+}
+.about-us-contact-us .about-us-contact-us-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  border-radius: 24px;
+  background-color: #dae2ff;
+  position: relative;
+  overflow: hidden;
+}
+.about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-img1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-img2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  color: #131316;
+  z-index: 2;
+}
+.about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-text {
+  margin: 16px 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #131316;
+  z-index: 2;
+}
+@media (max-width: 767.98px) {
+  .about-us {
+    padding-top: 16px;
+    padding-bottom: 32px;
+ }
+  .about-us .about-us-right {
+    margin-left: 0px;
+ }
+  .about-us .about-us-left {
+    margin-right: 0px;
+    min-height: auto;
+ }
+  .about-us .about-us-left .as_breadcrumbs {
+    font-size: 12px;
+    margin-bottom: 12px;
+ }
+  .about-us .about-us-left .about-us-title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+ }
+  .about-us .about-us-left p {
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+ }
+  .about-us-green-energy {
+    padding: 32px 0px;
+ }
+  .about-us-green-energy .about-us-green-energy-bg {
+    display: none;
+ }
+  .about-us-green-energy .about-us-green-energy-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+ }
+  .about-us-green-energy .about-us-green-energy-text1 {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0px;
+    margin-bottom: 24px;
+ }
+  .about-us-green-energy .about-us-green-energy-text2 {
+    margin: 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+ }
+  .about-us-green-energy .about-us-green-energy-items {
+    margin-top: 32px;
+ }
+  .about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item {
+    height: auto;
+    min-height: 129px;
+ }
+  .about-us-green-energy .about-us-green-energy-items .about-us-green-energy-item p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+ }
+  .about-us-green-energy .about-us-green-energy-items .col-md-3 {
+    padding-left: calc(1.5rem * .5);
+    padding-right: calc(1.5rem * .5);
+ }
+  .about-us-key-organizations {
+    padding: 48px 0px;
+    border-radius: 0;
+ }
+  .about-us-key-organizations .about-us-key-organizations-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 32px;
+ }
+  .about-us-key-organizations .about-us-key-organizations-item .about-us-key-organizations-item-img {
+    height: 72px;
+ }
+  .about-us-key-organizations .about-us-key-organizations-item:first-child {
+    margin-bottom: 16px;
+ }
+  .about-us-key-organizations .about-us-key-organizations-item img {
+    max-width: 100%;
+    max-height: 39px;
+ }
+  .about-us-key-organizations .about-us-key-organizations-item p {
+    margin-bottom: 0px;
+ }
+  .about-us-our-team {
+    margin-top: 48px;
+    margin-bottom: 8px;
+ }
+  .about-us-our-team .about-us-our-team-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 32px;
+ }
+  .about-us-our-team .about-us-our-team-item {
+    margin-bottom: 24px;
+ }
+  .about-us-contact-us {
+    padding-bottom: 48px;
+    padding-top: 32px;
+ }
+  .about-us-contact-us .about-us-contact-us-bg {
+    padding: 48px 16px;
+ }
+  .about-us-contact-us .about-us-contact-us-bg .btn_bg_primary {
+    width: 100%;
+ }
+  .about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-img2 {
+    right: -100px;
+    top: -80px;
+ }
+  .about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-img1 {
+    left: -100px;
+    bottom: 0;
+ }
+  .about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 12px;
+ }
+  .about-us-contact-us .about-us-contact-us-bg .about-us-contact-us-text {
+    margin: 0;
+    margin-bottom: 16px;
+ }
+}

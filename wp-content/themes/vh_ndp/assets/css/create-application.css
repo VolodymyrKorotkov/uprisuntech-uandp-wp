@@ -1,0 +1,101 @@
+.create-aplication-page {
+  padding: 32px 16px;
+  background-color: #f5f5f6;
+  min-height: calc(100vh - 257px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create-aplication-page .create-aplication-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.create-aplication-page .create-aplication-page-content .create-aplication-page-content-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+.create-aplication-page .create-aplication-page-content .create-aplication-page-content-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  margin-top: 16px;
+  text-align: center;
+}
+.create-aplication-page .create-aplication-page-content .create-aplication-page-content-actions {
+  display: flex;
+  margin-top: 32px;
+}
+.create-aplication-page .create-aplication-page-content .create-aplication-page-content-actions .create-aplication-page-content-actions-btn + .create-aplication-page-content-actions-btn {
+  margin-left: 24px;
+}
+.create-aplication-page .create-aplication-page-content .create-aplication-page-content-actions .create-aplication-page-content-actions-btn {
+  cursor: pointer;
+  min-width: 360px;
+  padding: 42px 8px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.create-aplication-page .create-aplication-page-content .create-aplication-page-content-actions .create-aplication-page-content-actions-btn .create-aplication-page-content-actions-btn-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-top: 8px;
+  color: #131316;
+}
+@media (max-width: 991.98px) {
+  .create-aplication-page {
+    padding: 32px 16px;
+    align-items: flex-start;
+ }
+  .create-aplication-page .create-aplication-page-content {
+    width: 100%;
+ }
+  .create-aplication-page .create-aplication-page-content .create-aplication-page-content-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+ }
+  .create-aplication-page .create-aplication-page-content .create-aplication-page-content-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-top: 8px;
+ }
+  .create-aplication-page .create-aplication-page-content .create-aplication-page-content-actions {
+    width: 100%;
+    flex-direction: column;
+ }
+  .create-aplication-page .create-aplication-page-content .create-aplication-page-content-actions .create-aplication-page-content-actions-btn {
+    padding: 24px 8px;
+    min-width: 100%;
+    width: 100%;
+ }
+  .create-aplication-page .create-aplication-page-content .create-aplication-page-content-actions .create-aplication-page-content-actions-btn + .create-aplication-page-content-actions-btn {
+    margin-left: 0px;
+    margin-top: 24px;
+ }
+}
+
+body.page-template-create-application-type main.main:has(#root:empty)  {
+  min-height: 638px;
+}
+@media (max-width: 991px) {
+  body.page-template-create-application-type main.main:has(#root:empty)  {
+    min-height: 1000px;
+  }
+}
+

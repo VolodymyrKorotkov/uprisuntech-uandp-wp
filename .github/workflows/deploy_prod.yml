@@ -1,0 +1,29 @@
+
+name: Deploy PROD
+
+on:
+  push:
+    branches: [production]
+
+jobs:
+
+  build:
+    env: 
+      PROGECT_NAME: ndp
+      BRANCH_NAME: production
+
+    runs-on: ubuntu-latest
+
+    name: 'Auto deploy'
+
+    steps:
+    - uses: appleboy/ssh-action@v0.1.4
+      name: Connect to server
+      with: 
+        host: ${{ secrets.SERVER_HOST_PROD }}
+        username: ${{ secrets.SERVER_NAME_PROD }}
+        key: ${{ secrets.SERVER_KEY_PROD}}
+        port: ${{ secrets.SERVER_PORT_PROD }}
+        script: |
+          cd /var/www/ndp/production-dev
+          git pull origin production

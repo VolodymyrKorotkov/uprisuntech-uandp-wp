@@ -1,0 +1,116 @@
+.Navigation{
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  position: sticky;
+  top: 134px;
+  .content{
+    .item{
+      display: flex;
+      align-items: center;
+      border-radius: 100px;
+      padding: 16px;
+      padding-right: 24px;
+      cursor: pointer;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+      color: #45464F;
+      
+      &:hover{
+        background-color: rgba(29, 27, 32, 0.08);
+      }
+      &.active{
+        background-color: #DCE2F9;
+        color: #151B2C;
+      }
+      &.disabled{
+        background-color: white;
+        color: #8A90A5;
+      }
+      .icon{
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .button{
+    margin-top: 16px;
+    border-top: 1px solid #C5C6D0;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .btn + .btn{
+      margin-top: 12px;
+    }
+    .btn{
+      border-radius: 100px;
+      padding: 13px 14px;
+      color: #2A59BD;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+      text-transform: none;
+      border: 1px solid #2A59BD;
+      &_solid {
+        padding: 14px 14px;
+        background: #3B66C2;
+        color: white;
+        &:hover {
+          background: #3B66C2;
+        }
+        &:active {
+          background: #446DC5;
+        }
+      }
+      &_color {
+        padding: 14px 14px;
+        background: #DCE2F9;
+        border-color: #DCE2F9;
+        color: #151B2C;
+        &:hover {
+          background: #DCE2F9;
+        }
+        &:active {
+          background: #DCE2F9;
+        }
+      }
+      &_transparent {
+        &:hover {
+          background: #F3F1F8;
+        }
+        &:active {
+          background: #E6E3F0;
+        }
+      }
+    }
+    :global{
+      .Mui-disabled{
+        border: none;
+        color: rgba($color: #1B1B1F, $alpha: 0.38);
+        background-color: rgba(29, 27, 32, 0.12) ;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .Navigation {
+    display: block;
+    .button {
+      .btn + .btn {
+        margin-left: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,482 @@
+# Copyright (C) 2023 Crudiator
+# This file is distributed under the same license as the Crudiator package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Crudiator 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/crudiator\n"
+"POT-Creation-Date: 2023-05-31 05:49:30+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: src/Crudiator.php:161
+msgid "equals"
+msgstr ""
+
+#: src/Crudiator.php:162
+msgid "does not equal"
+msgstr ""
+
+#: src/Crudiator.php:163
+msgid "is greater than"
+msgstr ""
+
+#: src/Crudiator.php:164
+msgid "is greater than or equal to"
+msgstr ""
+
+#: src/Crudiator.php:165
+msgid "is less than"
+msgstr ""
+
+#: src/Crudiator.php:166
+msgid "is less than or equal to"
+msgstr ""
+
+#: src/Crudiator.php:167
+msgid "contains"
+msgstr ""
+
+#: src/Crudiator.php:168
+msgid "does not contain"
+msgstr ""
+
+#: src/Crudiator.php:169
+msgid "starts with"
+msgstr ""
+
+#: src/Crudiator.php:170
+msgid "does not start with"
+msgstr ""
+
+#: src/Crudiator.php:171
+msgid "ends with"
+msgstr ""
+
+#: src/Crudiator.php:172
+msgid "does not ends with"
+msgstr ""
+
+#: src/Crudiator.php:173
+msgid "is null"
+msgstr ""
+
+#: src/Crudiator.php:174
+msgid "is not null"
+msgstr ""
+
+#: src/Crudiator.php:193
+msgid "Do you want to delete the item ?"
+msgstr ""
+
+#: src/Crudiator.php:194
+msgid "Do you want to delete this item ?"
+msgstr ""
+
+#: src/Crudiator.php:195
+msgid "Do you want to delete selected item ?"
+msgstr ""
+
+#: src/Crudiator.php:196
+msgid "Item count : "
+msgstr ""
+
+#: src/Crudiator.php:197
+msgid "Item not selected."
+msgstr ""
+
+#: src/Crudiator.php:198
+msgid "When in View or Filter view, data for that condition will be exported."
+msgstr ""
+
+#: src/Crudiator.php:233 src/CrudiatorPlugin.php:77
+msgid ""
+"Crudiator does not work properly because database connection by PDO is not "
+"possible."
+msgstr ""
+
+#: src/Crudiator.php:234 src/CrudiatorPlugin.php:78
+msgid "Error Message: "
+msgstr ""
+
+#: src/Crudiator.php:243 src/Crudiator.php:249
+msgid "Unable to retrieve table information."
+msgstr ""
+
+#: src/Crudiator.php:327 src/Crudiator.php:330
+msgid "This operation is not allowed."
+msgstr ""
+
+#: src/Crudiator.php:416
+msgid "Number of items per page:"
+msgstr ""
+
+#: src/Crudiator.php:487
+msgid "All"
+msgstr ""
+
+#: src/Crudiator.php:516
+msgid "Bulk delete"
+msgstr ""
+
+#: src/Crudiator.php:539
+msgid "View"
+msgstr ""
+
+#: src/Crudiator.php:545 src/Crudiator.php:1506
+msgid "Edit"
+msgstr ""
+
+#: src/Crudiator.php:556 src/Crudiator.php:1509
+msgid "Delete"
+msgstr ""
+
+#: src/Crudiator.php:621
+msgid "Export"
+msgstr ""
+
+#: src/Crudiator.php:827
+msgid ""
+"Only arrays are allowed for the view option. Please check the documentaion."
+msgstr ""
+
+#: src/Crudiator.php:833
+msgid "The use of MATCH is not permitted in the VIEW."
+msgstr ""
+
+#: src/Crudiator.php:844
+msgid ""
+"Only arrays are allowed for the where option. Please check the documentation."
+msgstr ""
+
+#: src/Crudiator.php:851
+msgid "The use of MATCH is not permitted in the WHERE."
+msgstr ""
+
+#: src/Crudiator.php:1295
+msgid " items deleted."
+msgstr ""
+
+#: src/Crudiator.php:1298
+msgid "Data added."
+msgstr ""
+
+#: src/Crudiator.php:1301
+msgid "Data updated."
+msgstr ""
+
+#: src/Crudiator.php:1342
+msgid "An error has occurred."
+msgstr ""
+
+#: src/Crudiator.php:1358
+msgid "Back"
+msgstr ""
+
+#: src/Crudiator.php:1407 src/Crudiator.php:1611 src/CrudiatorPlugin.php:95
+msgid "Add New"
+msgstr ""
+
+#: src/Crudiator.php:1425
+msgid "Search Text"
+msgstr ""
+
+#: src/Crudiator.php:1476
+msgid "View Data"
+msgstr ""
+
+#: src/Crudiator.php:1537
+msgid "Add New Data"
+msgstr ""
+
+#: src/Crudiator.php:1540 src/Crudiator.php:1615
+msgid "* required fields"
+msgstr ""
+
+#: src/Crudiator.php:1576
+msgid "Save"
+msgstr ""
+
+#: src/Crudiator.php:1609
+msgid "Edit Data"
+msgstr ""
+
+#: src/Crudiator.php:1663
+msgid "Save Changes"
+msgstr ""
+
+#: src/Crudiator.php:1671
+msgid "Search results for"
+msgstr ""
+
+#: src/Crudiator.php:1691
+msgid "filter condition : "
+msgstr ""
+
+#: src/Crudiator.php:1802
+msgid "Unknown input type specified"
+msgstr ""
+
+#: src/Crudiator.php:1946
+msgid "Filter Data"
+msgstr ""
+
+#: src/Crudiator.php:1971
+msgid "Reset filter"
+msgstr ""
+
+#: src/Crudiator.php:1973
+msgid "Cancel"
+msgstr ""
+
+#: src/Crudiator.php:1974
+msgid "Start"
+msgstr ""
+
+#: src/Crudiator.php:2118 src/Crudiator.php:2124 src/Crudiator.php:2167
+#: src/Crudiator.php:2259 src/Crudiator.php:2404 src/Crudiator.php:2418
+msgid "Invalid parameter"
+msgstr ""
+
+#: src/Crudiator.php:2133
+msgid "Data does not exist."
+msgstr ""
+
+#: src/Crudiator.php:2200
+msgid "No value returned in callback function before data insertion"
+msgstr ""
+
+#: src/Crudiator.php:2211 src/Crudiator.php:2303 src/Crudiator.php:2367
+#: src/Crudiator.php:2456 src/Crudiator.php:2531
+msgid "Database Error : "
+msgstr ""
+
+#: src/Crudiator.php:2291
+msgid "No value returned in callback function before data update"
+msgstr ""
+
+#: src/Crudiator.php:2356
+msgid "No value returned in callback function before data deletion"
+msgstr ""
+
+#: src/Crudiator.php:2376
+msgid "Failed to delete."
+msgstr ""
+
+#: src/Crudiator.php:2434
+msgid "No value is returned in the callback function before bulk processing"
+msgstr ""
+
+#: src/Crudiator.php:2450
+msgid "The following record could not be deleted. : "
+msgstr ""
+
+#: src/CrudiatorPlugin.php:38
+msgid "Top level menu"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:39
+msgid "Sub level menu"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:43
+msgid "Administrator"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:44
+msgid "Editor"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:45
+msgid "Author"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:46
+msgid "Contributor"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:47
+msgid "Subscriber"
+msgstr ""
+
+#. #-#-#-#-#  crudiator.pot (Crudiator 2.0.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: src/CrudiatorPlugin.php:90 src/CrudiatorPlugin.php:92
+#: src/CrudiatorPlugin.php:93
+msgid "Crudiator"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:91
+msgid "Table"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:94
+msgid "All Tables"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:96
+msgid "Add New Table"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:97
+msgid "Edit Table"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:98
+msgid "New Table"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:99
+msgid "View Table"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:100
+msgid "Search Tables"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:101
+msgid "No tables found."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:102
+msgid "No tables found in Trash."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:103
+msgid "Parent Tables"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:241
+msgid ""
+"The custom settings do not work because the format of the json string in the "
+"custom settings is incorrect."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:260
+msgid "Base setting"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:269 src/CrudiatorPlugin.php:496
+msgid "Custom setting"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:303 src/CrudiatorPlugin.php:590
+msgid "Database Table"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:307
+msgid "Select the target table for CRUD on the database."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:311
+msgid "Slug Name"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:314
+msgid ""
+"Enter the slug name that will be part of the URL. Only lowercase "
+"alphanumeric, hyphen, and underscores characters are valid.<br>When the "
+"Database Table is selected, it will be populated subsidiarily."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:325 src/CrudiatorPlugin.php:591
+msgid "Menu Type"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:328
+msgid ""
+"Select whether it is a top-level menu or a submenu within the top level."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:347
+msgid "Parent Menu"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:350
+msgid "Selects the parent menu when the menu type is submenu selection."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:381 src/CrudiatorPlugin.php:388
+msgid "Menu Position"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:384
+msgid ""
+"This menu appears below the selected menu.<br>If omitted, it will appear at "
+"the bottom of all menus."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:390
+msgid ""
+"Specify the position of the submenu to be displayed by any number from 1."
+"<br>If omitted, they are displayed in the order of registration."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:419
+msgid ""
+"Select the menu icon.You can check the list of icons on the official <a "
+"href='https://developer.wordpress.org/resource/dashicons/#menu' "
+"target='_blank'>WordPress website</a>."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:426
+msgid "Menu Icon"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:439 src/CrudiatorPlugin.php:592
+msgid "Permission"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:442
+msgid ""
+"Select the permissions that allow you to view this menu. <br>It will be "
+"displayed to users with the selected permissions or higher."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:499
+msgid ""
+"If you want to make custom settings, enter them here in json format."
+"<br>Please refer to the <a href='https://crudiator.com/document/' "
+"target='_blank'>documentation</a> for an example."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:548 src/CrudiatorPlugin.php:553
+msgid "Invalid value for meta_key."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:573
+msgid "This string becomes the menu name."
+msgstr ""
+
+#: src/CrudiatorPlugin.php:580
+msgid "Add menu name"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:587
+msgid "Menu Name"
+msgstr ""
+
+#: src/CrudiatorPlugin.php:625
+msgid "Show"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://crudiator.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin allows you to easily Create, Read, Update, Delete, etc. tables "
+"in the database with a WordPress-like UI."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Takafu"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://twitter.com/kahoo365"
+msgstr ""

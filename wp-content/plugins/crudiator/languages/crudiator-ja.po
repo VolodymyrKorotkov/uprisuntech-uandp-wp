@@ -1,0 +1,523 @@
+# Copyright (C) 2022 Crudiator
+# This file is distributed under the same license as the Crudiator package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Crudiator 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/crudiator\n"
+"POT-Creation-Date: 2023-05-31 05:25:09+00:00\n"
+"PO-Revision-Date: 2023-05-31 14:27+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: src/Crudiator.php:161
+msgid "equals"
+msgstr "次の値と等しい"
+
+#: src/Crudiator.php:162
+msgid "does not equal"
+msgstr "次の値と等しくない"
+
+#: src/Crudiator.php:163
+msgid "is greater than"
+msgstr "次の値より大きい"
+
+#: src/Crudiator.php:164
+msgid "is greater than or equal to"
+msgstr "次の値以上"
+
+#: src/Crudiator.php:165
+msgid "is less than"
+msgstr "次の値より小さい"
+
+#: src/Crudiator.php:166
+msgid "is less than or equal to"
+msgstr "次の値以下"
+
+#: src/Crudiator.php:167
+msgid "contains"
+msgstr "次の文字列を含む"
+
+#: src/Crudiator.php:168
+msgid "does not contain"
+msgstr "次の文字列を含まない"
+
+#: src/Crudiator.php:169
+msgid "starts with"
+msgstr "次の文字列で始まる"
+
+#: src/Crudiator.php:170
+msgid "does not start with"
+msgstr "次の文字列で始まらない"
+
+#: src/Crudiator.php:171
+msgid "ends with"
+msgstr "次の文字列で終わる"
+
+#: src/Crudiator.php:172
+msgid "does not ends with"
+msgstr "次の文字列で終わらない"
+
+#: src/Crudiator.php:173
+msgid "is null"
+msgstr "値がNULLである"
+
+#: src/Crudiator.php:174
+msgid "is not null"
+msgstr "値がNULLではない"
+
+#: src/Crudiator.php:193
+msgid "Do you want to delete the item ?"
+msgstr "次のデータを削除しても宜しいですか？"
+
+#: src/Crudiator.php:194
+msgid "Do you want to delete this item ?"
+msgstr "このデータを削除しても宜しいですか？"
+
+#: src/Crudiator.php:195
+msgid "Do you want to delete selected item ?"
+msgstr "選択したデータを削除しても宜しいですか？"
+
+#: src/Crudiator.php:196
+msgid "Item count : "
+msgstr "データ件数 : "
+
+#: src/Crudiator.php:197
+msgid "Item not selected."
+msgstr "項目が選択されていません。"
+
+#: src/Crudiator.php:198
+msgid "When in View or Filter view, data for that condition will be exported."
+msgstr ""
+"ビュー表示又は絞り込み表示をしている時はその条件のデータがエクスポートされま"
+"す。"
+
+#: src/Crudiator.php:233 src/CrudiatorPlugin.php:77
+msgid ""
+"Crudiator does not work properly because database connection by PDO is not "
+"possible."
+msgstr "PDOによるデータベース接続が出来ない為、Crudiatorは正常に動きません。"
+
+#: src/Crudiator.php:234 src/CrudiatorPlugin.php:78
+msgid "Error Message: "
+msgstr "エラーメッセージ: "
+
+#: src/Crudiator.php:243 src/Crudiator.php:249
+msgid "Unable to retrieve table information."
+msgstr "テーブル情報を取得できません。"
+
+#: src/Crudiator.php:327 src/Crudiator.php:330
+msgid "This operation is not allowed."
+msgstr "この操作は許可されていません。"
+
+#: src/Crudiator.php:416
+msgid "Number of items per page:"
+msgstr "ページごとに表示する項目数:"
+
+#: src/Crudiator.php:487
+msgid "All"
+msgstr "すべて"
+
+#: src/Crudiator.php:516
+msgid "Bulk delete"
+msgstr "一括削除"
+
+#: src/Crudiator.php:539
+msgid "View"
+msgstr "閲覧"
+
+#: src/Crudiator.php:545 src/Crudiator.php:1506
+msgid "Edit"
+msgstr "編集"
+
+#: src/Crudiator.php:556 src/Crudiator.php:1509
+msgid "Delete"
+msgstr "削除"
+
+#: src/Crudiator.php:621
+msgid "Export"
+msgstr "エクスポート"
+
+#: src/Crudiator.php:827
+msgid ""
+"Only arrays are allowed for the view option. Please check the documentaion."
+msgstr ""
+"viewオプションは配列のみ許可されています。ドキュメントをご確認ください。"
+
+#: src/Crudiator.php:833
+msgid "The use of MATCH is not permitted in the VIEW."
+msgstr "viewオプションではMATCHの使用は禁止されています。"
+
+#: src/Crudiator.php:844
+msgid ""
+"Only arrays are allowed for the where option. Please check the documentation."
+msgstr ""
+"whereオプションは配列のみ許可されています。ドキュメントをご確認ください。"
+
+#: src/Crudiator.php:851
+msgid "The use of MATCH is not permitted in the WHERE."
+msgstr "whereオプションではMATCHの使用は禁止されています。"
+
+#: src/Crudiator.php:1295
+msgid " items deleted."
+msgstr " 件のデータを削除しました。"
+
+#: src/Crudiator.php:1298
+msgid "Data added."
+msgstr "データを追加しました。"
+
+#: src/Crudiator.php:1301
+msgid "Data updated."
+msgstr "データを更新しました。"
+
+#: src/Crudiator.php:1342
+msgid "An error has occurred."
+msgstr "エラーが発生しました。"
+
+#: src/Crudiator.php:1358
+msgid "Back"
+msgstr "戻る"
+
+#: src/Crudiator.php:1407 src/Crudiator.php:1611 src/CrudiatorPlugin.php:95
+msgid "Add New"
+msgstr "新規追加"
+
+#: src/Crudiator.php:1425
+msgid "Search Text"
+msgstr "テキスト検索"
+
+#: src/Crudiator.php:1476
+msgid "View Data"
+msgstr "データを詳細表示"
+
+#: src/Crudiator.php:1537
+msgid "Add New Data"
+msgstr "新規データを追加"
+
+#: src/Crudiator.php:1540 src/Crudiator.php:1615
+msgid "* required fields"
+msgstr "* は必須項目です"
+
+#: src/Crudiator.php:1576
+msgid "Save"
+msgstr "保存"
+
+#: src/Crudiator.php:1609
+msgid "Edit Data"
+msgstr "データ編集"
+
+#: src/Crudiator.php:1663
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: src/Crudiator.php:1671
+msgid "Search results for"
+msgstr "検索結果"
+
+#: src/Crudiator.php:1691
+msgid "filter condition : "
+msgstr "絞り込み条件 : "
+
+#: src/Crudiator.php:1802
+msgid "Unknown input type specified"
+msgstr "不明な入力タイプが指定されました"
+
+#: src/Crudiator.php:1946
+msgid "Filter Data"
+msgstr "データを絞り込み"
+
+#: src/Crudiator.php:1971
+msgid "Reset filter"
+msgstr "絞り込みを解除"
+
+#: src/Crudiator.php:1973
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: src/Crudiator.php:1974
+msgid "Start"
+msgstr "開始"
+
+#: src/Crudiator.php:2118 src/Crudiator.php:2124 src/Crudiator.php:2167
+#: src/Crudiator.php:2259 src/Crudiator.php:2404 src/Crudiator.php:2418
+msgid "Invalid parameter"
+msgstr "不正なパラメータです"
+
+#: src/Crudiator.php:2133
+msgid "Data does not exist."
+msgstr "データが存在しません。"
+
+#: src/Crudiator.php:2200
+msgid "No value returned in callback function before data insertion"
+msgstr "データ挿入前のコールバック関数で値が返ってきません"
+
+#: src/Crudiator.php:2211 src/Crudiator.php:2303 src/Crudiator.php:2367
+#: src/Crudiator.php:2456 src/Crudiator.php:2531
+msgid "Database Error : "
+msgstr "データベースエラー : "
+
+#: src/Crudiator.php:2291
+msgid "No value returned in callback function before data update"
+msgstr "データ更新前のコールバック関数で値が返ってきません"
+
+#: src/Crudiator.php:2356
+msgid "No value returned in callback function before data deletion"
+msgstr "データ削除前のコールバック関数で値が返ってきません"
+
+#: src/Crudiator.php:2376
+msgid "Failed to delete."
+msgstr "削除に失敗しました"
+
+#: src/Crudiator.php:2434
+msgid "No value is returned in the callback function before bulk processing"
+msgstr "一括処理前のコールバック関数で値が返ってきません"
+
+#: src/Crudiator.php:2450
+msgid "The following record could not be deleted. : "
+msgstr "次のレコードは削除できませんでした： "
+
+#: src/CrudiatorPlugin.php:38
+msgid "Top level menu"
+msgstr "トップレベルメニュー"
+
+#: src/CrudiatorPlugin.php:39
+msgid "Sub level menu"
+msgstr "サブレベルメニュー"
+
+#: src/CrudiatorPlugin.php:43
+msgid "Administrator"
+msgstr "管理者"
+
+#: src/CrudiatorPlugin.php:44
+msgid "Editor"
+msgstr "編集者"
+
+#: src/CrudiatorPlugin.php:45
+msgid "Author"
+msgstr "投稿者"
+
+#: src/CrudiatorPlugin.php:46
+msgid "Contributor"
+msgstr "寄稿者"
+
+#: src/CrudiatorPlugin.php:47
+msgid "Subscriber"
+msgstr "購読者"
+
+#. Plugin Name of the plugin/theme
+#: src/CrudiatorPlugin.php:90 src/CrudiatorPlugin.php:92
+#: src/CrudiatorPlugin.php:93
+msgid "Crudiator"
+msgstr "Crudiator"
+
+#: src/CrudiatorPlugin.php:91
+msgid "Table"
+msgstr "テーブル"
+
+#: src/CrudiatorPlugin.php:94
+msgid "All Tables"
+msgstr "テーブル一覧"
+
+#: src/CrudiatorPlugin.php:96
+msgid "Add New Table"
+msgstr "新しいテーブルを追加"
+
+#: src/CrudiatorPlugin.php:97
+msgid "Edit Table"
+msgstr "テーブルを編集"
+
+#: src/CrudiatorPlugin.php:98
+msgid "New Table"
+msgstr "新しいテーブル"
+
+#: src/CrudiatorPlugin.php:99
+msgid "View Table"
+msgstr "テーブルを閲覧"
+
+#: src/CrudiatorPlugin.php:100
+msgid "Search Tables"
+msgstr "テーブルを検索"
+
+#: src/CrudiatorPlugin.php:101
+msgid "No tables found."
+msgstr "テーブルが見つかりませんでした。"
+
+#: src/CrudiatorPlugin.php:102
+msgid "No tables found in Trash."
+msgstr "ゴミ箱内にテーブルが見つかりませんでした。"
+
+#: src/CrudiatorPlugin.php:103
+msgid "Parent Tables"
+msgstr "親テーブル"
+
+#: src/CrudiatorPlugin.php:241
+msgid ""
+"The custom settings do not work because the format of the json string in the "
+"custom settings is incorrect."
+msgstr ""
+"カスタム設定のjson文字列の書式に誤りがある為カスタム設定は機能しません。"
+
+#: src/CrudiatorPlugin.php:260
+msgid "Base setting"
+msgstr "基本設定"
+
+#: src/CrudiatorPlugin.php:269 src/CrudiatorPlugin.php:496
+msgid "Custom setting"
+msgstr "カスタム設定"
+
+#: src/CrudiatorPlugin.php:303 src/CrudiatorPlugin.php:590
+msgid "Database Table"
+msgstr "データベーステーブル"
+
+#: src/CrudiatorPlugin.php:307
+msgid "Select the target table for CRUD on the database."
+msgstr "データベース上のCRUDの対象となるテーブルを選択します。"
+
+#: src/CrudiatorPlugin.php:311
+msgid "Slug Name"
+msgstr "スラッグ名"
+
+#: src/CrudiatorPlugin.php:314
+msgid ""
+"Enter the slug name that will be part of the URL. Only lowercase "
+"alphanumeric, hyphen, and underscores characters are valid.<br>When the "
+"Database Table is selected, it will be populated subsidiarily."
+msgstr ""
+"メニューURLの一部となるスラッグ名を入力します。小文字英数字・ハイフン・アン"
+"ダースコアのみ有効です。<br/>データベーステーブルを選択すると補完的に入力され"
+"ます。"
+
+#: src/CrudiatorPlugin.php:325 src/CrudiatorPlugin.php:591
+msgid "Menu Type"
+msgstr "メニュータイプ"
+
+#: src/CrudiatorPlugin.php:328
+msgid ""
+"Select whether it is a top-level menu or a submenu within the top level."
+msgstr "トップレベルのメニューか、トップレベル内のサブメニューかを選択します。"
+
+#: src/CrudiatorPlugin.php:347
+msgid "Parent Menu"
+msgstr "サブメニュー時の親メニュー"
+
+#: src/CrudiatorPlugin.php:350
+msgid "Selects the parent menu when the menu type is submenu selection."
+msgstr "メニュータイプがサブメニュー選択時に、親メニューを選択します。"
+
+#: src/CrudiatorPlugin.php:381 src/CrudiatorPlugin.php:388
+msgid "Menu Position"
+msgstr "メニュー位置"
+
+#: src/CrudiatorPlugin.php:384
+msgid ""
+"This menu appears below the selected menu.<br>If omitted, it will appear at "
+"the bottom of all menus."
+msgstr ""
+"選択したメニューの下にこのメニューが表示されます。<br/>省略した場合は全てのメ"
+"ニューの一番下に表示されます。"
+
+#: src/CrudiatorPlugin.php:390
+msgid ""
+"Specify the position of the submenu to be displayed by any number from 1."
+"<br>If omitted, they are displayed in the order of registration."
+msgstr ""
+"サブメニューの表示される位置を1からの任意の数字で指定します。<br/>省略した場"
+"合は登録順に表示されます。"
+
+#: src/CrudiatorPlugin.php:419
+msgid ""
+"Select the menu icon.You can check the list of icons on the official <a "
+"href='https://developer.wordpress.org/resource/dashicons/#menu' "
+"target='_blank'>WordPress website</a>."
+msgstr ""
+"メニューアイコンを選択します。<a href=\"https://developer.wordpress.org/"
+"resource/dashicons/#menu\" target=\"_blank\">WordPress公式サイト</a>でアイコ"
+"ン一覧を確認出来ます。"
+
+#: src/CrudiatorPlugin.php:426
+msgid "Menu Icon"
+msgstr "メニューアイコン"
+
+#: src/CrudiatorPlugin.php:439 src/CrudiatorPlugin.php:592
+msgid "Permission"
+msgstr "アクセス許可"
+
+#: src/CrudiatorPlugin.php:442
+msgid ""
+"Select the permissions that allow you to view this menu. <br>It will be "
+"displayed to users with the selected permissions or higher."
+msgstr ""
+"このメニューを閲覧することが出来る権限を選択します。<br/>選択した権限以上の"
+"ユーザーに表示されます。"
+
+#: src/CrudiatorPlugin.php:499
+msgid ""
+"If you want to make custom settings, enter them here in json format."
+"<br>Please refer to the <a href='https://crudiator.com/document/' "
+"target='_blank'>documentation</a> for an example."
+msgstr ""
+"カスタム設定をjson形式で記述します。記述例は<a href=\"https://crudiator.com/"
+"ja/document/\" target=\"_blank\">ドキュメント</a>を参考にしてください。"
+
+#: src/CrudiatorPlugin.php:548 src/CrudiatorPlugin.php:553
+msgid "Invalid value for meta_key."
+msgstr "meta_keyの値が無効です。"
+
+#: src/CrudiatorPlugin.php:573
+msgid "This string becomes the menu name."
+msgstr "この文字列がメニュー名になります。"
+
+#: src/CrudiatorPlugin.php:580
+msgid "Add menu name"
+msgstr "メニュー名を追加"
+
+#: src/CrudiatorPlugin.php:587
+msgid "Menu Name"
+msgstr "メニュー名"
+
+#: src/CrudiatorPlugin.php:625
+msgid "Show"
+msgstr "表示"
+
+#. Plugin URI of the plugin/theme
+msgid "https://crudiator.com/"
+msgstr "https://crudiator.com/"
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin allows you to easily Create, Read, Update, Delete, etc. tables "
+"in the database with a WordPress-like UI."
+msgstr ""
+"データベース上のテーブルをWordPressライクなUIで簡単に作成・閲覧・編集・削除な"
+"どを出来るようにします。"
+
+#. Author of the plugin/theme
+msgid "Takafu"
+msgstr "タカフ"
+
+#. Author URI of the plugin/theme
+msgid "https://twitter.com/kahoo365"
+msgstr "https://twitter.com/kahoo365"
+
+#~ msgid "Crudiators"
+#~ msgstr "Crudiators"
+
+#~ msgid "false was returned in the callback function before data insertion"
+#~ msgstr "データ挿入前のコールバック関数内でfalseが返されました"
+
+#~ msgid "false was returned in the callback function before data update"
+#~ msgstr "データ更新前のコールバック関数内でfalseが返されました"
+
+#~ msgid "false was returned in the callback function before data deletion"
+#~ msgstr "データ削除前のコールバック関数内でfalseが返されました"
+
+#~ msgid "false was returned in the callback function before bulk processing"
+#~ msgstr "一括処理前のコールバック関数内でfalseが返されました"
+
+#~ msgid "Takafumi Suzuki"
+#~ msgstr "Takafumi Suzuki"

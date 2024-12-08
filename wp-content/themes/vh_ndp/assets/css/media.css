@@ -1,0 +1,8 @@
+@media (max-width: 650px) {
+    .hero-home-one, .hero-home-three {
+    display: block;
+    align-items: center; 
+    justify-content: center;
+    background-color: black  !important;
+}
+}

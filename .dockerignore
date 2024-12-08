@@ -1,0 +1,12 @@
+.git
+wp-content/themes/vh_ndp/react-aplication/node_modules
+*.log
+*.md
+*.sh
+.dockerignore
+.dockerfile
+.docker-compose.yml
+docker-compose.yml
+Dockerfile
+dockerfile
+docker/db_data

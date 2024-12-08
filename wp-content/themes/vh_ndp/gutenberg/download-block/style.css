@@ -1,0 +1,72 @@
+.article .download {
+    padding-top: 32px;
+    margin-bottom: 32px;
+}
+
+.download .download__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.download__item {
+    width: 168px;
+    padding: 8px 8px 12px 8px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #F6F6F8;
+    margin-right: 24px;
+}
+
+.download__img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    height: 126px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.download__title {
+    font-size: 14px;
+    display: block;
+    max-width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap !important;
+    margin-bottom: 4px;
+    color: #141218;
+}
+
+.article .download__title {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #141218;
+}
+
+.download__info {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    opacity: 0.4;
+    color: #545F71;
+    text-align: center;
+}

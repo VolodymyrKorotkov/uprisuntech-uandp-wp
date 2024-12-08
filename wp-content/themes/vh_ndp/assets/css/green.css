@@ -1,0 +1,765 @@
+
+@-webkit-keyframes rotating {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+@keyframes rotating {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+.gu_block {
+  display: flex;
+  padding-bottom: 96px;
+  padding-top: 64px;
+  position: relative
+}
+
+.gu_block .bg-image {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  display: flex;
+}
+
+.gu_block .gu_block_left img {
+  max-height: 100%;
+  max-width: 100%
+}
+
+.gu_block .gu_block_left .gu-image-row {
+  display: flex
+}
+
+.gu_block .gu_block_left .gu-image-row .gu-image-row-item2 {
+  position: relative
+}
+
+.gu_block .gu_block_left .gu-green-university {
+  align-items: center;
+  background-color: #2a59bd;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 8px 32px 6px rgba(0, 0, 0, .12);
+  display: flex;
+  height: 131px;
+  justify-content: center;
+  left: -65px;
+  position: absolute;
+  top: -65px;
+  width: 131px;
+  z-index: 1
+}
+
+.gu_block .gu_block_left .gu-green-university .gu-green-university-icon {
+  position: absolute
+}
+
+.gu_block .gu_block_left .gu-green-university .gu-green-university-text {
+  -webkit-animation: rotating 8s linear infinite;
+  animation: rotating 8s linear infinite
+}
+
+.gu_block .gu_block_right {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 48px 0 48px 50px
+}
+
+.gu_block .gu_block_right .gu_breadcrumbs {
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 16px
+}
+
+.gu_block .gu_block_right .gu_breadcrumbs .gu_breadcrumbs-item-separator {
+  margin: 0 8px
+}
+
+.gu_block .gu_block_right .gu_breadcrumbs .gu_breadcrumbs-item {
+  color: #000;
+  text-decoration: none
+}
+
+.gu_block .gu_block_right .gu_breadcrumbs .gu_breadcrumbs-item.active {
+  color: #77777a
+}
+
+.gu_block .gu_block_right .gu_title {
+  align-items: center;
+  display: flex;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  margin: 0 0 32px
+}
+
+.gu_block .gu_block_right .gu_title img {
+  margin: 0 8px
+}
+
+.gu_block .gu_block_right p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 16px
+}
+
+.gu_block .gu_block_right .gu_comment p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 12px
+}
+
+.gu_block .gu_block_right .gu_comment p span {
+  color: #2a59bd
+}
+
+.gu_block .gu_block_right .gu_comment .gu_user-info {
+  align-items: center;
+  display: flex
+}
+
+.gu_block .gu_block_right .gu_comment .gu_user-info .gu_avatar {
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+.gu_avatar img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.gu_block .gu_block_right .gu_comment .gu_user-info .gu_user-content {
+  margin-left: 12px
+}
+
+.gu_block .gu_block_right .gu_comment .gu_user-info .gu_user-content .gu_user-name {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px
+}
+
+.gu_block .gu_block_right .gu_comment .gu_user-info .gu_user-content .gu_user-info {
+  color: #77777a;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px
+}
+
+@media(max-width:767.98px) {
+  .gu_block {
+    padding: 10px 0
+  }
+
+  .gu_block .row {
+    flex-direction: column-reverse
+  }
+
+  .gu_block .gu_block_right {
+    margin-bottom: 24px;
+    padding: 0
+  }
+
+  .gu_block .gu_block_right .gu_breadcrumbs {
+    font-size: 12px;
+    margin-bottom: 12px
+  }
+
+  .gu_block .gu_block_right .gu_title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    margin-bottom: 18px
+  }
+
+  .gu_block .gu_block_right .gu_title img {
+    height: 36px
+  }
+
+  .gu_block .gu_block_right p {
+    font-size: 14px
+  }
+
+  .gu_block .gu_block_right .gu_comment {
+    display: flex;
+    flex-direction: column-reverse
+  }
+
+  .gu_block .gu_block_right .gu_comment p {
+    font-size: 14px;
+    margin: 0
+  }
+
+  .gu_block .gu_block_right .gu_comment .gu_user-info {
+    margin-bottom: 15px;
+    margin-top: 5px
+  }
+
+  .gu_block .bg-image {
+    display: none
+  }
+}
+
+.gu-training-platform {
+  background-color: #f5f5f6;
+  padding: 0 32px;
+  padding-top: 88px;
+}
+
+.gu-training-platform .gu-container-bg {
+  background-color: #dae2ff;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 64px 0;
+  position: relative
+}
+
+.gu-training-platform .gu-container-bg .gu-bg-image {
+  left: 0;
+  position: absolute;
+  top: 0
+}
+
+.gu-training-platform .gu-container-bg .gu-bg-image .gu-bg2 {
+  display: none
+}
+
+.gu-training-platform .gu-training-platform-block-left {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center
+}
+
+.gu-training-platform .gu-training-platform-block-left .title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin: 0 0 32px
+}
+
+.gu-training-platform .gu-training-platform-block-left p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 32px
+}
+
+.gu-training-platform .gu-training-platform-block-left .btn-info {
+  background-color: #2a59bd;
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 14px 20px
+}
+
+.gu-training-platform .gu-training-platform-block-right {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column
+}
+
+.gu-training-platform .gu-training-platform-block-right .gu-image {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  max-width: 456px;
+  position: relative;
+  width: 100%
+}
+
+.gu-training-platform .gu-training-platform-block-right .gu-image img {
+  max-height: 100%;
+  max-width: 100%
+}
+
+.gu-training-platform .gu-training-platform-block-right .gu-image .gu-info {
+  align-items: center;
+  background-color: #2a59bd;
+  border-radius: 20px;
+  bottom: -16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  padding: 24px 16px 16px;
+  position: absolute;
+  width: 100%
+}
+
+.gu-training-platform .gu-training-platform-block-right .gu-image .gu-info p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 12px 0 0;
+  text-align: center
+}
+
+@media(max-width:767.98px) {
+  .gu-training-platform {
+    padding: 48px .75rem 0
+  }
+
+  .gu-training-platform .container {
+    padding: 0
+  }
+
+  .gu-training-platform .gu-container-bg {
+    padding: 38px .75rem 0
+  }
+
+  .gu-training-platform .gu-container-bg .gu-bg-image {
+    left: auto;
+    right: 0;
+    top: 0
+  }
+
+  .gu-training-platform .gu-container-bg .gu-bg-image .gu-bg1 {
+    display: none
+  }
+
+  .gu-training-platform .gu-container-bg .gu-bg-image .gu-bg2 {
+    display: block
+  }
+
+  .gu-training-platform .gu-training-platform-block-left {
+    margin-bottom: 32px
+  }
+
+  .gu-training-platform .gu-training-platform-block-left .title {
+    font-size: 24px;
+    line-height: 1.1
+  }
+
+  .gu-training-platform .gu-training-platform-block-left p {
+    font-size: 14px
+  }
+
+  .gu-training-platform .gu-training-platform-block-left .btn_bg_primary {
+    width: 100%
+  }
+
+  .gu-training-platform .gu-training-platform-block-right {
+    background: linear-gradient(357deg, #f5f5f6, #dae2ff);
+    margin-left: -.75rem;
+    margin-right: -.75rem
+  }
+
+  .gu-training-platform .gu-training-platform-block-right .gu-image .gu-info {
+    max-width: calc(100% - 96px)
+  }
+}
+
+.gu-knowledge-base {
+  display: flex;
+  padding: 112px 0
+}
+
+.gu-knowledge-base .gu-knowledge-base-image {
+  position: relative
+}
+
+.gu-knowledge-base .gu-knowledge-base-image img {
+  max-height: 100%;
+  max-width: 100%
+}
+
+.gu-knowledge-base .gu-knowledge-base-image .gu-green-university {
+  align-items: center;
+  background-color: #2a59bd;
+  border-radius: 50%;
+  bottom: -65px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 8px 32px 6px rgba(0, 0, 0, .12);
+  display: flex;
+  height: 131px;
+  justify-content: center;
+  left: 261px;
+  position: absolute;
+  width: 131px;
+  z-index: 1
+}
+
+.gu-knowledge-base .gu-knowledge-base-image .gu-green-university .gu-green-university-icon {
+  position: absolute
+}
+
+.gu-knowledge-base .gu-knowledge-base-image .gu-green-university .gu-green-university-text {
+  -webkit-animation: rotating 8s linear infinite;
+  animation: rotating 8s linear infinite
+}
+
+.gu-knowledge-base .gu-knowledge-base-block-right {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center
+}
+
+.gu-knowledge-base .gu-knowledge-base-block-right .title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin: 0 0 32px
+}
+
+.gu-knowledge-base .gu-knowledge-base-block-right p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 32px
+}
+
+@media(max-width:767.98px) {
+  .gu-knowledge-base {
+    padding: 48px 0 112px
+  }
+
+  .gu-knowledge-base .row {
+    flex-direction: column-reverse
+  }
+
+  .gu-knowledge-base .row .gu-knowledge-base-image .gu-green-university {
+    left: calc(50% - 65px)
+  }
+
+  .gu-knowledge-base .row .gu-knowledge-base-block-right .title {
+    font-size: 24px;
+    margin-bottom: 16px
+  }
+
+  .gu-knowledge-base .row .gu-knowledge-base-block-right p {
+    font-size: 14px;
+    margin-bottom: 16px
+  }
+
+  .gu-knowledge-base .row .gu-knowledge-base-block-right .btn_bg_primary {
+    margin-bottom: 32px;
+    width: 100%
+  }
+}
+
+.gu-interactive-tools {
+  background-color: #f5f5f6;
+  display: flex;
+  padding-bottom: 56px;
+  padding-top: 112px
+}
+
+.gu-interactive-tools .title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin: 0 0 40px
+}
+
+.gu-interactive-tools .gu-interactive-tools-item+.gu-interactive-tools-item {
+  margin-top: 16px
+}
+
+.gu-interactive-tools .gu-interactive-tools-item {
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, .06), 0 1px 2px 0 rgba(0, 0, 0, .12);
+  display: flex;
+  padding: 16px
+}
+
+.gu-interactive-tools .gu-interactive-tools-item:hover {
+  background-color: #dae2ff
+}
+
+.gu-interactive-tools .gu-interactive-tools-item:hover .gu-it-icon {
+  background-color: #b2c5ff
+}
+
+.gu-interactive-tools .gu-interactive-tools-item:hover .gu-it-text {
+  color: #2a59bd
+}
+
+.gu-interactive-tools .gu-interactive-tools-item .gu-it-icon {
+  align-items: center;
+  background: #eef0ff;
+  border-radius: 8px;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  width: 48px
+}
+
+.gu-interactive-tools .gu-interactive-tools-item .gu-it-text {
+  display: flex;
+  flex: auto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  margin-left: 16px;
+  margin-right: 24px
+}
+
+.gu-interactive-tools .gu-interactive-tools-item .gu-it-action {
+  cursor: pointer
+}
+
+@media(max-width:767.98px) {
+  .gu-interactive-tools {
+    padding: 48px 0
+  }
+
+  .gu-interactive-tools .title {
+    font-size: 24px;
+    margin-bottom: 32px
+  }
+
+  .gu-interactive-tools .gu-interactive-tools-item .gu-it-text {
+    font-size: 16px
+  }
+}
+
+.gu-documets {
+  background-color: #f5f5f6;
+  display: flex;
+  padding-bottom: 112px;
+  padding-top: 56px
+}
+
+.gu-documets .gu-documents-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px
+}
+
+.gu-documets .gu-documents-header .gu-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px
+}
+
+.gu-documets .gu-documents-header .gu-see-all {
+  align-items: center;
+  border-radius: 100px;
+  color: #2a59bd;
+  display: flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 14px 20px;
+  text-decoration: none
+}
+
+.gu-documets .gu-documents-header .gu-see-all img {
+  margin-left: 8px
+}
+
+.gu-documets .gu-documents-header .gu-see-all:hover {
+  background: #eae8f0
+}
+
+.gu-documets .gu-documents-item {
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, .06), 0 1px 2px 0 rgba(0, 0, 0, .12);
+  display: flex;
+  flex-direction: column;
+  padding: 8px
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-image {
+  align-items: center;
+  background: #eef0ff;
+  border-radius: 10px;
+  display: flex;
+  height: 126px;
+  justify-content: center;
+  margin-bottom: 12px;
+  width: 100%
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-image:hover {
+  background-color: #cdd2e9
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-title {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #131316;
+  display: -webkit-box;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 8px;
+  min-height: 48px;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-title:hover {
+  color: #2a59bd
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-label {
+  background-color: #dce2f9;
+  border-radius: 8px;
+  color: #151b2c;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 12px;
+  padding: 6px 12px
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-label:hover {
+  background-color: #cdd2e9
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-link {
+  align-items: center;
+  color: #2a59bd;
+  display: flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 4px;
+  text-decoration: none
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-link img {
+  margin-right: 4px
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-text {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: #919094;
+  display: -webkit-box;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  width: 100%
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-footer .gu-doc-item-date {
+  color: #77777a;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-footer .gu-doc-item-dowload {
+  align-items: center;
+  border-radius: 100px;
+  color: #2a59bd;
+  display: flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 14px 20px;
+  text-decoration: none
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-footer .gu-doc-item-dowload img {
+  margin-left: 4px
+}
+
+.gu-documets .gu-documents-item .gu-documents-item-content .gu-documents-item-footer .gu-doc-item-dowload:hover {
+  background: #eae8f0
+}
+
+@media(max-width:767.98px) {
+  .gu-documets {
+    padding-bottom: 32px;
+    padding-top: 48px
+  }
+
+  .gu-documets .gu-documents-header {
+    margin-bottom: 16px
+  }
+
+  .gu-documets .gu-documents-header .gu-title {
+    font-size: 24px
+  }
+
+  .gu-documets .gu-documents-header .gu-see-all {
+    font-size: 14px
+  }
+
+  .gu-documets .gu-documents-item {
+    margin-bottom: 16px
+  }
+}
+
+/*# sourceMappingURL=main.e7069a1c.css.map*/

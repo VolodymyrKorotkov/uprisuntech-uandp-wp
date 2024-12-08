@@ -1,0 +1,60 @@
+.LoginModal{
+  max-width: 456px;
+  .title{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    margin-bottom: 12px;
+    margin-top: 4px;
+    text-align: center;
+  }
+  p{
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0px;
+  }
+  .actions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    .btn + .btn{
+      margin-top: 16px;
+    }
+    .btn{
+      border-radius: 100px;
+      padding: 13px 14px;
+      color: #2A59BD;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+      text-transform: none;
+      border: 1px solid #2A59BD;
+      &_solid {
+        padding: 14px 14px;
+        background: #131316;
+        border-color: #131316;
+        color: white;
+        &:hover {
+          background: #131316;
+        }
+        &:active {
+          background: #131316;
+        }
+      }
+      &_transparent {
+        &:hover {
+          background: #F3F1F8;
+        }
+        &:active {
+          background: #E6E3F0;
+        }
+      }
+    }
+  }
+}

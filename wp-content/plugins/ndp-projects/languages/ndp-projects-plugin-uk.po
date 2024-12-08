@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: NDP Projects Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-27 21:07+0000\n"
+"PO-Revision-Date: 2024-02-27 21:14+0000\n"
+"Last-Translator: admin test\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.3\n"
+"X-Domain: ndp-projects-plugin"
+
+#: ndp-projects.php:62
+msgid "Add New Category"
+msgstr "Додати Категорію"
+
+#: ndp-projects.php:40
+msgid "Add new Project"
+msgstr "Додати Проєкт"
+
+#: ndp-projects.php:58 templates/projects.php:180
+msgid "All Categories"
+msgstr "Усі Категорії"
+
+#: ndp-projects.php:45
+msgid "All Projects"
+msgstr "Усі Проєкти"
+
+#: templates/projects.php:243
+msgid "All status"
+msgstr "Усі статуси"
+
+#: templates/projects.php:212
+msgid "All tags"
+msgstr "Усі теги"
+
+#: ndp-projects.php:51
+msgid "Categories"
+msgstr "Категорії"
+
+#: ndp-projects.php:57
+msgid "Category"
+msgstr "Категорія"
+
+#: templates/projects.php:104
+msgid "Data (ascending)"
+msgstr ""
+
+#: templates/projects.php:97 templates/projects.php:101
+msgid "Data (descending)"
+msgstr ""
+
+#: ndp-projects.php:59
+msgid "Edit Category"
+msgstr "Редагувати Категорію"
+
+#: templates/single-project.php:49
+msgid "Home page"
+msgstr "Головна сторінка"
+
+#: ndp-projects.php:46
+msgid "Insert into Project"
+msgstr "Додати в Проєкт"
+
+#. Name of the plugin
+msgid "NDP Projects Plugin"
+msgstr ""
+
+#: ndp-projects.php:63
+msgid "New Category Name"
+msgstr "Нова Категорія"
+
+#: ndp-projects.php:41
+msgid "New Project"
+msgstr "Новий Проєкт"
+
+#: templates/single-project.php:515
+msgid "No"
+msgstr "Ні"
+
+#: ndp-projects.php:67
+msgid "No Categories found"
+msgstr ""
+
+#: ndp-projects.php:43
+msgid "No Projects found"
+msgstr "Проєктів не знайдено"
+
+#: ndp-projects.php:44
+msgid "No Projects found in trash"
+msgstr "В кошику не знайдено Проєктів"
+
+#: ndp-projects.php:65
+msgid "Parent Category"
+msgstr "Батьківська Категорія"
+
+#: ndp-projects.php:66
+msgid "Parent Category:"
+msgstr "Батьківська Категорія"
+
+#: ndp-projects.php:39
+msgid "Project"
+msgstr "Проєкт"
+
+#: ndp-projects.php:29
+msgid "Projects"
+msgstr "Проєкти"
+
+#. Description of the plugin
+msgid "Projects list, single project page for NDP."
+msgstr ""
+
+#: ndp-projects.php:64
+msgid "Search Categories"
+msgstr "Пошук Категорій"
+
+#: templates/projects.php:185
+msgid "Select category"
+msgstr "Вибрати категорію"
+
+#: templates/projects.php:248
+msgid "Select status"
+msgstr "Вибрати статус"
+
+#: templates/projects.php:217
+msgid "Select tags"
+msgstr "Вибрати теги"
+
+#: templates/projects.php:93
+msgid "Sort by"
+msgstr "Сортувати по"
+
+#: templates/single-project.php:288
+msgid "Status"
+msgstr "Статус"
+
+#: ndp-projects.php:61
+msgid "Update Category"
+msgstr "Оновити Категорію"
+
+#. Author of the plugin
+msgid "uprisun.tech"
+msgstr ""
+
+#: ndp-projects.php:60
+msgid "View Category"
+msgstr "Переглянути Категорію"
+
+#: ndp-projects.php:42
+msgid "View Project"
+msgstr "Переглянути Проєкт"
+
+#: templates/content-custom.php:258 templates/content-custom.php:324
+#: templates/single-project.php:443 templates/single-project.php:489
+msgid "Yes"
+msgstr "Так"

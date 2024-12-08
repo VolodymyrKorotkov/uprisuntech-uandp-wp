@@ -1,0 +1,124 @@
+# Copyright (C) 2023 OnTheGoSystems
+# This file is distributed under the same license as the WPML Import plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WPML Import 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpml-import\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-08-23T08:03:22-03:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: wpml-import\n"
+
+#. Plugin Name of the plugin
+#: classes/UI/AdminPageHooks.php:55
+msgid "WPML Import"
+msgstr ""
+
+#. Description of the plugin
+msgid "A multipurpose plugin to import multilingual content."
+msgstr ""
+
+#. Author of the plugin
+msgid "OnTheGoSystems"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.onthegosystems.com"
+msgstr ""
+
+#: classes/Commands/CleanupPostFields.php:11
+msgid "Cleanup Post Fields"
+msgstr ""
+
+#: classes/Commands/CleanupPostFields.php:18
+msgid "This will remove all temporary post fields added before or during this process."
+msgstr ""
+
+#: classes/Commands/CleanupTermFields.php:11
+msgid "Cleanup Term Fields"
+msgstr ""
+
+#: classes/Commands/CleanupTermFields.php:18
+msgid "This will remove all temporary term fields added before or during this process."
+msgstr ""
+
+#: classes/Commands/ConnectTermTranslationsByPostsWithOnlyOneAssignment.php:41
+msgid "Connect Term Translations By Posts With Only One Assignment"
+msgstr ""
+
+#: classes/Commands/ConnectTermTranslationsByPostsWithOnlyOneAssignment.php:48
+msgid "We can re-connect some term translations when its assigned post has only one unique taxonomy term. We'll suppose that the term assigned to the original post is the translation of the term assigned to the translated post."
+msgstr ""
+
+#: classes/Commands/DeleteOriginalsOfDuplicatedTerms.php:27
+msgid "Delete Originals of Duplicated Terms"
+msgstr ""
+
+#: classes/Commands/DeleteOriginalsOfDuplicatedTerms.php:34
+msgid "Some terms might have been duplicated in a previous command and re-assigned to translated posts. If the original term has no assigned post, it will be deleted."
+msgstr ""
+
+#: classes/Commands/DuplicateTermsAssignedToPostsInDifferentLanguage.php:53
+msgid "Duplicate Terms Assigned To Posts In Different Language"
+msgstr ""
+
+#: classes/Commands/DuplicateTermsAssignedToPostsInDifferentLanguage.php:60
+msgid "If a post is assigned to a term in a different language and this terms does not have a translation, we'll make a duplicate of this term in the right language."
+msgstr ""
+
+#: classes/Commands/ReassignPostsToTranslatedTerms.php:38
+msgid "Reassign Posts To Translated Terms"
+msgstr ""
+
+#: classes/Commands/ReassignPostsToTranslatedTerms.php:45
+msgid "If a post is assigned to a term in a different language, we'll find the right translation of that term and re-connect the post to it."
+msgstr ""
+
+#: classes/Commands/SetFinalPostsStatus.php:30
+msgid "Set Final Posts Status"
+msgstr ""
+
+#: classes/Commands/SetFinalPostsStatus.php:37
+msgid "Once the multilingual import process is complete, we set the final post status."
+msgstr ""
+
+#: classes/Commands/SetInlineTermsLanguage.php:39
+msgid "Set Inline Terms Language"
+msgstr ""
+
+#: classes/Commands/SetInlineTermsLanguage.php:46
+msgid "If certain terms were created during import of posts, we will set their language according to the posts they are assigned to."
+msgstr ""
+
+#: classes/Commands/SetPostsLanguage.php:15
+msgid "Set Posts Language"
+msgstr ""
+
+#: classes/Commands/SetPostsLanguage.php:22
+msgid "Apply multilingual information to posts and connect with its original and other translations."
+msgstr ""
+
+#: classes/Commands/SetTermsLanguage.php:16
+msgid "Set Terms Language"
+msgstr ""
+
+#: classes/Commands/SetTermsLanguage.php:23
+msgid "Apply multilingual information to terms and connect with its original and other translations."
+msgstr ""
+
+#: classes/Integrations/WooCommerce/Commands/ConnectAttributesUsedInProductVariations.php:40
+msgid "Connect Attributes Used In Product Variations"
+msgstr ""
+
+#: classes/Integrations/WooCommerce/Commands/ConnectAttributesUsedInProductVariations.php:47
+msgid "The product variations that are already connected will be used to deduct the connection between global attributes."
+msgstr ""
+
+#: classes/UI/AdminPageHooks.php:33
+msgid "Import"
+msgstr ""

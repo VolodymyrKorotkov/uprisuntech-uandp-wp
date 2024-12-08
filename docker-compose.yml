@@ -1,0 +1,88 @@
+version: "3.8"
+
+services:
+  db-cli:
+    image: mysql:5.7.11
+    networks:
+      - wordpress-network
+    depends_on:
+      - db
+    environment:
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      MYSQL_DATABASE: '${MYSQL_DATABASE}'
+      MYSQL_USER: '${MYSQL_USER}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+  db:
+    image: mysql:5.7.11
+#    ports:
+#      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      MYSQL_DATABASE: '${MYSQL_DATABASE}'
+      MYSQL_USER: '${MYSQL_USER}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+    volumes:
+      - ./.docker_data/mysql:/var/lib/mysql
+      - ./docker/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    networks:
+      - wordpress-network
+  http:
+    build:
+      context: docker/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "443:443"
+      - "80:80"
+    depends_on:
+      - php
+    working_dir: /var/www/html
+    volumes:
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./docker/nginx/start.sh:/etc/nginx/start.sh
+      - ${SSL_CRT_PATH}:/var/www/ssl/nginx.crt
+      - ${SSL_KEY_PATH}:/var/www/ssl/nginx.key
+      - ./:/var/www/html
+    networks:
+      - wordpress-network
+    command: 'sh /etc/nginx/start.sh'
+
+  php:
+    build:
+      context: docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+      - ./docker/php/docker-fpm.ini:/usr/local/etc/php/conf.d/docker-fpm.ini
+    depends_on:
+      - db
+    networks:
+      - wordpress-network
+    env_file:
+      - .env
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: '${MYSQL_DATABASE}'
+      WORDPRESS_DB_USER: '${MYSQL_USER}'
+      WORDPRESS_DB_PASSWORD: '${MYSQL_PASSWORD}'
+      WORDPRESS_URL: https://${APP_HOST_NAME}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  wordpress-cli:
+    depends_on:
+      - php
+    image: wordpress:cli
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: '${MYSQL_DATABASE}'
+      WORDPRESS_DB_USER: '${MYSQL_USER}'
+      WORDPRESS_DB_PASSWORD: '${MYSQL_PASSWORD}'
+      WORDPRESS_URL: https://${APP_HOST_NAME}
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - wordpress-network
+
+networks:
+  wordpress-network:
+    driver: bridge

@@ -1,0 +1,43 @@
+.ProjectInformation{
+  .btn{
+    border-radius: 100px;
+    padding: 13px 14px;
+    color: #2A59BD;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: none;
+    border: 1px solid #2A59BD;
+    &_solid {
+      padding: 14px 14px;
+      background: #3B66C2;
+      color: white;
+      &:hover {
+        background: #3B66C2;
+      }
+      &:active {
+        background: #446DC5;
+      }
+    }
+    &_transparent {
+      &:hover {
+        background: #F3F1F8;
+      }
+      &:active {
+        background: #E6E3F0;
+      }
+    }
+  }
+  :global{
+    .Mui-disabled{
+      &.MuiButton-textPrimary{
+        border: none;
+        color: #151B2C;
+        background-color: rgba(29, 27, 32, 0.12) ;
+      }
+      
+    }
+  }
+}

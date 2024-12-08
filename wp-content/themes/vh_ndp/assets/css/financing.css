@@ -1,0 +1,1645 @@
+.financing-page-financing {
+  display: flex;
+  padding: 64px 0;
+}
+
+.financing-page-ticker {
+  padding-top: 112px;
+}
+.financing-page-financing .financing-page-financing-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  max-width: 500px;
+}
+.financing-page-financing .financing-page-financing-left .fn_breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.financing-page-financing
+  .financing-page-financing-left
+  .fn_breadcrumbs
+  .fn_breadcrumbs-item-separator {
+  margin: 0px 8px;
+}
+.financing-page-financing
+  .financing-page-financing-left
+  .fn_breadcrumbs
+  .fn_breadcrumbs-item {
+  color: black;
+  text-decoration: none;
+}
+.financing-page-financing
+  .financing-page-financing-left
+  .fn_breadcrumbs
+  .fn_breadcrumbs-item.active {
+  color: #77777a;
+}
+.financing-page-financing
+  .financing-page-financing-left
+  .financing-page-financing-left-title {
+  padding: 0;
+  margin: 0;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  color: #131316;
+  margin-bottom: 32px;
+}
+.financing-page-financing .financing-page-financing-left p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 32px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.financing-page-financing
+  .financing-page-financing-left
+  .financing-page-financing-left-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+.financing-page-financing .financing-page-financing-left .btn_bg_primary {
+  display: flex;
+  flex-direction: row;
+}
+.financing-page-financing .financing-page-financing-left .btn_bg_primary img {
+  margin-right: 8px;
+}
+.financing-page-financing .financing-page-financing-rigth {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+}
+.financing-page-financing
+  .financing-page-financing-rigth
+  .financing-page-financing-rigth-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 24px;
+  background-color: #eef0ff;
+}
+.financing-page-financing
+  .financing-page-financing-rigth
+  .financing-page-financing-rigth-bottom
+  svg {
+  padding: 24px;
+  min-width: 156px;
+}
+.financing-page-financing
+  .financing-page-financing-rigth
+  .financing-page-financing-rigth-bottom
+  .financing-page-financing-rigth-bottom-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #dae2ff;
+  display: flex;
+  align-items: flex-end;
+  flex: auto;
+}
+.financing-page-financing
+  .financing-page-financing-rigth
+  .financing-page-financing-rigth-bottom
+  .financing-page-financing-rigth-bottom-block
+  p {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  max-width: 290px;
+}
+.financing-page-financing
+  .financing-page-financing-rigth
+  .financing-page-financing-rigth-bottom
+  .financing-page-financing-rigth-bottom-block
+  svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+}
+.financing-page-financing .financing-page-financing-rigth img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.financing-page-leasing-platform-in-numbers {
+  display: flex;
+  padding: 112px 0px;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  max-width: 335px;
+  margin-bottom: 20px;
+}
+.financing-page-leasing-platform-in-numbers-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.financing-page-leasing-platform-in-numbers-left .btn_bg_primary {
+  min-width: 167px;
+}
+.financing-page-leasing-platform-in-numbers .col-md-8 {
+  display: flex;
+  flex-direction: row;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item {
+  background-color: #eef0ff;
+  border-radius: 24px;
+  padding: 12px 20px;
+  padding-bottom: 16px;
+  min-height: 156px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item
+  .financing-page-leasing-platform-in-numbers-item-title {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  color: #2a59bd;
+  display: flex;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item
+  .financing-page-leasing-platform-in-numbers-item-title
+  span {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item
+  .financing-page-leasing-platform-in-numbers-item-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item.bg2 {
+  background-color: #dae2ff;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item.bg3 {
+  background-color: #2a59bd;
+}
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item.bg3
+  .financing-page-leasing-platform-in-numbers-item-title,
+.financing-page-leasing-platform-in-numbers
+  .financing-page-leasing-platform-in-numbers-item.bg3
+  .financing-page-leasing-platform-in-numbers-item-text {
+  color: white;
+}
+.financing-page-ndp {
+  display: flex;
+  background-color: #f5f5f6;
+  padding: 112px 0;
+}
+.financing-page-ndp .financing-page-ndp-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.financing-page-ndp .financing-page-ndp-block .financing-page-ndp-title {
+  max-width: 936px;
+  width: 100%;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  color: #131316;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.financing-page-ndp .financing-page-ndp-block .financing-page-ndp-title span {
+  border-radius: 50px;
+  background-color: #dce2f9;
+  padding: 2px 10px;
+}
+.financing-page-ndp .financing-page-ndp-block .financing-page-ndp-container {
+  /* max-width: 840px; */
+  width: 100%;
+  position: relative;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-arrow1 {
+  position: absolute;
+  left: 0px;
+  top: 25%;
+  width: 48px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-arrow3 {
+  display: none;
+  position: absolute;
+  right: 0px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-arrow2 {
+  position: absolute;
+  right: 0px;
+  top: 25%;
+  width: 48px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-container-item {
+  border-radius: 24px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: auto;
+  padding: 24px 12px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-container-item
+  img {
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 24px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-container-item
+  .financing-page-ndp-container-item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-container-items {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-container-items
+  .financing-page-ndp-container-item
+  + .financing-page-ndp-container-item {
+  margin-left: 24px;
+}
+.financing-page-ndp
+  .financing-page-ndp-block
+  .financing-page-ndp-container
+  .financing-page-ndp-container-items
+  img {
+  max-height: 63px;
+}
+.financing-application-process {
+  padding: 112px 0;
+  display: flex;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  color: #131316;
+  margin-bottom: 40px;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-title
+  + .financing-application-process-row {
+  padding-right: 40px;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-arrow
+  + .financing-application-process-row {
+  padding-left: 40px;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-arrow {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-arrow
+  .mobile {
+  display: none;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-arrow
+  img {
+  position: absolute;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row {
+  display: flex;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item
+  + .financing-application-process-item {
+  margin-left: 24px;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #eef0ff;
+  height: 152px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item
+  .financing-application-process-item-label {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  background-color: #dae2ff;
+  border-radius: 8px;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item
+  .financing-application-process-item-label
+  .financing-application-process-item-label-point {
+  background-color: #2a59bd;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item
+  .financing-application-process-item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item
+  p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: #46464a;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item
+  .financing-application-process-item-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item.finish {
+  background-color: #b2c5ff;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item.finish
+  .financing-application-process-item-label {
+  color: white;
+  background-color: #2a59bd;
+}
+.financing-application-process
+  .financing-application-process-block
+  .financing-application-process-row
+  .financing-application-process-item.finish
+  .financing-application-process-item-label
+  .financing-application-process-item-label-point {
+  background-color: white;
+}
+.platform-features-we-provide {
+  background-color: #f5f5f6;
+  display: flex;
+  padding: 112px 0px;
+}
+.platform-features-we-provide .row + .row {
+  margin-top: 32px;
+}
+.platform-features-we-provide
+  .platform-features-we-provide-block
+  .platform-features-we-provide-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  color: #131316;
+  margin-bottom: 16px;
+}
+.platform-features-we-provide
+  .platform-features-we-provide-block
+  .platform-features-we-provide-title
+  span {
+  border-radius: 50px;
+  background-color: #dce2f9;
+  padding: 0 10px;
+}
+.platform-features-we-provide .platform-features-we-provide-block p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+}
+.platform-features-we-provide
+  .platform-features-we-provide-block
+  .platform-features-we-provide-item
+  .platform-features-we-provide-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #dae2ff;
+}
+.platform-features-we-provide
+  .platform-features-we-provide-block
+  .platform-features-we-provide-item
+  .platform-features-we-provide-icon
+  img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.platform-features-we-provide
+  .platform-features-we-provide-block
+  .platform-features-we-provide-item
+  .platform-features-we-provide-item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+.join-the-community {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.06),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  padding: 64px 80px;
+  border-radius: 24px;
+}
+.join-the-community.bg {
+  background-color: #dae2ff;
+}
+.join-the-community .join-the-community-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  user-select: none;
+}
+.join-the-community .join-the-community-left .join-the-community-left-bg {
+  position: absolute;
+  bottom: -64px;
+  left: -80px;
+}
+.join-the-community .join-the-community-left .join-the-community-left-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  color: #131316;
+}
+.join-the-community .join-the-community-left p {
+  margin: 16px 0;
+  padding: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.join-the-community .join-the-community-left .btn_bg_primary {
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+}
+.join-the-community .join-the-community-left .btn_bg_primary img {
+  margin-right: 8px;
+}
+.join-the-community .join-the-community-right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  user-select: none;
+}
+.join-the-community .join-the-community-right img {
+  max-width: 100%;
+  max-height: 154px;
+  z-index: 2;
+}
+.join-the-community
+  .join-the-community-right
+  .join-the-community-right-bg-desctop {
+  position: absolute;
+  top: -64px;
+  right: -80px;
+  z-index: 1;
+}
+.join-the-community
+  .join-the-community-right
+  .join-the-community-right-bg-mobile {
+  display: none;
+}
+.create-aplication {
+  background-color: #f5f5f6;
+  padding: 80px 0px;
+  display: flex;
+}
+.create-aplication .col-md-12 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.create-aplication .create-aplication-icon {
+  border-radius: 100px;
+  border: 1px solid #b2c5ff;
+  padding: 10px 14px;
+  color: #2a59bd;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.create-aplication .create-aplication-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 24px;
+  max-width: 724px;
+  text-align: center;
+}
+.create-aplication .create-aplication-title span {
+  color: #2a59bd;
+}
+.create-aplication .create-aplication-action {
+  position: relative;
+}
+.create-aplication .create-aplication-action img {
+  position: absolute;
+  bottom: -10px;
+  right: -120px;
+}
+.financing-our-solutions {
+  padding: 112px 0px;
+  display: flex;
+}
+.financing-our-solutions .financing-our-solutions-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin-bottom: 40px;
+}
+.financing-our-solutions .financing-our-solutions-header {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.financing-our-solutions
+  .financing-our-solutions-header
+  .financing-our-solutions-title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  padding: 0;
+  margin: 0;
+}
+.financing-our-solutions
+  .financing-our-solutions-header
+  .financing-our-solutions-title
+  span {
+  color: #2a59bd;
+}
+.financing-our-solutions .financing-our-solutions-header .btn_link {
+  padding: 14px 12px;
+  padding-left: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 100px;
+  color: #2a59bd;
+  display: flex;
+  align-items: center;
+}
+.financing-our-solutions .financing-our-solutions-header .btn_link svg {
+  margin-left: 8px;
+}
+.financing-our-solutions .financing-our-solutions-header .btn_link:hover {
+  background-color: rgba(103, 80, 164, 0.08);
+}
+.financing-our-solutions
+  .financing-wide-range-of-solutions
+  .financing-wide-range-of-solutions-items {
+  /*display: flex;*/
+  width: 100%;
+}
+.financing-our-solutions
+  .financing-wide-range-of-solutions
+  .financing-wide-range-of-solutions-items
+  .financing-wide-range-of-solutions-item {
+  padding: 8px;
+  border-radius: 24px;
+  background-color: #eef0ff;
+}
+.financing-our-solutions
+  .financing-wide-range-of-solutions
+  .financing-wide-range-of-solutions-items
+  .financing-wide-range-of-solutions-item
+  img {
+  border-radius: 16px;
+  max-width: 100%;
+  max-height: 100%;
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+.financing-our-solutions
+  .financing-wide-range-of-solutions
+  .financing-wide-range-of-solutions-items
+  .financing-wide-range-of-solutions-item
+  .financing-wide-range-of-solutions-item-text {
+  text-align: center;
+  padding: 20px 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: block;
+  color: #131316;
+}
+.financing-our-solutions hr {
+  margin: 64px 0px;
+  border: none;
+  border-top: 1px solid #efedf1;
+}
+.financing-our-solutions .owl-nav {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  z-index: 1;
+}
+.financing-our-solutions .owl-nav .owl-next,
+.financing-our-solutions .owl-nav .owl-prev {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.financing-our-solutions .owl-nav .owl-next:hover,
+.financing-our-solutions .owl-nav .owl-prev:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.financing-our-solutions .owl-dots {
+  z-index: 2;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.financing-our-solutions .owl-dots .owl-dot + .owl-dot {
+  margin-left: 12px;
+}
+.financing-our-solutions .owl-dots .owl-dot {
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #c5c6d0;
+}
+.financing-our-solutions .owl-dots .owl-dot.active {
+  background-color: #2a59bd;
+}
+.financing-our-solutions
+  .financing-our-solutions-every
+  .financing-our-solutions-every-items {
+  display: flex;
+}
+.financing-our-solutions
+  .financing-our-solutions-every
+  .financing-our-solutions-every-items
+  .financing-our-solutions-every-item1 {
+  flex: 1;
+  border-radius: 24px;
+  background-color: #eef0ff;
+  display: flex;
+}
+.financing-our-solutions
+  .financing-our-solutions-every
+  .financing-our-solutions-every-items
+  .financing-our-solutions-every-item1
+  .financing-our-solutions-every-item2 {
+  border-radius: 24px;
+  flex: 1;
+  background-color: #dae2ff;
+  display: flex;
+}
+.financing-our-solutions
+  .financing-our-solutions-every
+  .financing-our-solutions-every-items
+  .financing-our-solutions-every-item1
+  .financing-our-solutions-every-item2
+  .financing-our-solutions-every-item3 {
+  flex: 1;
+  border-radius: 24px;
+  background-color: #b2c5ff;
+  display: flex;
+}
+.financing-our-solutions
+  .financing-our-solutions-every
+  .financing-our-solutions-every-items
+  .financing-our-solutions-every-item {
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+  padding: 20px;
+  padding-bottom: 16px;
+  flex: 1;
+}
+.financing-our-solutions
+  .financing-our-solutions-every
+  .financing-our-solutions-every-items
+  .financing-our-solutions-every-item
+  .financing-our-solutions-every-item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  white-space: nowrap;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items {
+  display: flex;
+  width: 100%;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .owl-item
+  + .owl-item {
+  border-left: 1px solid #efedf1;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor {
+  width: 100%;
+  padding: 32px 20px;
+  padding-top: 40px;
+  display: flex;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor
+  + .financing-from-market-leaders-item-vendor {
+  border-top: 1px solid #efedf1;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor
+  .financing-from-market-leaders-item-vendor-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor
+  .financing-from-market-leaders-item-vendor-block
+  .financing-from-market-leaders-item-vendor-block-image {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor::before {
+  content: "";
+  padding-top: 100%;
+  float: left;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor
+  img {
+  filter: grayscale(100%);
+  max-width: 100%;
+  max-height: 100%;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor
+  .financing-from-market-leaders-item-vendor-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #919094;
+  text-align: center;
+  margin: 20px 0px;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor:hover
+  img {
+  filter: none;
+}
+.financing-our-solutions
+  .financing-from-market-leaders
+  .financing-from-market-leaders-items
+  .financing-from-market-leaders-item
+  .financing-from-market-leaders-item-vendor:hover
+  .financing-from-market-leaders-item-vendor-text {
+  color: #131316;
+}
+.our-financial-instruments {
+  padding: 112px 0px;
+  display: flex;
+}
+.our-financial-instruments img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.our-financial-instruments .our-financial-instruments-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin-bottom: 40px;
+}
+.our-financial-instruments .our-financial-instruments-text {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 40px;
+}
+.our-financial-instruments .our-financial-instruments-text span {
+  color: #2a59bd;
+}
+.our-financial-instruments .our-financial-instruments-item {
+  display: flex;
+  flex-direction: column;
+}
+.our-financial-instruments
+  .our-financial-instruments-item
+  .our-financial-instruments-item-icon {
+  width: 56px;
+  height: 56px;
+  background-color: #eef0ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.our-financial-instruments
+  .our-financial-instruments-item
+  .our-financial-instruments-item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+.our-financial-instruments hr {
+  border: none;
+  border-top: 1px solid #efedf1;
+  margin: 64px 0px;
+}
+.our-financial-instruments .our-financial-instruments-block-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.our-financial-instruments
+  .our-financial-instruments-block-content
+  .our-financial-instruments-block-content-title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+.our-financial-instruments
+  .our-financial-instruments-block-content
+  .our-financial-instruments-block-content-title
+  span {
+  color: #2a59bd;
+}
+.our-financial-instruments .our-financial-instruments-block-content p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.our-financial-instruments .row + .row {
+  margin-top: 64px;
+}
+.our-financial-instruments .our-financial-instruments-block-ndp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.our-financial-instruments
+  .our-financial-instruments-block-ndp
+  .our-financial-instruments-block-ndp-icon {
+  border-radius: 100px;
+  border: 1px solid #b2c5ff;
+  padding: 10px 14px;
+  color: #2a59bd;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.our-financial-instruments
+  .our-financial-instruments-block-ndp
+  .our-financial-instruments-block-ndp-title {
+  max-width: 670px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+}
+.our-financial-instruments
+  .our-financial-instruments-block-ndp
+  .our-financial-instruments-block-ndp-title
+  span {
+  color: #2a59bd;
+}
+.financing-from-market-leaders-items {
+  flex-direction: column;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-prev {
+  margin-right: 16px;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-next {
+  margin-left: 16px;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-next,
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-prev {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.financing-from-market-leaders-items
+  .vendors__slider__navigation
+  .owl-next:hover,
+.financing-from-market-leaders-items
+  .vendors__slider__navigation
+  .owl-prev:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.financing-from-market-leaders-items .vendors__slider__navigation__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.financing-from-market-leaders-items
+  .vendors__slider__navigation__dots
+  .owl-dot {
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #c5c6d0;
+}
+.financing-from-market-leaders-items
+  .vendors__slider__navigation__dots
+  .owl-dot
+  + .owl-dot {
+  margin-left: 12px;
+}
+.financing-from-market-leaders-items
+  .vendors__slider__navigation__dots
+  .owl-dot.active {
+  background-color: #2a59bd;
+}
+@media (max-width: 767.98px) {
+  .financing-page-financing {
+    padding: 16px 0px;
+  }
+  .financing-page-financing .financing-page-financing-left {
+    padding-bottom: 24px;
+  }
+  .financing-page-financing .financing-page-financing-left .fn_breadcrumbs {
+    margin-bottom: 12px;
+  }
+  .financing-page-financing
+    .financing-page-financing-left
+    .financing-page-financing-left-title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+  }
+  .financing-page-financing .financing-page-financing-left p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .financing-page-financing .financing-page-financing-left .btn_bg_primary {
+    width: 100%;
+  }
+  .financing-page-financing
+    .financing-page-financing-left
+    .financing-page-financing-left-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .financing-page-financing
+    .financing-page-financing-rigth
+    .financing-page-financing-rigth-bottom
+    .financing-page-financing-rigth-bottom-block
+    svg {
+    width: 155px;
+  }
+  .financing-page-financing
+    .financing-page-financing-rigth
+    .financing-page-financing-rigth-bottom
+    .financing-page-financing-rigth-bottom-block
+    p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    max-width: 182px;
+  }
+  .financing-page-leasing-platform-in-numbers {
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+  .financing-page-leasing-platform-in-numbers
+    .financing-page-leasing-platform-in-numbers-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 32px;
+  }
+  .financing-page-leasing-platform-in-numbers .col-md-8 {
+    flex-direction: column;
+  }
+  .financing-page-ndp {
+    padding: 48px 0px;
+  }
+  .financing-page-ndp .financing-page-ndp-block .financing-page-ndp-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+  .financing-page-ndp .financing-page-ndp-block .financing-page-ndp-container {
+    padding-left: 0px;
+    padding-right: 23px;
+  }
+
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-container-items {
+    flex-direction: column;
+    margin-top: 12px;
+  }
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-container-items
+    .financing-page-ndp-container-item
+    + .financing-page-ndp-container-item {
+    margin-top: 12px;
+    margin-left: 0px;
+  }
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-container-item
+    img {
+    max-width: 115px;
+    margin-bottom: 8px;
+  }
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-container-item
+    .financing-page-ndp-container-item-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+  }
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-arrow3 {
+    display: block;
+    top: 0px;
+  }
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-arrow1,
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-arrow2 {
+    display: none;
+  }
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-arrow1,
+  .financing-page-ndp
+    .financing-page-ndp-block
+    .financing-page-ndp-container
+    .financing-page-ndp-arrow2 {
+    width: 23px;
+  }
+  .financing-application-process {
+    padding: 48px 0px;
+  }
+  .financing-application-process .financing-application-process-block {
+    position: relative;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-title {
+    margin-bottom: 32px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-arrow {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-arrow
+    .desctop {
+    display: none;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-arrow
+    .mobile {
+    display: block;
+    right: 16px;
+    margin-top: 45px;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-arrow
+    + .financing-application-process-row {
+    padding-left: 0px;
+    padding-right: 40px;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-row {
+    flex-direction: column;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-row
+    .financing-application-process-item {
+    padding: 16px;
+    height: auto;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-row
+    .financing-application-process-item
+    .financing-application-process-item-label {
+    margin-bottom: 14px;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-row
+    .financing-application-process-item
+    .financing-application-process-item-text {
+    font-size: 14px;
+  }
+  .financing-application-process
+    .financing-application-process-block
+    .financing-application-process-row
+    .financing-application-process-item
+    + .financing-application-process-item {
+    margin-top: 14px;
+    margin-left: 0px;
+  }
+  .join-the-community {
+    padding: 32px 16px;
+  }
+  .join-the-community .join-the-community-left {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .join-the-community .join-the-community-left .join-the-community-left-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  .join-the-community .join-the-community-left p {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+  .join-the-community .join-the-community-left .join-the-community-left-bg {
+    top: -71px;
+    left: -50px;
+    transform: rotate(100deg);
+  }
+  .join-the-community
+    .join-the-community-right
+    .join-the-community-right-bg-desctop {
+    display: none;
+  }
+  .join-the-community
+    .join-the-community-right
+    .join-the-community-right-bg-mobile {
+    display: block;
+    position: absolute;
+    bottom: -32px;
+    right: -16px;
+    z-index: 1;
+  }
+  .create-aplication {
+    padding: 48px 0px;
+  }
+  .create-aplication .create-aplication-icon {
+    margin-bottom: 12px;
+  }
+  .create-aplication .create-aplication-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+  .create-aplication .create-aplication-action {
+    width: 100%;
+  }
+  .create-aplication .create-aplication-action .btn_bg_primary {
+    width: 100%;
+  }
+  .create-aplication .create-aplication-action img {
+    display: none;
+  }
+  .financing-our-solutions {
+    padding: 48px 0px;
+  }
+  .financing-our-solutions .financing-our-solutions-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 40px;
+  }
+  .financing-our-solutions .financing-our-solutions-header {
+    margin-bottom: 24px;
+  }
+  .financing-our-solutions
+    .financing-our-solutions-header
+    .financing-our-solutions-title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  .financing-our-solutions hr {
+    margin: 40px 0px;
+  }
+  .financing-our-solutions
+    .financing-our-solutions-every
+    .financing-our-solutions-every-item1 {
+    flex-direction: column;
+  }
+  .financing-our-solutions
+    .financing-our-solutions-every
+    .financing-our-solutions-every-item
+    .financing-our-solutions-every-item-text {
+    white-space: unset !important;
+  }
+  .our-financial-instruments {
+    padding: 48px 0px;
+  }
+  .our-financial-instruments .mb-24 {
+    margin-bottom: 24px;
+  }
+  .our-financial-instruments .our-financial-instruments-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  .our-financial-instruments .our-financial-instruments-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+  .our-financial-instruments hr {
+    margin: 40px 0px;
+  }
+  .our-financial-instruments .row + .row {
+    margin-top: 16px;
+  }
+  .our-financial-instruments .our-financial-instruments-block-content {
+    margin-bottom: 24px;
+  }
+  .our-financial-instruments
+    .our-financial-instruments-block-content
+    .our-financial-instruments-block-content-title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .our-financial-instruments .our-financial-instruments-block-content p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .our-financial-instruments .rtl-block {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .our-financial-instruments
+    .our-financial-instruments-block-ndp
+    .our-financial-instruments-block-ndp-icon {
+    margin-bottom: 12px;
+  }
+  .our-financial-instruments
+    .our-financial-instruments-block-ndp
+    .our-financial-instruments-block-ndp-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  .platform-features-we-provide {
+    padding: 48px 0px;
+  }
+  .platform-features-we-provide
+    .platform-features-we-provide-block
+    .platform-features-we-provide-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 14px;
+  }
+  .platform-features-we-provide
+    .platform-features-we-provide-block
+    .platform-features-we-provide-item {
+    margin-bottom: 24px;
+  }
+  .platform-features-we-provide
+    .platform-features-we-provide-block
+    .platform-features-we-provide-item
+    .platform-features-we-provide-icon {
+    margin-bottom: 12px;
+  }
+  .financing-page-ticker {
+    padding-top: 48px;
+  }
+}
+
+.financing-our-solutions-every-item img {
+  width: 40px;
+}
+.financing-our-solutions-every-item:nth-child(1) {
+  border-radius: 20px;
+  z-index: 5;
+  flex-grow: 1.3 !important;
+}
+.financing-our-solutions-every-item:nth-child(2) {
+  border-radius: 0 20px 20px 0;
+  margin-left: -15px;
+  z-index: 3;
+  padding-left: 40px !important;
+  flex-grow: 2 !important;
+}
+.financing-our-solutions-every-item:nth-child(3) {
+  border-radius: 0 20px 20px 0;
+  margin-left: -15px;
+  padding-left: 40px !important;
+  flex-grow: 3 !important;
+}
+@media (max-width: 768px) {
+  .financing-our-solutions-every-items {
+    flex-direction: column;
+  }
+  .financing-our-solutions-every-item:nth-child(2) {
+    border-radius: 20px;
+    margin-left: 0;
+    padding-left: 20px !important;
+  }
+  .financing-our-solutions-every-item:nth-child(3) {
+    border-radius: 20px;
+    margin-left: 0;
+    padding-left: 20px !important;
+  }
+}
+.our-financial-instruments-item-icon {
+  width: 56px;
+  height: 56px;
+  background-color: #eef0ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.financing__slider__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+.financing__slider__navigation.disabled {
+  display: none;
+}
+.financing__slider__navigation > div svg:hover {
+  filter: invert(8%) sepia(100%) saturate(6481%) hue-rotate(246deg)
+    brightness(102%) contrast(143%);
+  cursor: pointer;
+}
+.financing__slider__navigation__dots {
+  margin: 0 22px;
+  display: flex;
+}
+.financing__slider__navigation .owl-dot {
+  background: #c5c6d0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.financing__slider__navigation .owl-dot:last-child {
+  margin-right: 0;
+}
+.financing__slider__navigation .owl-dot:hover {
+  cursor: pointer;
+}
+.financing__slider__navigation .owl-dot:hover,
+.financing__slider__navigation .owl-dot.active {
+  background: #2a59bd;
+}

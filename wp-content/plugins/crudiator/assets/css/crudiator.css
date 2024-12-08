@@ -1,0 +1,228 @@
+#crudiator-wrap .required-warning {
+  color: #b32d2e;
+  margin-bottom: 0;
+}
+
+#crudiator-wrap table.form-table tbody th .required-label {
+  color: #b32d2e;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+#crudiator-wrap #search_query select {
+  float: right;
+  margin-right: 4px;
+}
+
+#crudiator-wrap .tablenav .filter_action {
+  padding: 0 8px 0 0;
+}
+
+#crudiator-wrap .tablenav .filter_action #crudiator_filter_button {
+  margin: 0 8px 0 0;
+}
+
+#crudiator-wrap .tablenav .export_action a.button {
+  display: inline-block;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog {
+  width: 600px;
+  margin-left: -300px;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content {
+  margin: 25px;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content h1 {
+  color: #1d2327;
+  font-size: 2em;
+  margin: 0.67em 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .condition-list li:first-child .andor-radio {
+  display: none;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .condition-list li .andor-radio {
+  padding-left: 20px;
+  margin-bottom: 6px;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .condition-list li .andor-radio label {
+  margin-right: 14px;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .condition-list li .condition {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .condition-list li .condition > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .condition-list li .condition .button-del-condition {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .button-add-condition,
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .button-del-condition {
+  width: 30px;
+  min-width: 30px !important;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content.multi-condition .condition-list li .button-del-condition {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .crudiator-filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .crudiator-filter-buttons a, #crudiator-wrap #crudiator-filter-wrap .notification-dialog #crudiator-filter-dialog-content .crudiator-filter-buttons button {
+  margin-left: 10px;
+}
+
+#crudiator-wrap .null-value {
+  color: #a7aaad;
+}
+
+@media screen and (min-width: 783px) {
+  #crudiator-wrap .tablenav select {
+    margin-right: 4px;
+  }
+  #crudiator-wrap table.form-table tbody th span {
+    display: inline-block;
+    padding-top: 6px;
+  }
+  #crudiator-wrap table.form-table tbody td input.form-parts, #crudiator-wrap table.form-table tbody td select.form-parts {
+    margin-right: 4px;
+  }
+  #crudiator-wrap .null-checkbox {
+    min-width: 4em;
+  }
+  #crudiator-wrap .null-checkbox input[type="checkbox"] {
+    width: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #crudiator-wrap #crudiator-filter-wrap .notification-dialog {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    top: 30%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 782px) {
+  #crudiator-wrap .tablenav select {
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  #crudiator-wrap .null-checkbox {
+    display: block;
+    margin-top: 8px;
+    margin-left: 1px;
+  }
+}
+
+#crudiator-wrap .detail-buttons a {
+  margin-right: 10px;
+}
+
+#crudiator-wrap .detail-buttons .button-danger {
+  background-color: #b32d2e;
+  border-color: #b32d2e;
+  color: white;
+}
+
+#crudiator-debug {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  z-index: 10000;
+  transition: height 500ms;
+}
+
+#crudiator-debug[data-show="off"] {
+  height: 0;
+}
+
+#crudiator-debug[data-show="off"] .expand-btn {
+  top: -20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+
+#crudiator-debug[data-show="off"] .expand-btn:before {
+  content: "<";
+  transform: rotate(90deg);
+}
+
+#crudiator-debug .crudiator-debug-wrap {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+}
+
+#crudiator-debug .crudiator-debug-wrap .crudiator-debug-content {
+  padding: 10px 10px;
+  color: white;
+}
+
+#crudiator-debug .crudiator-debug-wrap .crudiator-debug-content h4 {
+  margin: 4px 0;
+}
+
+#crudiator-debug .crudiator-debug-wrap .crudiator-debug-content code {
+  padding: 0;
+}
+
+#crudiator-debug .expand-btn {
+  position: absolute;
+  top: 4px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 500ms;
+}
+
+#crudiator-debug .expand-btn:before {
+  content: "-";
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  font-family: monospace;
+}

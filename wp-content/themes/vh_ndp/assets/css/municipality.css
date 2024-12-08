@@ -1,0 +1,421 @@
+.financing-page-financing {
+  display: flex;
+  padding: 64px 0;
+}
+.financing-page-financing .financing-page-financing-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  max-width: 500px;
+}
+.financing-page-financing .financing-page-financing-left .fn_breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.financing-page-financing .financing-page-financing-left .fn_breadcrumbs .fn_breadcrumbs-item-separator {
+  margin: 0px 8px;
+}
+.financing-page-financing .financing-page-financing-left .fn_breadcrumbs .fn_breadcrumbs-item {
+  color: black;
+  text-decoration: none;
+}
+.financing-page-financing .financing-page-financing-left .fn_breadcrumbs .fn_breadcrumbs-item.active {
+  color: #77777a;
+}
+.financing-page-financing .financing-page-financing-left .financing-page-financing-left-title {
+  padding: 0;
+  margin: 0;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  color: #131316;
+  margin-bottom: 32px;
+}
+.financing-page-financing .financing-page-financing-left p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 32px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.financing-page-financing .financing-page-financing-left .financing-page-financing-left-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+.financing-page-financing .financing-page-financing-left .btn_bg_primary {
+  display: flex;
+  flex-direction: row;
+}
+.financing-page-financing .financing-page-financing-left .btn_bg_primary img {
+  margin-right: 8px;
+}
+.financing-page-financing .financing-page-financing-rigth {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.financing-page-financing .financing-page-financing-rigth .financing-page-financing-rigth-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 24px;
+  background-color: #eef0ff;
+}
+.financing-page-financing .financing-page-financing-rigth .financing-page-financing-rigth-bottom svg {
+  padding: 24px;
+  min-width: 156px;
+}
+.financing-page-financing .financing-page-financing-rigth .financing-page-financing-rigth-bottom .financing-page-financing-rigth-bottom-block {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #dae2ff;
+  display: flex;
+  align-items: flex-end;
+  flex: auto;
+}
+.financing-page-financing .financing-page-financing-rigth .financing-page-financing-rigth-bottom .financing-page-financing-rigth-bottom-block p {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  max-width: 290px;
+}
+.financing-page-financing .financing-page-financing-rigth .financing-page-financing-rigth-bottom .financing-page-financing-rigth-bottom-block svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+}
+.financing-page-financing .financing-page-financing-rigth img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.financing-page-leasing-platform-in-numbers {
+  display: flex;
+  padding: 112px 0px;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  max-width: 335px;
+}
+.financing-page-leasing-platform-in-numbers .col-md-8 {
+  display: flex;
+  flex-direction: row;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item {
+  background-color: #eef0ff;
+  border-radius: 24px;
+  padding: 12px 20px;
+  padding-bottom: 16px;
+  min-height: 156px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item .financing-page-leasing-platform-in-numbers-item-title {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  color: #2a59bd;
+  display: flex;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item .financing-page-leasing-platform-in-numbers-item-title span {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item .financing-page-leasing-platform-in-numbers-item-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg2 {
+  background-color: #dae2ff;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg3 {
+  background-color: #2a59bd;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg3 .financing-page-leasing-platform-in-numbers-item-title, .financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg3 .financing-page-leasing-platform-in-numbers-item-text {
+  color: white;
+}
+.municipality-visual {
+  display: flex;
+  padding: 112px 0px;
+  background-color: #f5f5f6;
+ 
+}
+.municipality-visual .row{
+  position: relative;
+  z-index: 1;
+}
+.municipality-visual .municipality-visual-left {
+  max-width: 496px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.municipality-visual .municipality-visual-left .municipality-visual-left-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+}
+.municipality-visual .municipality-visual-left .municipality-visual-left-items {
+  display: flex;
+  margin-top: 32px;
+  justify-content: space-between;
+}
+.municipality-visual .municipality-visual-left .municipality-visual-left-items .municipality-visual-left-item {
+  max-width: 140px;
+}
+.municipality-visual .municipality-visual-left .municipality-visual-left-items .municipality-visual-left-item .municipality-visual-left-item-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: #dae2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.municipality-visual .municipality-visual-left .municipality-visual-left-items .municipality-visual-left-item .municipality-visual-left-item-count {
+  margin-top: 20px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+.municipality-visual .municipality-visual-left .municipality-visual-left-items .municipality-visual-left-item .municipality-visual-left-item-text {
+  margin-top: 4px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #77777a;
+}
+.municipality-visual .municipality-visual-right {
+  position: relative;
+}
+.municipality-visual .municipality-visual-right img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 24px;
+}
+.municipality-visual .municipality-visual-right .btn-white {
+  border-radius: 100px;
+  background: #dce2f9;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 29px;
+  bottom: 29px;
+}
+.municipality-visual .municipality-visual-right .btn-white svg {
+  margin-right: 4px;
+}
+.municipality-grafic {
+  display: flex;
+  padding: 112px 0px;
+}
+.municipality-grafic .municipality-grafic-container .municipality-grafic-container-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.municipality-grafic .municipality-grafic-container .municipality-grafic-container-title span {
+  border-radius: 100px;
+  background-color: #dae2ff;
+  padding: 5px 10px;
+}
+.municipality-grafic .municipality-grafic-container .municipality-grafic-container-chart {
+  margin-top: 80px;
+}
+.municipality-info {
+  padding: 112px 0px;
+  display: flex;
+}
+.municipality-info .municipality-info-container {
+  border-radius: 24px;
+  background: #f5f5f6;
+  padding: 64px 48px;
+}
+.municipality-info .municipality-info-container .municipality-info-container-left {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.municipality-info .municipality-info-container .municipality-info-container-left .municipality-info-container-left-title {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+}
+.municipality-info .municipality-info-container .municipality-info-container-left .municipality-info-container-left-title span {
+  color: #2a59bd;
+}
+.municipality-info .municipality-info-container .municipality-info-container-left .municipality-info-container-left-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 28px;
+  margin-bottom: 16px;
+}
+.municipality-info .municipality-info-container .municipality-info-container-right {
+  margin-left: 56px;
+}
+.municipality-info .municipality-info-container .municipality-info-container-right .municipality-info-container-right-item + .municipality-info-container-right-item {
+  margin-top: 48px;
+}
+.municipality-info .municipality-info-container .municipality-info-container-right .municipality-info-container-right-item .municipality-info-container-right-item-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #dae2ff;
+}
+.municipality-info .municipality-info-container .municipality-info-container-right .municipality-info-container-right-item .municipality-info-container-right-item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin-top: 20px;
+}
+@media (max-width: 767.98px) {
+  .financing-page-financing {
+    padding: 16px 0px;
+ }
+  .financing-page-financing .financing-page-financing-left {
+    padding-bottom: 24px;
+ }
+  .financing-page-financing .financing-page-financing-left .fn_breadcrumbs {
+    margin-bottom: 12px;
+ }
+  .financing-page-financing .financing-page-financing-left .financing-page-financing-left-title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+ }
+  .financing-page-financing .financing-page-financing-left p {
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+ }
+  .financing-page-financing .financing-page-financing-left .btn_bg_primary {
+    width: 100%;
+ }
+  .financing-page-financing .financing-page-financing-left .financing-page-financing-left-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+ }
+  .financing-page-financing .financing-page-financing-rigth .financing-page-financing-rigth-bottom .financing-page-financing-rigth-bottom-block svg {
+    width: 155px;
+ }
+  .financing-page-financing .financing-page-financing-rigth .financing-page-financing-rigth-bottom .financing-page-financing-rigth-bottom-block p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    max-width: 182px;
+ }
+  .financing-page-leasing-platform-in-numbers {
+    padding-top: 64px;
+    padding-bottom: 48px;
+ }
+  .financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 32px;
+ }
+  .financing-page-leasing-platform-in-numbers .col-md-8 {
+    flex-direction: column;
+ }
+  .municipality-visual {
+    padding: 48px 0px;
+ }
+  .municipality-visual .municipality-visual-left .municipality-visual-left-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+ }
+  .municipality-visual .municipality-visual-right {
+    margin-top: 32px;
+ }
+  .municipality-grafic {
+    padding: 48px 0px;
+ }
+  .municipality-grafic .municipality-grafic-container .municipality-grafic-container-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: left;
+    margin-bottom: 16px;
+ }
+  .municipality-info {
+    padding: 0px;
+    padding-bottom: 48px;
+ }
+  .municipality-info .municipality-info-container {
+    padding: 20px 16px;
+ }
+  .municipality-info .municipality-info-container .municipality-info-container-left .municipality-info-container-left-title {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+ }
+  .municipality-info .municipality-info-container .municipality-info-container-left .btn_bg_primary {
+    width: 100%;
+ }
+  .municipality-info .municipality-info-container .municipality-info-container-right {
+    margin-top: 32px;
+    margin-left: 0px;
+ }
+}

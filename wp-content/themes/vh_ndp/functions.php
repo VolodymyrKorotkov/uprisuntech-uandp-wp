@@ -1,0 +1,4136 @@
+<?php
+//require 'vendor/autoload.php';
+/**
+ * NDP functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package NDP
+ */
+
+//date_default_timezone_set('Europe/Kyiv');
+if (!defined('_S_VERSION')) {
+    // Replace the version number of the theme on each release.
+    define('_S_VERSION', '1.0.0');
+}
+//file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test2.txt',print_r($_GET,true));
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function vh_ndp_setup()
+{
+    /*
+        * Make theme available for translation.
+        * Translations can be filed in the /languages/ directory.
+        * If you're building a theme based on NDP, use a find and replace
+        * to change 'vh_ndp' to the name of your theme in all the template files.
+        */
+    load_theme_textdomain('vh_ndp', get_template_directory() . '/languages');
+
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support('automatic-feed-links');
+
+    /*
+        * Let WordPress manage the document title.
+        * By adding theme support, we declare that this theme does not use a
+        * hard-coded <title> tag in the document head, and expect WordPress to
+        * provide it for us.
+        */
+    add_theme_support('title-tag');
+
+    /*
+        * Enable support for Post Thumbnails on posts and pages.
+        *
+        * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+        */
+    add_theme_support('post-thumbnails');
+
+    // This theme uses wp_nav_menu() in one location.
+    register_nav_menus(
+        array(
+            'menu-1' => esc_html__('Header', 'vh_ndp'),
+            'menu-2' => esc_html__('Footer 1', 'vh_ndp'),
+            'menu-3' => esc_html__('Footer 2', 'vh_ndp'),
+            'menu-4' => esc_html__('Footer 3', 'vh_ndp'),
+        )
+    );
+
+    /*
+        * Switch default core markup for search form, comment form, and comments
+        * to output valid HTML5.
+        */
+    add_theme_support(
+        'html5',
+        array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'style',
+            'script',
+        )
+    );
+
+    // Set up the WordPress core custom background feature.
+    add_theme_support(
+        'custom-background',
+        apply_filters(
+            'vh_ndp_custom_background_args',
+            array(
+                'default-color' => 'ffffff',
+                'default-image' => '',
+            )
+        )
+    );
+
+    // Add theme support for selective refresh for widgets.
+    add_theme_support('customize-selective-refresh-widgets');
+
+    /**
+     * Add support for core custom logo.
+     *
+     * @link https://codex.wordpress.org/Theme_Logo
+     */
+    add_theme_support(
+        'custom-logo',
+        array(
+            'height' => 250,
+            'width' => 250,
+            'flex-width' => true,
+            'flex-height' => true,
+        )
+    );
+}
+
+add_action('after_setup_theme', 'vh_ndp_setup');
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function vh_ndp_content_width()
+{
+    $GLOBALS['content_width'] = apply_filters('vh_ndp_content_width', 640);
+}
+
+add_action('after_setup_theme', 'vh_ndp_content_width', 0);
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function vh_ndp_widgets_init()
+{
+    register_sidebar(
+        array(
+            'name' => esc_html__('Sidebar', 'vh_ndp'),
+            'id' => 'sidebar-1',
+            'description' => esc_html__('Add widgets here.', 'vh_ndp'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' => '</section>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        )
+    );
+}
+
+add_action('widgets_init', 'vh_ndp_widgets_init');
+
+/**
+ * Enqueue scripts and styles.
+ */
+function vh_ndp_scripts()
+{
+    wp_enqueue_style('vh_ndp-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_style_add_data('vh_ndp-style', 'rtl', 'replace');
+
+    // wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css');
+    wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css');
+
+    wp_enqueue_style('vh_ndp-documents-css', get_template_directory_uri() . '/assets/css/documets.css');
+    wp_enqueue_style('block-post-item', get_template_directory_uri() . '/assets/css/block-post-item.css');
+
+
+    wp_enqueue_style('vh_ndp-bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css');
+    wp_enqueue_style('theme_carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css');
+
+    wp_enqueue_style('theme_default', get_template_directory_uri() . '/assets/css/owl.theme.default.css');
+
+    wp_enqueue_style('main-min', get_template_directory_uri() . '/assets/css/style.min.css');
+    wp_enqueue_style('main-home', get_template_directory_uri() . '/assets/css/home.css');
+    wp_enqueue_style('footer', get_template_directory_uri() . '/assets/css/footer.css');
+    wp_enqueue_style('main-404', get_template_directory_uri() . '/assets/css/404.css');
+
+    wp_enqueue_script('vh_ndp-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), _S_VERSION, true);
+    wp_enqueue_script('vh_ndp-marqueee', get_template_directory_uri() . '/assets/js/marquee.js', array(), _S_VERSION, true);
+    wp_enqueue_script('vh_ndp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+    wp_enqueue_script('js_carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), _S_VERSION, true);
+    wp_enqueue_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js',  array('jquery'), _S_VERSION, true);
+    wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css' );
+    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js');
+
+    wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), _S_VERSION, true);
+    if (is_page('cart')){
+        wp_enqueue_script('cart', get_template_directory_uri() . '/assets/js/cart.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('cart', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_style('vh_ndp-buttons', get_template_directory_uri() . '/assets/css/buttons.css');
+    }
+
+    wp_enqueue_script('main-home-script', get_template_directory_uri() . '/assets/js/home.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('block-post-item', get_template_directory_uri() . '/assets/js/block-post-item.js', array('jquery'));
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
+
+    if (is_page('marketplace') || is_product_category() || is_product_taxonomy()) {
+        wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css' );
+        wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js');
+        wp_enqueue_style('vh_ndp-marketplace', get_template_directory_uri() . '/assets/css/marketplace.css',array(),_S_VERSION);
+        wp_enqueue_script('vh_ndp-marketplace', get_template_directory_uri() . '/assets/js/marketplace.js', array(), _S_VERSION, true);
+        wp_enqueue_style('vh_ndp-buttons', get_template_directory_uri() . '/assets/css/buttons.css');
+        wp_enqueue_script('cart', get_template_directory_uri() . '/assets/js/cart.js', array('jquery'), '1.0.0.1', true);
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+    }
+    if(is_page_template('page-solutions.php')){
+        wp_enqueue_script('solutions', get_template_directory_uri() . '/assets/js/solutions.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('solutions', get_template_directory_uri() . '/assets/css/solutions.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_style('vh_ndp-buttons', get_template_directory_uri() . '/assets/css/buttons.css');
+    }
+
+
+
+
+    if(is_page_template('page-comparison.php')){
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_style('vh_ndp-buttons', get_template_directory_uri() . '/assets/css/buttons.css');
+    }
+    if(is_page_template('page-training-center.php') || is_page_template('page-training-center_ua.php')){
+        wp_enqueue_script('center', get_template_directory_uri() . '/assets/js/training-center.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('center', get_template_directory_uri() . '/assets/css/training-center.css');
+
+    }
+    if(is_page_template('page-categories.php')){
+        wp_enqueue_script('solutions', get_template_directory_uri() . '/assets/js/solutions.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('solutions', get_template_directory_uri() . '/assets/css/solutions.css');
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_script('cart-prod-js', get_template_directory_uri() . '/assets/js/cart.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_style('vh_ndp-buttons', get_template_directory_uri() . '/assets/css/buttons.css');
+    }
+
+    if(is_page('Create Application Type')){
+        wp_enqueue_script('application', get_template_directory_uri() . '/react-aplication/build_application/application.js', array(), _S_VERSION, true);
+        wp_enqueue_style('application', get_template_directory_uri() . '/react-aplication/build_application/application.css');
+    }
+
+    if(is_page('Application engineer')){
+        wp_enqueue_script('application', get_template_directory_uri() . '/react-aplication/build_engineer/application.js', array(), _S_VERSION, true);
+        wp_enqueue_style('application', get_template_directory_uri() . '/react-aplication/build_engineer/application.css');
+    }
+
+    if(is_page('Municipality') OR is_page('Громадам')){
+        wp_enqueue_script('chart', 'https://cdn.jsdelivr.net/npm/chart.js');
+        wp_enqueue_script('municipality', get_template_directory_uri() . '/assets/js/municipality.js', array(), _S_VERSION, true);
+        wp_enqueue_style('municipality', get_template_directory_uri() . '/assets/css/municipality.css');
+    }
+
+    if(is_page('create-application')){
+        wp_enqueue_style('vh_ndp-create-application', get_template_directory_uri() . '/assets/css/create-application.css');
+    }
+    if(is_page_template('page-vendors-list.php')){
+        wp_enqueue_script('solutions', get_template_directory_uri() . '/assets/js/solutions.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('solutions', get_template_directory_uri() . '/assets/css/solutions.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_style('vh_ndp-buttons', get_template_directory_uri() . '/assets/css/buttons.css');
+    }
+
+
+    if (is_page('Course') || is_singular('course')) {
+        wp_enqueue_style('lifterlms-fonts', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+        wp_enqueue_style('lifterlms-material', get_template_directory_uri() . '/assets/css/material-components-web.min.css');
+        wp_enqueue_script('lifterlms-material', get_template_directory_uri() . '/assets/js/material-components-web.min.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('lifterlms-authorization', get_template_directory_uri() . '/assets/css/authorization.css');
+        wp_enqueue_style('lifterlms-authorization-govua', get_template_directory_uri() . '/assets/css/registration-govua.css');
+        wp_enqueue_script('lifterlms-authorization', get_template_directory_uri() . '/assets/js/authorization.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('vh_ndp-course', get_template_directory_uri() . '/assets/css/course.css');
+        wp_enqueue_script('vh_ndp-course', get_template_directory_uri() . '/assets/js/course.js', array(), _S_VERSION, true);
+        wp_enqueue_script('vh_ndp-authorization', get_template_directory_uri() . '/assets/js/registration-govua.js', array(), _S_VERSION, true);
+    }
+
+//    function get_application_data_from_external_api( $entry_id ) {
+//        // Получаем имя хоста из текущего запроса.
+//        $host_name = $_SERVER['HTTP_HOST'];
+//
+//        // Формируем URL с использованием динамического хоста.
+//        $request_url = 'https://' . $host_name . '/wp-json/application/v1/get_entry/' . $entry_id;
+//
+//        // Отправляем GET-запрос к внешнему API.
+//        $response = wp_remote_get( $request_url );
+//
+//        // Проверяем на наличие ошибок.
+//        if ( is_wp_error( $response ) ) {
+//            // Обработка ошибки.
+//            error_log( 'Ошибка при получении данных: ' . $response->get_error_message() );
+//            return null;
+//        }
+//
+//        // Получаем тело ответа и декодируем его из JSON.
+//        $body = wp_remote_retrieve_body( $response );
+//        $data = json_decode( $body, true );
+//
+//        if ( json_last_error() !== JSON_ERROR_NONE ) {
+//            // Обработка ошибки декодирования JSON.
+//            error_log( 'Ошибка декодирования JSON: ' . json_last_error_msg() );
+//            return null;
+//        }
+//
+//        // Возвращаем данные.
+//        return $data;
+//    }
+
+    if (is_page('green-university')) {
+        wp_enqueue_style('vh_ndp-green', get_template_directory_uri() . '/assets/css/green.css');
+        wp_enqueue_script('vh_ndp-green', get_template_directory_uri() . '/assets/js/green.js', array(), _S_VERSION, true);
+    }
+    if (is_page('contacts')) {
+        wp_enqueue_style('vh_ndp-contacts', get_template_directory_uri() . '/assets/css/material-components-web.min.css');
+        wp_enqueue_style('vh_ndp-contact', get_template_directory_uri() . '/assets/css/contact.css');
+        wp_enqueue_script('vh_ndp-contact-mask', 'https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js', array('jquery'));
+        wp_enqueue_script('map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB9aUxEyR_wIGZSzvzFotwRZ_u5tjuTtlw');
+        wp_enqueue_script('vh_ndp-contacts', get_template_directory_uri() . '/assets/js/material-components-web.min.js', array(), _S_VERSION, true);
+        wp_enqueue_script('vh_ndp-contact', get_template_directory_uri() . '/assets/js/contact.js', array(), _S_VERSION, true);
+    }
+
+    if (is_page('about-us')) {
+        wp_enqueue_style('vh_ndp-about', get_template_directory_uri() . '/assets/css/about.css');
+    }
+
+    if (is_page('privacy-policy')) {
+        wp_enqueue_style('vh_ndp-about', get_template_directory_uri() . '/assets/css/privacy-policy.css');
+    }
+
+    if (is_page('financing')) {
+        wp_enqueue_style('vh_ndp-financing', get_template_directory_uri() . '/assets/css/financing.css');
+        wp_enqueue_script('vh_ndp-financing', get_template_directory_uri() . '/assets/js/financing.js', array('jquery'), _S_VERSION, true);
+    }
+
+    if (is_product()) {
+        wp_enqueue_style('vh_ndp-product', get_template_directory_uri() . '/assets/css/product.css');
+        wp_enqueue_script('vh_ndp-product-zoom', 'https://cdn.jsdelivr.net/gh/igorlino/elevatezoom-plus@1.2.3/src/jquery.ez-plus.js');
+        wp_enqueue_script('vh_ndp-product', get_template_directory_uri() . '/assets/js/product.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('cart-prod-js', get_template_directory_uri() . '/assets/js/cart.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('vh_ndp-buttons', get_template_directory_uri() . '/assets/css/buttons.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+
+    }
+
+    if (is_page('comparison')) {
+        wp_enqueue_style('vh_ndp-comparison', get_template_directory_uri() . '/assets/css/comparison.css');
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_script('vh_ndp-comparison', get_template_directory_uri() . '/assets/js/comparison.js', array(), _S_VERSION, true);
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+    }
+
+    if (is_page('vendors-list')) {
+        wp_enqueue_style('vh_ndp-vendors-list', get_template_directory_uri() . '/assets/css/vendors-list.css');
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_script('vh_ndp-vendors-list', get_template_directory_uri() . '/assets/css/vendors-list.js', array(), _S_VERSION, true);
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+    }
+
+    if (is_page('solutions')) {
+        wp_enqueue_style('vh_ndp-solutions', get_template_directory_uri() . '/assets/css/solutions.css');
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+//        wp_enqueue_script('vh_ndp-solutions', get_template_directory_uri() . '/assets/js/solutions.js', array(), _S_VERSION, true);
+    }
+
+    if (is_page('categories')) {
+        wp_enqueue_style('vh_ndp-categories', get_template_directory_uri() . '/assets/css/categories.css');
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_script('vh_ndp-categories', get_template_directory_uri() . '/assets/js/categories.js', array(), _S_VERSION, true);
+    }
+
+    if (is_product_category()) {
+        wp_enqueue_style('vh_ndp-categories', get_template_directory_uri() . '/assets/css/categories.css');
+        wp_enqueue_script('vh_ndp-categories', get_template_directory_uri() . '/assets/js/categories.js', array(), _S_VERSION, true);
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_script('vh_ndp-categories', get_template_directory_uri() . '/assets/js/categories.js', array(), _S_VERSION, true);
+    }
+
+    if (is_tax('sp_smart_brand')) {
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/cart.css');
+        wp_enqueue_style('vh_ndp-categories', get_template_directory_uri() . '/assets/css/categories.css');
+        wp_enqueue_style('vh_ndp-vendor', get_template_directory_uri() . '/assets/css/vendors-solutions.css');
+        wp_enqueue_style('empty', get_template_directory_uri() . '/assets/css/empty.css');
+        wp_enqueue_style('product-brands', get_template_directory_uri() . '/assets/css/product-brands.css');
+    }
+
+    if ( is_post_type_archive('course') ) {
+        wp_enqueue_style('cart-prod', get_template_directory_uri() . '/assets/css/courses-library.css');
+        wp_enqueue_script('vh_ndp-categories', get_template_directory_uri() . '/assets/js/courses-library.js', array('jquery'), _S_VERSION, true);
+    }
+
+    if (is_llms_account_page()) {
+
+        wp_enqueue_style('lifterlms-fonts', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+        wp_enqueue_style('lifterlms-material', get_template_directory_uri() . '/assets/css/material-components-web.min.css');
+        wp_enqueue_script('lifterlms-material', get_template_directory_uri() . '/assets/js/material-components-web.min.js', array('jquery'), _S_VERSION, true);
+        if (!is_user_logged_in()) {
+            wp_enqueue_style('lifterlms-authorization', get_template_directory_uri() . '/assets/css/authorization.css');
+            wp_enqueue_style('vh_ndp-authorization', get_template_directory_uri() . '/assets/css/registration-govua.css');
+            wp_enqueue_script('lifterlms-llms', get_template_directory_uri() . '/assets/js/llms.js', array('jquery'), _S_VERSION, true);
+            wp_enqueue_script('lifterlms-authorization', get_template_directory_uri() . '/assets/js/authorization.js', array('jquery'), _S_VERSION, true);
+            wp_enqueue_script('vh_ndp-authorization', get_template_directory_uri() . '/assets/js/registration-govua.js', array(), _S_VERSION, true);
+        } else {
+            $endpointSlug  = LLMS_Student_Dashboard::get_current_tab( 'slug' );
+            wp_enqueue_style('lifterlms-dashboard-main', get_template_directory_uri() . '/assets/css/dashboard-main.css');
+            wp_enqueue_style('lifterlms-izimodal', WP_PLUGIN_URL . '/lifterlms/assets/vendor/izimodal/iziModal.min.css?ver=1.5.1');
+            wp_enqueue_script('lifterlms-izimodal', WP_PLUGIN_URL . '/lifterlms/assets/vendor/izimodal/iziModal.min.js?ver=1.5.1', array('jquery'), _S_VERSION, true);
+            wp_enqueue_script('lifterlms-dashboard-main', get_template_directory_uri() . '/assets/js/dashboard-main.js', array('jquery'), _S_VERSION, true);
+
+            if ($endpointSlug == 'dashboard') {
+                wp_enqueue_style('lifterlms-dashboard', get_template_directory_uri() . '/assets/css/dashboard.css');
+                wp_enqueue_script('lifterlms-dashboard', get_template_directory_uri() . '/assets/js/dashboard.js', array('jquery'), _S_VERSION, true);
+            } elseif ($endpointSlug == 'applications') {
+                wp_enqueue_style('lifterlms-applications', get_template_directory_uri() . '/assets/css/applications.css');
+                wp_enqueue_script('lifterlms-applications', get_template_directory_uri() . '/assets/js/applications.js', array('jquery'), _S_VERSION, true);
+            } elseif ($endpointSlug == 'requests') {
+                wp_enqueue_style('lifterlms-main-municipality', get_template_directory_uri() . '/assets/css/main.municipality.css');
+                wp_enqueue_script('lifterlms-select2', get_template_directory_uri() . '/assets/js/select2.js', array('jquery'), _S_VERSION, true);
+                wp_enqueue_script('lifterlms-requests', get_template_directory_uri() . '/assets/js/common.municipality.js', array('jquery'), _S_VERSION, true);
+            } elseif ($endpointSlug == 'view-courses') {
+                wp_enqueue_style('lifterlms-my-courses', get_template_directory_uri() . '/assets/css/my-courses.css');
+                wp_enqueue_script('lifterlms-my-courses', get_template_directory_uri() . '/assets/js/my-courses.js', array('jquery'), _S_VERSION, true);
+            } elseif ($endpointSlug == 'surveys') {
+                wp_enqueue_style('lifterlms-surveys', get_template_directory_uri() . '/assets/css/main.min.css');
+                wp_enqueue_script('lifterlms-select2', get_template_directory_uri() . '/assets/js/select2.js', array('jquery'), _S_VERSION, true);
+                wp_enqueue_script('lifterlms-surveys', get_template_directory_uri() . '/assets/js/common.municipality.js', array('jquery'), _S_VERSION, true);
+            } elseif ($endpointSlug == 'view-certificates') {
+                if (isset($_GET['upload']) || isset($_GET['edit']) || isset($_GET['view'])) {
+                    wp_enqueue_script('vh_ndp-contact-mask', 'https://unpkg.com/dropzone@5/dist/min/dropzone.min.js', array('jquery'));
+                    wp_enqueue_style('upload-datepicker', get_template_directory_uri() . '/assets/css/datepicker.css');
+                    wp_enqueue_script('upload-datepicker', get_template_directory_uri() . '/assets/js/datepicker-full.min.js', array('jquery'), _S_VERSION, true);
+                    wp_enqueue_script('upload-datepicker-locale-uk', 'https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/locales/uk.js', array('upload-datepicker'));
+                    wp_enqueue_style('upload-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap-grid.min.css');
+                    wp_enqueue_script('upload-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), _S_VERSION, true);
+                    wp_enqueue_style('upload-material', get_template_directory_uri() . '/assets/css/material-components-web.min.css');
+                    wp_enqueue_script('upload-material', get_template_directory_uri() . '/assets/js/material-components-web.min.js', array('jquery'), _S_VERSION, true);
+                    wp_enqueue_style('upload-certificate', get_template_directory_uri() . '/assets/css/upload-certificate.css');
+                    wp_enqueue_script('upload-certificate', get_template_directory_uri() . '/assets/js/upload-certificate.js', array('jquery'), _S_VERSION, true);
+                } else {
+                    wp_enqueue_style('lifterlms-certificates', get_template_directory_uri() . '/assets/css/certificates.css');
+                    wp_enqueue_script('lifterlms-certificates', get_template_directory_uri() . '/assets/js/certificates.js', array('jquery'), _S_VERSION, true);
+                }
+            } elseif ($endpointSlug == 'notifications') {
+                wp_enqueue_style('lifterlms-notifications', get_template_directory_uri() . '/assets/css/notifications.css');
+                wp_enqueue_script('lifterlms-notifications', get_template_directory_uri() . '/assets/js/notifications.js', array('jquery'), _S_VERSION, true);
+            } elseif ($endpointSlug == 'municipalities') {
+                wp_enqueue_script('vh_ndp-contact-mask', 'https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js', array('jquery'));
+                wp_enqueue_style('lifterlms-main-municipality', get_template_directory_uri() . '/assets/css/main.municipality.css');
+                wp_enqueue_script('lifterlms-select2', get_template_directory_uri() . '/assets/js/select2.js', array('jquery'), _S_VERSION, true);
+                wp_enqueue_script('lifterlms-municipality', get_template_directory_uri() . '/assets/js/common.municipality.js', array('jquery'), _S_VERSION, true);
+            } elseif ($endpointSlug == 'edit-account') {
+                if (isset($_GET['password-change'])) {
+                    wp_enqueue_style('material', get_template_directory_uri() . '/assets/css/material-components-web.min.css');
+                    wp_enqueue_script('material', get_template_directory_uri() . '/assets/js/material-components-web.min.js', array('jquery'), _S_VERSION, true);
+                    wp_enqueue_style('password-change', get_template_directory_uri() . '/assets/css/password-change.css');
+                    wp_enqueue_script('password-change', get_template_directory_uri() . '/assets/js/password-change.js', array('jquery'), _S_VERSION, true);
+                } else {
+                    wp_enqueue_script('vh_ndp-contact-mask', 'https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js', array('jquery'));
+                    wp_enqueue_style('lifterlms-profile', get_template_directory_uri() . '/assets/css/profile-settings.css');
+                    wp_enqueue_script('lifterlms-llms', get_template_directory_uri() . '/assets/js/llms.js', array('jquery'), _S_VERSION, true);
+                    wp_enqueue_script('lifterlms-profile', get_template_directory_uri() . '/assets/js/profile-settings.js', array('jquery'), _S_VERSION, true);
+                }
+            }
+        }
+    }
+
+    //Покдлючил файл js ToggleDisplayOnTouch для функционала нажатии на поле тип Select на мобильном 
+    wp_enqueue_script('toggle_script_display', get_template_directory_uri() . '/assets/js/ToggleDisplayOnTouch.js', array(), _S_VERSION, true);
+    
+
+    if (is_page_template('page-confirm-email.php')) {
+        wp_enqueue_style('lifterlms-material', get_template_directory_uri() . '/assets/css/material-components-web.min.css');
+        wp_enqueue_script('lifterlms-material', get_template_directory_uri() . '/assets/js/material-components-web.min.js', array('jquery'), _S_VERSION, true);
+
+        wp_enqueue_style('lifterlms-fonts', 'https://fonts.googleapis.com/icon?family=Material+Icons');
+        wp_enqueue_style('vh_ndp-confirm', get_template_directory_uri() . '/assets/css/confirm-email.css');
+        wp_enqueue_script('vh_ndp-confirm', get_template_directory_uri() . '/assets/js/confirm-email.js', array(), _S_VERSION, true);
+        wp_localize_script('vh_ndp-confirm', 'ServerInfo', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('user_activation_nonce')
+        ));
+    }
+
+    if (is_singular('lesson')) {
+        wp_enqueue_style('lifterlms-notifications', get_template_directory_uri() . '/assets/css/course-training.css');
+        wp_enqueue_script('lifterlms-notifications', get_template_directory_uri() . '/assets/js/course-training.js', array('jquery'), _S_VERSION, true);
+    }
+
+    elseif (is_singular('llms_quiz')) {
+        wp_enqueue_style('lifterlms-material', get_template_directory_uri() . '/assets/css/material-components-web.min.css');
+        wp_enqueue_script('lifterlms-material', get_template_directory_uri() . '/assets/js/material-components-web.min.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_style('lifterlms-notifications', get_template_directory_uri() . '/assets/css/course-quiz.css');
+        wp_enqueue_script('lifterlms-notifications', get_template_directory_uri() . '/assets/js/course-quiz.js', array('jquery'), _S_VERSION, true);
+    }
+
+
+    wp_enqueue_script('vh_ndp-documents-js', get_template_directory_uri() . '/assets/js/documets.js');
+}
+
+add_action('wp_enqueue_scripts', 'vh_ndp_scripts');
+
+
+add_action('wp_ajax_update_cart_item_quantity_callback', 'update_cart_item_quantity_callback');
+add_action('wp_ajax_nopriv_update_cart_item_quantity_callback', 'update_cart_item_quantity_callback');
+function update_cart_item_quantity_callback() {
+    // Проверяем наличие необходимых данных в POST-запросе
+    if (!isset($_POST['cart_item_key']) || !isset($_POST['quantity'])) {
+        echo json_encode(['success' => false, 'message' => 'Missing data']);
+        wp_die();
+    }
+
+    $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+    $quantity = intval($_POST['quantity']);
+
+    // Проверяем, существует ли товар с таким cart_item_key в корзине
+    if (!isset(WC()->cart->get_cart()[$cart_item_key])) {
+        echo json_encode(['success' => false, 'message' => 'Invalid cart item key']);
+        wp_die();
+    }
+
+    // Устанавливаем новое количество для товара в корзине
+    WC()->cart->set_quantity($cart_item_key, $quantity);
+
+    echo json_encode(['success' => true, 'message' => 'Quantity updated', 'total_items' => WC()->cart->get_cart_contents_count()]);
+    wp_die();
+}
+
+function custom_llms_get_page_id($page_name) {
+    // Получение ID страницы из LifterLMS
+    $page_id = llms_get_page_id($page_name);
+
+    // Если WPML активен, получите переведенный ID страницы
+    if (function_exists('wpml_object_id_filter')) {
+        $page_id = apply_filters('wpml_object_id', $page_id, 'page', true);
+    }
+
+    return $page_id;
+}
+
+// Затем обновите is_llms_account_page, чтобы использовать вашу новую функцию
+function is_llms_account_page() {
+    return (is_page(custom_llms_get_page_id('myaccount')) || apply_filters('lifterlms_is_account_page', false));
+}
+
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if (defined('JETPACK__VERSION')) {
+    require get_template_directory() . '/inc/jetpack.php';
+}
+
+/**
+ * Load WooCommerce compatibility file.
+ */
+if (class_exists('WooCommerce')) {
+    require get_template_directory() . '/inc/woocommerce.php';
+}
+
+/**
+ * Implement ajax hundlers
+ */
+require get_template_directory() . '/inc/ajax.php';
+
+/**
+ * Lifterlms code
+ */
+require get_template_directory() . '/inc/lifterlms.php';
+
+
+/**
+ * Custom Guttenberg Blocks
+ */
+function enqueue_newsletter_block_assets()
+{
+    wp_enqueue_script(
+        'newsletter-block',
+        get_template_directory_uri() . '/gutenberg/newsletter-block/newsletter-block.js', // Путь к вашему файлу index.js
+        array('wp-blocks', 'wp-editor', 'wp-components'), // Зависимости, которые нужно загрузить
+        filemtime(get_template_directory() . '/gutenberg/newsletter-block/newsletter-block.js') // Версия файла (чтобы избежать кеширования)
+    );
+    wp_enqueue_style('newsletter-block', get_template_directory_uri() . '/gutenberg/newsletter-block/style.css', array(), _S_VERSION);
+
+
+    wp_enqueue_script(
+        'download-block',
+        get_template_directory_uri() . '/gutenberg/download-block/download-block.js', // Путь к вашему файлу download-block.js
+        array('wp-blocks', 'wp-editor', 'wp-components'), // Зависимости, которые нужно загрузить
+        filemtime(get_template_directory() . '/gutenberg/download-block/download-block.js') // Версия файла (чтобы избежать кеширования)
+    );
+    wp_enqueue_style('download-block', get_template_directory_uri() . '/gutenberg/download-block/style.css', array(), _S_VERSION);
+}
+
+add_action('enqueue_block_editor_assets', 'enqueue_newsletter_block_assets');
+
+
+/**
+ * Регистрация кастомного типа постов
+ */
+function register_custom_post_type()
+{
+
+    // "News"
+    register_post_type('news',
+        array(
+            'labels' => array(
+                'name' => 'News',
+                'singular_name' => 'News',
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+            'capability_type' => 'post',
+            'show_in_rest' => true, // Включаем поддержку Гутенберга
+        )
+    );
+
+    // Создание таксономии "Category" для кастомного типа "News"
+    register_taxonomy('news_category', 'news', array(
+        'label' => 'News Categories',
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'news-category'),
+        'show_in_rest' => true, // Включаем поддержку Гутенберга
+    ));
+
+    // Создание таксономии "Tag" для кастомного типа "News"
+    register_taxonomy('news_tag', 'news', array(
+        'label' => 'News Tags',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'news-tag'),
+        'show_in_rest' => true, // Включаем поддержку Гутенберга
+    ));
+
+
+    // "Knowledge base"
+    register_post_type('knowledge-base',
+        array(
+            'labels' => array(
+                'name' => 'Knowledge base',
+                'singular_name' => 'Knowledge base',
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+            'show_in_rest' => true, // Включаем поддержку Гутенберга
+        )
+    );
+
+    // Создание таксономии "Category" для кастомного типа "Articles"
+    register_taxonomy('knowledge-base_category', 'knowledge-base', array(
+        'label' => 'Knowledge base Categories',
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'knowledge-base-category'),
+        'show_in_rest' => true, // Включаем поддержку Гутенберга
+    ));
+
+    // Создание таксономии "Tag" для кастомного типа "Articles"
+    register_taxonomy('knowledge-base_tag', 'knowledge-base', array(
+        'label' => 'Knowledge base Tags',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'knowledge-base-tag'),
+        'show_in_rest' => true, // Включаем поддержку Гутенберга
+    ));
+
+
+    // "Cases"
+    register_post_type('cases',
+        array(
+            'labels' => array(
+                'name' => 'Cases',
+                'singular_name' => 'Case',
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+            'show_in_rest' => true, // Включаем поддержку Гутенберга
+        )
+    );
+
+    // Создание таксономии "Category" для кастомного типа "Cases"
+    register_taxonomy('cases_category', 'cases', array(
+        'label' => 'Case Categories',
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'cases-category'),
+        'show_in_rest' => true, // Включаем поддержку Гутенберга
+    ));
+
+    // Создание таксономии "Tag" для кастомного типа "Cases"
+    register_taxonomy('cases_tag', 'cases', array(
+        'label' => 'Case Tags',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'cases-tag'),
+        'show_in_rest' => true, // Включаем поддержку Гутенберга
+    ));
+
+}
+
+add_action('init', 'register_custom_post_type');
+
+
+/**
+ * Закрепленные посты
+ */
+function add_custom_sticky_column($columns)
+{
+    $columns['custom_sticky'] = 'Make this post sticky';
+    return $columns;
+}
+
+function populate_custom_sticky_column($column, $post_id)
+{
+    if ($column === 'custom_sticky') {
+        $is_sticky = get_post_meta($post_id, 'custom_sticky', true);
+        echo '<label><input type="checkbox" name="custom_sticky" value="' . $is_sticky . '" ' . checked($is_sticky, 'on', false) . '>Make this post sticky</label>';
+    }
+}
+
+function add_custom_quick_edit_script()
+{
+    global $current_screen;
+    $allowed_post_types = array('news', 'knowledge-base', 'cases');
+
+    if (in_array($current_screen->post_type, $allowed_post_types)) {
+        ?>
+        <style>
+            #custom_sticky {
+                width: 150px;
+            }
+        </style>
+        <script>
+            jQuery(document).ready(function ($) {
+
+                // let stickyPostCounter = 0
+                // $('[name="custom_sticky"]').each(function () {
+                //     stickyPostCounter++
+                //     if (stickyPostCounter > 4 && $(this).attr('value') === 'on') {
+                //         console.log(stickyPostCounter)
+                //         $('[name="custom_sticky"]').attr('disabled', 'true')
+                //         return false
+                //     }
+                // })
+
+                $(document).on('change', '[name="custom_sticky"]', function () {
+                    let parent = $(this).closest('tr')
+                    let isChecked = $(this).prop('checked')
+                    let post_id = parent.attr('id').replace('post-', '')
+
+                    $.ajax({
+                        type: 'POST',
+                        url: ajaxurl,
+                        data: {
+                            action: 'update_custom_sticky',
+                            post_id: post_id,
+                            is_sticky: isChecked ? 'on' : 'off',
+                            post_type: '<?php echo $current_screen->post_type; ?>'
+                        },
+                        beforeSend: function () {
+                            parent.css('opacity', '.5')
+                        },
+                        success: function (response) {
+                            console.log(response)
+                            parent.css('opacity', '1');
+
+                            if (response && response.hasOwnProperty('switchOff')) {
+                                let ids = response['switchOff'];
+                                for (let id in ids) {
+                                    let $tr = $('#the-list').find('#post-'+ids[id]);
+                                    if ($tr.length) {
+                                        $tr.find(".custom_sticky").find('input').prop('checked', false);
+                                    }
+                                }
+                            }
+                        }
+                    })
+                })
+            })
+        </script>
+        <?php
+    }
+}
+
+function update_custom_sticky()
+{
+    $post_id = $_POST['post_id'];
+    $is_sticky = $_POST['is_sticky'];
+    $post_type = $_POST['post_type'];
+
+    $post_data = array(
+        'ID' => $post_id,
+    );
+    wp_update_post($post_data);
+    update_post_meta($post_id, 'custom_sticky', $is_sticky);
+
+    $response = [];
+
+    if ($is_sticky === 'on') {
+        $args = [
+            'post_type' => $post_type,
+            'posts_per_page' => -1,
+            'post_status' => 'publish',
+            'meta_query' => [
+                [
+                    'key' => 'custom_sticky',
+                    'value' => 'on'
+                ],
+            ],
+            'orderby' => 'modified',
+            'order' => 'DESC'
+        ];
+
+        $newest_post = new WP_Query($args);
+        $new_dates = array();
+        $postsData = [];
+        $countSticky = 0;
+
+
+        if ($newest_post->have_posts()) {
+            while ($newest_post->have_posts()) {
+                $newest_post->the_post();
+
+                $ID = get_the_ID();
+                $newest_post_date = get_the_date('Y-m-d H:i:s');
+                $new_dates[] = $newest_post_date;
+                $custom_sticky = get_post_meta($ID, 'custom_sticky', true);
+                if ($custom_sticky && $custom_sticky == 'on') {
+                    $countSticky++;
+                }
+                $postsData[$ID] = [
+                    'id' => $ID,
+                    'title' => get_the_title(),
+                    'date' => $newest_post_date,
+                    'sticky' => $custom_sticky,
+                ];
+            }
+        }
+        wp_reset_postdata();
+
+
+        if ($countSticky > 4) {
+
+            $num = 1;
+            $swithOffPosts = [];
+            foreach ($postsData as $id => $data) {
+                if ($num > 4) {
+                    update_post_meta($id, 'custom_sticky', 'off');
+                    $swithOffPosts[] = $id;
+                }
+                $num++;
+            }
+            $response['switchOff'] = $swithOffPosts;
+
+        }
+    }
+
+    wp_send_json($response);
+}
+
+add_filter('manage_edit-news_columns', 'add_custom_sticky_column');
+add_filter('manage_edit-knowledge-base_columns', 'add_custom_sticky_column');
+add_filter('manage_edit-cases_columns', 'add_custom_sticky_column');
+
+add_action('manage_news_posts_custom_column', 'populate_custom_sticky_column', 10, 2);
+add_action('manage_knowledge-base_posts_custom_column', 'populate_custom_sticky_column', 10, 2);
+add_action('manage_cases_posts_custom_column', 'populate_custom_sticky_column', 10, 2);
+
+add_action('admin_footer-edit.php', 'add_custom_quick_edit_script');
+add_action('wp_ajax_update_custom_sticky', 'update_custom_sticky');
+
+
+/**
+ * Breadcrumbs
+ */
+function generate_breadcrumbs()
+{
+    $home = __( 'Home', 'Home' );
+    if (get_post_type() === 'news') {
+        $home = __( 'Main Page', 'Home' );
+    }
+    $breadcrumbs = '<nav class="breadcrumb">';
+    $breadcrumbs .= '<a href="' . esc_url(home_url('/')) . '">'.$home.'</a>';
+
+    if (is_single()) {
+        $taxonomy_cat = '';
+        $taxonomy_slug = '';
+
+        if (get_post_type() === 'news') {
+            $taxonomy_cat = 'News';
+            $taxonomy_slug = 'news_category';
+        } elseif (get_post_type() === 'knowledge-base') {
+            $taxonomy_cat = 'Knowledge Base';
+            $taxonomy_slug = 'knowledge-base_category';
+        } elseif (get_post_type() === 'cases') {
+            $taxonomy_cat = 'Cases';
+            $taxonomy_slug = 'cases_category';
+        }
+
+        if (!empty($taxonomy_cat)) {
+            $breadcrumbs .= '<span class="delimiter">  </span>';
+            $breadcrumbs .= '<a href="' . esc_url(get_post_type_archive_link(get_post_type())) . '">' . esc_html($taxonomy_cat) . '</a>';
+            $breadcrumbs .= '<span class="delimiter">  </span>';
+        }
+
+        $terms = get_the_terms(get_the_ID(), $taxonomy_slug);
+
+        if ($terms && !is_wp_error($terms)) {
+            $term = reset($terms);
+            $term_link = esc_url(get_term_link($term, $taxonomy_slug));
+            $breadcrumbs .= '<a href="' . $term_link . '">' . $term->name . '</a>';
+        }
+
+        $breadcrumbs .= '<span class="delimiter">  </span>';
+        $breadcrumbs .= '<span class="current" title="' . esc_html(get_the_title()) . '">' . esc_html(get_the_title()) . '</span>';
+    } elseif (is_category() || is_tax() || is_post_type_archive()) {
+        $post_type_label = '';
+
+        if (is_post_type_archive('news')) {
+            $post_type_label = 'News';
+        } elseif (is_post_type_archive('knowledge-base')) {
+            $post_type_label = 'Knowledge Base';
+        } elseif (is_post_type_archive('cases')) {
+            $post_type_label = 'Cases';
+        }
+
+        if (!empty($post_type_label)) {
+            $breadcrumbs .= '<span class="delimiter">  </span>';
+            $breadcrumbs .= '<span class="current">' . esc_html($post_type_label) . '</span>';
+        }
+
+        if (is_category() || is_tax()) {
+
+        } elseif (is_post_type_archive()) {
+
+        }
+    } elseif (is_page()) {
+        $breadcrumbs .= '<span class="delimiter">  </span>';
+        $breadcrumbs .= '<span class="current">'.get_the_title().'</span>';
+    } elseif (is_404()) {
+        $breadcrumbs .= '<span class="delimiter">  </span>';
+        $breadcrumbs .= '<span class="current">Page 404</span>';
+    }
+
+    $breadcrumbs .= '</nav>';
+
+    return $breadcrumbs;
+}
+
+
+/**
+ * Функция количества просмотров поста
+ */
+function get_post_views($postID)
+{
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+
+    if ($count === '') {
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return "0 Views";
+    }
+    return $count . ' Views';
+}
+
+function set_post_views($postID)
+{
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if ($count === '') {
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    } else {
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+// Запуск функции при просмотре поста
+function track_post_views($post_id)
+{
+    if (!is_single()) return;
+    if (empty($post_id)) {
+        global $post;
+        $post_id = $post->ID;
+    }
+    set_post_views($post_id);
+}
+
+add_action('wp_head', 'track_post_views');
+
+
+/**
+ * Функция, которая будет определять разницу между текущим временем и временем публикации поста, а затем форматировать вывод соответственно требованиям
+ */
+function custom_time_ago($post_time)
+{
+    $current_time = current_time('timestamp');
+    $post_time_diff = $current_time - $post_time;
+
+    if ($post_time_diff < 3600) {
+        $minutes = ceil($post_time_diff / 60);
+        if ($minutes === 1) {
+            return __('1 min ago', 'ndp');
+        } else {
+            return "" . sprintf( __( '%d mins ago', 'ndp' ), $minutes );
+        }
+    } elseif ($post_time_diff < 86400) {
+        $hours = floor($post_time_diff / 3600);
+        if ($hours === 1) {
+            return __('1 hour ago', 'ndp');
+        } else {
+            return "" . sprintf( __( '%d hours ago', 'ndp' ), $hours );
+        }
+    } else {
+        return date_i18n("d.m.y", $post_time);
+    }
+}
+
+
+/**
+ * Функция для расчета примерного времени чтения поста
+ */
+function approximate_reading_time($post_content)
+{
+    // Очищаем текст от HTML-тегов, чтобы подсчитать только слова
+    $cleaned_content = wp_strip_all_tags($post_content);
+
+    // Получаем массив слов из текста поста
+    $words_array = preg_split('/\s+/', $cleaned_content);
+
+    // Подсчитываем количество слов
+    $word_count = count($words_array);
+
+    // Оцениваем среднее время чтения (приблизительно 200 слов в минуту)
+    $words_per_minute = 200;
+    $reading_time_minutes = ceil($word_count / $words_per_minute);
+
+    return $reading_time_minutes;
+}
+
+
+/**
+ * Функция замены стандартной функции get_the_excerpt()
+ */
+function trim_title_length($title) {
+    $max_length = 65;
+    if (mb_strlen($title) > $max_length) {
+        $title = mb_substr($title, 0, $max_length) . '...';
+    }
+    return $title;
+}
+
+function custom_get_the_excerpt($post, $excerpt_length = 150, $more_text = '...')
+{
+    $post_excerpt = $post->post_excerpt;
+
+    if (empty($post_excerpt)) {
+        $post_content = $post->post_content;
+
+        // Очищаем текст от HTML-тегов, чтобы подсчитать символы
+        $cleaned_content = wp_strip_all_tags($post_content);
+
+        // Обрезаем текст до заданной длины
+        $post_excerpt = mb_substr($cleaned_content, 0, $excerpt_length);
+
+        // Проверяем, есть ли необработанный текст, который следует добавить в конце
+        if (mb_strlen($cleaned_content) > $excerpt_length) {
+            $post_excerpt .= $more_text;
+        }
+    }
+
+    return apply_filters('get_the_excerpt', $post_excerpt);
+}
+
+function register_ndp_session()
+{
+    if (!session_id()) {
+        session_start();
+    }
+}
+add_action('init', 'register_ndp_session');
+
+
+//Wizard settings page
+add_action('admin_menu', 'register_wizard_submenu_page');
+function register_wizard_submenu_page() {
+    add_submenu_page(
+        'edit.php?post_type=course',
+        __('Wizard settings'),
+        __('Wizard'),
+        'manage_options',
+        'wizard-page',
+        'wizard_custom_submenu_page_callback'
+    );
+}
+
+// контент страницы wizard
+function wizard_custom_submenu_page_callback() {
+    wp_enqueue_style('wizard-draggable', get_template_directory_uri() . '/assets/css/jquery-ui-draggable.min.css');
+    wp_enqueue_style('wizard', get_template_directory_uri() . '/assets/css/wizard.css');
+    wp_enqueue_script('wizard-draggable', get_template_directory_uri() . '/assets/js/jquery-ui-draggable.min.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('wizard-punch', get_template_directory_uri() . '/assets/js/jquery.ui.touch-punch.min.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('wizard-sticky', get_template_directory_uri() . '/assets/js/sticky-sidebar.min.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('wizard', get_template_directory_uri() . '/assets/js/wizard.js', array('jquery'), _S_VERSION, true);
+
+    require_once get_template_directory() . '/inc/wizard.php';
+}
+
+
+$perPage = get_option( 'posts_per_page' );
+define('NEWS_COUNT_CUSTOM_POST_TYPE', 16);//posts_per_page
+define('SHOW_COUNT_CUSTOM_POST_TYPE', $perPage ?? 9);//posts_per_page
+
+
+//сортировка по прикреплённым постам и по дате изменения
+add_action('pre_get_posts',  'setup_custom_post_type');
+function setup_custom_post_type( $query ) {
+    $queriedObject = get_queried_object();
+    $allowedTypes = ['news', 'news_category', 'knowledge-base', 'cases', 'cases_category', 'knowledge-base_category'];
+
+    if (!is_admin() && $query->is_main_query() && (is_archive() || $query->is_post_type_archive() || is_post_type_archive())) {
+
+        if ((!empty($queriedObject->name) && in_array($queriedObject->name, $allowedTypes)) || (!empty($queriedObject->taxonomy) && in_array($queriedObject->taxonomy, $allowedTypes))) {
+            $per_page = SHOW_COUNT_CUSTOM_POST_TYPE;
+            if ($queriedObject->name=='news' || (!empty($queriedObject->taxonomy) && $queriedObject->taxonomy == 'news_category')) {
+                $per_page = NEWS_COUNT_CUSTOM_POST_TYPE;
+            }
+
+            $query->set('posts_per_page', $per_page);
+            $query->set('orderby', 'meta_value date');
+            $query->set('meta_key', 'custom_sticky');
+
+            if (!empty($_GET)) {
+                $tax_queries = prepareTaxQueriesArray($_GET);
+
+                if (!empty($tax_queries)) {
+                    $query->set('tax_query', $tax_queries);
+                }
+            }
+        }
+    }
+
+    return $query;
+}
+
+
+/**
+ * Сохранение custom_sticky для пагинации и сортировки
+ */
+add_action( 'save_post_news', 'update_custom_post_type', 10, 3);
+add_action( 'save_post_cases', 'update_custom_post_type', 10, 3);
+add_action( 'save_post_knowledge-base', 'update_custom_post_type', 10, 3);
+function update_custom_post_type($post_id, $post, $update) {
+
+    // Если это ревизия
+    if ( wp_is_post_revision($post_id) || $update){
+        return;
+    }
+
+    update_post_meta($post_id, 'custom_sticky', 'off');
+}
+
+
+function update_query_string_for_main_query($query)
+{
+    if (!is_admin()) {
+        $allowedTypes = ['news', 'knowledge-base', 'cases'];
+
+        if (preg_match('/news|knowledge-base|cases/', $_SERVER['REQUEST_URI']) != false && (array_key_exists('post_type', $query) && in_array($query['post_type'], $allowedTypes))) {
+            if (array_key_exists('news_category', $query)) {
+                unset($query['news_category']);
+            }
+            if (array_key_exists('news_tag', $query)) {
+                unset($query['news_tag']);
+            }
+        }
+    }
+    return $query;
+}
+add_filter('request', 'update_query_string_for_main_query', 1);
+
+
+/**
+ * Data from number_of_views table
+ * @param string $type
+ */
+function getNumbersOfViewsByType(string $type) {
+    global $wpdb;
+
+    $result = [];
+    $type = !empty($type)? sanitize_text_field($type) : '';
+    if (!$type) return;
+
+    $tableName = $wpdb->prefix .'number_of_views';
+
+    $sql = "SELECT * FROM `{$tableName}` WHERE entity_type='{$type}'";
+
+    $views = $wpdb->get_results($sql, ARRAY_A);
+    if (!empty($views)) {
+
+        function sortByViews($a, $b) {
+            if ($a['views'] > $b['views']) {
+                return 1;
+            } elseif ($a['views'] < $b['views']) {
+                return -1;
+            }
+            return 0;
+        }
+
+        usort($views, 'sortByViews');
+        $result = $views;
+    }
+
+    return $result;
+}
+
+
+/**
+ * Подготовка tax_query для WP_Query
+ * @param $filtersArray например knowledge-base_tag или knowledge-base_category
+ * @return array|string[]
+ */
+function prepareTaxQueriesArray(array $filtersArray, array $additionalParams = null):array {
+
+    if (empty($filtersArray)) return [];
+
+    $tax_queries = [];
+    $relation = '';
+    $relationInner = 'OR';
+    $operator = 'IN';
+    if (!empty($additionalParams['relation']) && in_array($additionalParams['relation'], ['AND','OR'])) {
+        $relation = $additionalParams['relation'];//outer relation
+    }
+    if (!empty($additionalParams['relationInner']) && in_array($additionalParams['relationInner'], ['AND','OR'])) {
+        $relationInner = $additionalParams['relationInner'];//inner relation
+    }
+    if (!empty($additionalParams['operator']) && in_array($additionalParams['operator'], ['AND','IN', 'NOT IN', 'EXISTS', 'NOT EXISTS'])) {
+        $operator = $additionalParams['operator'];//tax_query operator
+    }
+
+    $key = 0;
+    foreach ($filtersArray as $taxonomy => $filterList) {
+        $taxonomy = sanitize_text_field($taxonomy);
+        if (!get_taxonomy($taxonomy) || checkIfPostTypeAttributes($taxonomy)) continue;
+
+        $tax_query = [];
+        $tax_query['taxonomy'] = $taxonomy;
+        $tax_query['field'] = 'slug';
+
+        if (is_array($filterList)) {
+            foreach ($filterList as $key => $filter) {
+                $filter = sanitize_text_field($filter);
+
+                $tax_query['terms'][] = $filter;
+                $tax_query['operator'] = $operator;
+                if (!empty($additionalParams) && isset($additionalParams['include_children']) && is_bool($additionalParams['include_children'])) {
+                    $tax_query['include_children'] = $additionalParams['include_children'];
+                }
+            }
+        } elseif (is_string($filterList)) {
+            $filter = sanitize_text_field($filterList);
+
+            $tax_query['terms'][] = $filter;
+            $tax_query['operator'] = $operator;
+            if (!empty($additionalParams) && isset($additionalParams['include_children']) && is_bool($additionalParams['include_children'])) {
+                $tax_query['include_children'] = $additionalParams['include_children'];
+            }
+            $key++;
+        }
+        if (!empty($tax_queries) && !empty($relationInner)) {
+            $tax_queries['relation'] = $relationInner;
+        }
+        $tax_queries[] = $tax_query;
+    }
+    if (!empty($tax_queries) && !empty($relation)) {
+        $tax_queries['relation'] = $relation;
+    }
+
+    return $tax_queries;
+}
+
+
+/**
+ * Подготовка meta_query для WP_Query
+ * @param $filtersArray
+ * @return array|string[]
+ */
+function prepareMetaQueriesArray(array $filtersArray, array $additionalParams = null):array {
+
+    if (empty($filtersArray)) return [];
+
+    $meta_queries = [];
+    $relation = '';
+    $relationInner = 'OR';
+    if (!empty($filtersArray['relation']) && in_array($filtersArray['relation'], ['AND','OR'])) {
+        $relation = $filtersArray['relation'];//outer relation
+        unset($filtersArray['relation']);
+    } elseif (!empty($additionalParams['relation']) && in_array($additionalParams['relation'], ['AND','OR'])) {
+        $relation = $additionalParams['relation'];//outer relation
+    }
+    if (!empty($additionalParams['relationInner']) && in_array($additionalParams['relationInner'], ['AND','OR'])) {
+        $relationInner = $additionalParams['relationInner'];//inner relation
+    }
+
+    foreach ($filtersArray as $key => $filterList) {
+        $key = sanitize_text_field($key);
+        if (get_taxonomy($key) || checkIfPostTypeAttributes($key)) continue;
+
+        $meta_query = [];
+        if (is_array($filterList)) {
+            foreach ($filterList as $k => $filter) {
+                $query = [];
+                $filter = sanitize_text_field($filter);
+                if ($key) {
+                    $query['key'] = $key;
+                }
+                if ($filter) {
+                    $query['value'] = $filter;
+                }
+                $meta_query[] = $query;
+            }
+        } else {
+            $query = [];
+            $filter = sanitize_text_field($filterList);
+            if ($key) {
+                $query['key'] = $key;
+            }
+            if ($filter) {
+                $query['value'] = $filter;
+            }
+            $meta_query[] = $query;
+        }
+        if (!empty($meta_query) && !empty($relationInner)) {
+            $meta_query['relation'] = $relationInner;
+        }
+        $meta_queries[] = $meta_query;
+    }
+    if (!empty($meta_queries) && !empty($relation)) {
+        $meta_queries['relation'] = $relation;
+    }
+
+    return $meta_queries;
+}
+
+/**
+ * Проверяет содержит ли фильтр атрибуты соответствующие типу post, page
+ * @param $filters
+ * @return bool
+ */
+function checkIfPostTypeAttributes(string $filter) {
+    $postAttributes = [
+        'title','name','pagename','post_parent','author','author_name',
+    ];
+
+    $filter = sanitize_text_field($filter);
+    if (in_array($filter, $postAttributes)) {
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Подготовка параметров записи для запроса WP_Query (post_title, post_type)
+ * @param array $filtersArray
+ * @return array
+ */
+function preparePostDataArray(array $filtersArray):array {
+
+    if (empty($filtersArray)) return [];
+
+    $dataArray = [];
+
+    foreach ($filtersArray as $key => $filterList) {
+        $key = sanitize_text_field($key);
+        if (!checkIfPostTypeAttributes($key) || get_taxonomy($key)) continue;
+
+        if (is_array($filterList)) {
+            foreach ($filterList as $k => $filter) {
+                $filter = sanitize_text_field($filter);
+                $dataArray[$key] = $filter;
+            }
+        } else {
+            $filter = sanitize_text_field($filterList);
+            $dataArray[$key] = $filter;
+        }
+    }
+
+    return $dataArray;
+}
+
+
+function getFilterName($value) {
+    return getNameByTaxonomy($value);
+}
+
+function getNameByTaxonomy($taxonomy = '') {
+    $taxonomyObject = get_taxonomy($taxonomy);
+    $name = ($taxonomyObject instanceof WP_Taxonomy)? $taxonomyObject->labels->menu_name : '';
+    return $name;
+}
+
+
+function setupMainQuery($query) {
+    if (!is_admin()) {
+
+        //если есть $_GET-параметры, настройка основного запроса
+        if (!empty($query['post_type']) && count($query) > 1) {
+
+            if (!empty($_GET)) {
+                $allowedTypes = ['news', 'knowledge-base', 'cases', 'course'];
+                if (in_array($query['post_type'], $allowedTypes)) {
+                    foreach ($query as $key => $queryItem) {
+                        if ($key !== 'post_type' && $key !== 'paged') {
+                            unset($query[$key]);
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    return $query;
+}
+add_filter('request', 'setupMainQuery', 1);
+
+
+add_action('pre_get_posts',  'preGetPostSetupMainQuery', 9999);
+function preGetPostSetupMainQuery( $query ) {
+    $queriedObject = get_queried_object();
+
+    if (!is_admin() && $query->is_main_query()) {
+
+        if (($query->is_post_type_archive() || is_post_type_archive())) {
+            if ($queriedObject->name === 'course') {
+
+                $query->set( 'orderby', 'title' );
+                $query->set( 'order', 'ASC' );
+                $query->set( 'post_status', 'publish' );
+
+                //применение $_GET-параметров к основному запросу
+                if (!empty($_GET)) {
+
+                    $tax_query = prepareTaxQueriesArray($_GET);
+                    if (!empty($tax_query)) {
+                        $query->set('tax_query', $tax_query);
+                    }
+
+                    $meta_query = prepareMetaQueriesArray($_GET);
+                    if (!empty($meta_query)) {
+                        $query->set('meta_query', $meta_query);
+                    }
+
+                    $data = preparePostDataArray($_GET);
+                    if (!empty($data)) {
+                        foreach ($data as $key => $item) {
+                            if (is_string($key) && checkIfPostTypeAttributes($key) && is_string($item)) {
+                                $query->set($key, $item);
+                            }
+                        }
+                    }
+                }//$_GET
+                $meta_query = $query->get('meta_query') ? $query->get('meta_query') : [];
+                $meta_query[] = array(
+                    'key' => 'type',//not survey
+                    'value' => 1,
+                    'compare' => '!='
+                );
+                $query->set('meta_query', $meta_query);
+
+                if (isset($_SESSION) && !empty($_SESSION['sortCourses']) && is_string($_SESSION['sortCourses'])
+                    && !empty($_SERVER['HTTP_REFERER']) && preg_match('/\/courses/', $_SERVER['HTTP_REFERER'])) {
+
+                    $courseEnrollCount = [];
+                    $sort = trim($_SESSION['sortCourses']);
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    if ($sort == 'popularity') {
+
+                        //Поиск одинаковых курсов в разных языках и подсчёт количества учащихся в одном курсе на разных языках
+                        $courseEnrollCount = getEnrolledIdsByPopularity();
+
+                        if (!empty($courseEnrollCount)) {
+                            $query->set('post__in', array_keys($courseEnrollCount));
+                            $query->set('orderby', 'post__in');
+                        }
+
+                    } elseif ($sort == 'name') {
+
+                        $query->set('orderby', 'title');
+                        $query->set('order', 'ASC');
+
+                    } elseif ($sort == 'price-desc' || $sort == 'price-asc') {
+
+                        $ascDesc = $sort == 'price-asc'? 'asc' : 'desc';
+                        $argsAccessPlans = [
+                            'post_type' => 'llms_access_plan',
+                            'posts_per_page' => get_option( 'lifterlms_shop_courses_per_page', 10 ),
+                            'paged' => $paged,
+                            'post_status' => 'publish',
+                            'meta_key' => '_llms_product_id',
+                        ];
+
+                        $meta_query = [
+                            [
+                                'key' => '_llms_is_free',
+                                'value' => 'no',
+                            ],
+                            [
+                                'key' => '_llms_price',
+                            ],
+                        ];
+                        $argsAccessPlans['meta_query'] = $meta_query;
+
+                        add_filter( 'posts_orderby', 'course_posts_orderby_filter_'.$ascDesc );
+                        add_filter( 'posts_groupby', 'course_posts_groupby_filter' );
+                        $queryAccesPlans = new WP_Query($argsAccessPlans);
+                        remove_filter( 'posts_orderby', 'course_posts_orderby_filter_'.$ascDesc );
+                        remove_filter( 'posts_groupby', 'course_posts_groupby_filter' );
+
+                        if (!empty($queryAccesPlans)) {
+                            $ids = [];
+                            foreach ($queryAccesPlans->posts as $plan) {
+                                $parentCourse = get_post_meta($plan->ID, '_llms_product_id',true);
+                                if ($parentCourse) {
+                                    $ids[] = (int)$parentCourse;
+                                }
+                            }
+                            if (!empty($ids)) {
+                                $query->set('post__in', $ids);
+                            }
+                        }
+                    }
+                } //sort
+
+            }
+        }
+    }
+    return $query;
+}
+
+
+function log_hook_call( $hook_name ) {
+    error_log( "Hook executed: {$hook_name}" );
+
+}
+add_action( 'some_hook', function() {
+    log_hook_call( 'some_hook' );
+}, 10, 0 );
+
+
+//function prevent_email_domain( $user_login, $user_email, $errors ) {
+function prevent_email_domain() {
+    $user_email = '';
+    $errors = new WP_Error();
+    if (!empty($_POST['email_address'])) {
+        $user_email = $_POST['email_address'];
+    }
+    if (preg_match('/@[^\.]+\.ru|@[^\.]+\.ру/', $user_email)) {
+        $_POST['email_address'] = '';
+        $errors->add( 'bad_email_domain', __( '<strong>Error:</strong> Please type your email address.' ) );
+//        llms_add_notice( __('<strong>ERROR</strong>: This email domain is not allowed.', 'ndp'), 'error' );
+    }
+}
+//add_action( 'register_post', 'prevent_email_domain', 10, 3 );
+add_action( 'lifterlms_before_new_user_registration', 'prevent_email_domain');
+
+//проверка срока приглашения 72 часа
+function checkInviteDateExpired(string $date) {
+    if (!empty($date)) {
+        $seconds_to_expire = time() - strtotime($date);
+        if ($seconds_to_expire > 3*86400) {
+            return true;
+        }
+    }
+    return false;
+}
+function check_invited_user($user_id) {
+    // Убедитесь, что заголовки еще не отправлены, чтобы избежать ошибки
+    if (!headers_sent()) {
+        if ($user_id) {
+            $user = get_user_by('id', $user_id);
+            $email = $user->data? $user->data->user_email : '';
+//            try{
+//                if ((isset($_SESSION) && !empty($_SESSION['invite'])) || (isset($_GET['invite']) && !empty($_GET['invite']))) {
+//                    if (isset($_SESSION) && !empty($_SESSION['invite'])) {
+//                        $inviteUUID = $_SESSION['invite'];
+//                        unset($_SESSION['invite']);
+//                    } else {
+//                        $inviteUUID = $_GET['invite'];
+//                    }
+//                    $invitedUser = get_invited_representatives('', '', ['invite' => $inviteUUID]);
+//                    if (!empty($invitedUser)) {
+//                        $invitedUser = $invitedUser[0];
+//                        if (is_array($invitedUser) && !empty($invitedUser['date']) && checkInviteDateExpired($invitedUser['date'])) {
+//                            $invitedUser = null;
+//                        }
+//                    }
+//                }
+//
+//                if (!empty($invitedUser)) {
+//                    $user_email = !empty($invitedUser['user_email'])? $invitedUser['user_email'] : $email;
+//                    if ($user_email !== $email) {
+//                        $user_data = [
+//                            'ID' => $user_id,
+//                            'user_email' => $user_email,
+//                        ];
+//                        wp_update_user($user_data);
+//                    }
+//                }
+//            } catch (\Throwable $ex) {
+//
+//            }
+
+//            if (!empty($invitedUser) && is_array($invitedUser) && $user_email) {
+//                update_user_meta( $user_id, 'user_profile_type', 'Representative' );
+//                municipality_add_request([
+//                    'user_id' => $user_id,
+//                    'type' => 'Invitation',
+//                    'status' => 'Approved',
+//                ]);
+//                if (!empty($invitedUser['first_name'])) {
+//                    update_user_meta( $user_id, 'first_name', $invitedUser['first_name'] );
+//                }
+//                if (!empty($invitedUser['last_name'])) {
+//                    update_user_meta( $user_id, 'last_name', $invitedUser['last_name'] );
+//                }
+//                if (!empty($invitedUser['llms_phone'])) {
+//                    update_user_meta( $user_id, 'llms_phone', $invitedUser['llms_phone'] );
+//                }
+//                if (!empty($invitedUser['edrpou_code'])) {
+//                    $edrpou_code = $invitedUser['edrpou_code'];
+//                    if (isset($_SESSION) && !empty($_SESSION['edrpou_code'])) {
+//                        $edrpou_code = $_SESSION['edrpou_code'];
+//                        unset($_SESSION['edrpou_code']);
+//                    }
+//                    update_user_meta( $user_id, 'edrpou_code', $edrpou_code );
+//                }
+//                if (!empty($invitedUser['edrpouCode'])) {//инн
+//                    $edrpouCode = $invitedUser['edrpouCode'];
+//                    if (isset($_SESSION) && !empty($_SESSION['edrpouCode'])) {
+//                        $edrpouCode = $_SESSION['edrpouCode'];
+//                        unset($_SESSION['edrpouCode']);
+//                    }
+//                    update_user_meta( $user_id, 'edrpouCode', $edrpouCode );
+//                }
+//                if (!empty($invitedUser['user_organization'])) {
+//                    update_user_meta( $user_id, 'user_organization', $invitedUser['user_organization'] );
+//                }
+//                if (!empty($invitedUser['position'])) {
+//                    update_user_meta( $user_id, 'position', $invitedUser['position'] );
+//                }
+//                global $wpdb;
+//                $table_name = $wpdb->prefix . 'municipality_events';
+//                $wpdb->update( $table_name,
+//                    [
+//                        'text' => '',//uuid
+//                    ],
+//                    [
+//                        'from_email' => $invitedUser['from_email'],
+//                        'to_email' => $user->user_email,
+//                        'eventType' => 'invite to municipality'
+//                    ]
+//                );
+//            }
+        }
+    }
+}
+add_action( 'user_register', 'check_invited_user', 99);
+
+
+//function redirect_after_registration($user_id) {
+//    // Убедитесь, что заголовки еще не отправлены, чтобы избежать ошибки
+//    if (!headers_sent()) {
+//        if ($user_id) {
+//            $user = get_user_by('id', $user_id);
+//            $email = $user->data? $user->data->user_email : '';
+//            wp_safe_redirect(esc_url( add_query_arg( 'email', $email, get_permalink(get_page_by_path('email-verification-page')) ) ));
+//            exit;
+//        }
+//    }
+//}
+//add_action( 'user_register', 'redirect_after_registration', 99);
+
+//подтверждение по email после регистрации в LMS
+function redirectToDashboard() {
+    if (isset($_POST['user_verification_action']) && !empty($_POST['activation_key'])) {
+        $activation_key = isset($_POST['activation_key']) ? sanitize_text_field($_POST['activation_key']) : '';
+
+        // Ваш код для работы с базой данных и обновления данных пользователя
+        global $wpdb;
+
+        $user_id = $wpdb->get_var($wpdb->prepare(
+            "SELECT user_id FROM $wpdb->usermeta WHERE meta_key = 'user_activation_key' AND meta_value = %s",
+            $activation_key
+        ));
+        $redirect = get_permalink(get_page_by_path('dashboard'));
+        if (isset($_POST['redirect']) && filter_var($_POST['redirect'], FILTER_VALIDATE_URL)) {
+            $redirect = sanitize_text_field($_POST['redirect']);
+        }
+
+        if ($user_id) {
+            $user = get_user_by('id', $user_id);
+            update_user_meta($user_id, 'user_activation_status', 1);
+            wp_set_current_user($user_id);
+            wp_set_auth_cookie($user_id);
+        } else {
+            $redirect = esc_url( add_query_arg( 'error', $activation_key, $redirect ) );
+        }
+
+        if (!headers_sent() && $redirect) {
+            wp_safe_redirect($redirect);
+            exit;
+        }
+    }
+}
+add_action( 'admin_post_redirectToDashboard', 'redirectToDashboard' );
+add_action( 'admin_post_nopriv_redirectToDashboard', 'redirectToDashboard' );
+
+add_filter( 'llms_lostpassword_url', 'my_redirect_home' );
+
+function my_redirect_home( $lostpassword_redirect ) {
+    return "/success-change-password";
+}
+
+
+add_action( 'show_user_profile', 'extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+
+function extra_user_profile_fields( $user ) { ?>
+    <h3><?php _e("Extra profile information", "ndp"); ?></h3>
+
+    <table class="form-table form-table-custom">
+        <?php if (!wp_is_mobile()): ?>
+            <tr>
+                <th><label for="day_of_birth"><?php _e("Day", "ndp"); ?></label></th>
+                <th><label for="month_of_birth"><?php _e("Month", "ndp"); ?></label></th>
+                <th><label for="year_of_birth"><?php _e("Year", "ndp"); ?></label></th>
+            </tr>
+        <?php endif; ?>
+        <tr>
+            <td>
+                <input type="text" name="day_of_birth" id="day_of_birth" value="<?php echo esc_attr( get_the_author_meta( 'day_of_birth', $user->ID ) ); ?>" class="regular-text" /><br />
+                <span class="description"><?php _e("Enter your birthday", "ndp"); ?></span>
+            </td>
+            <td>
+                <input type="text" name="month_of_birth" id="month_of_birth" value="<?php echo esc_attr( get_the_author_meta( 'month_of_birth', $user->ID ) ); ?>" class="regular-text" /><br />
+                <span class="description"><?php _e("Enter month of birth", "ndp"); ?></span>
+            </td>
+            <td>
+                <input type="text" name="year_of_birth" id="year_of_birth" value="<?php echo esc_attr( get_the_author_meta( 'year_of_birth', $user->ID ) ); ?>" class="regular-text" /><br />
+                <span class="description"><?php _e("Enter year of birth", "ndp"); ?></span>
+            </td>
+        </tr>
+    </table>
+  <style>
+    table.form-table-custom {
+        width: auto;
+    }
+    table.form-table-custom th,
+    table.form-table-custom td {
+        max-width: 150px;
+        padding: 0;
+    }
+    table.form-table-custom input {
+        max-width: 100%;
+    }
+  </style>
+  <table class="form-table form-table-custom">
+    <tr>
+        <th><label for="middle_name"><?php _e("Middle name", "ndp"); ?></label></th>
+        <th><label for="gender"><?php _e("Gender", "ndp"); ?></label></th>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" name="middle_name" id="middle_name" value="<?php echo esc_attr( get_the_author_meta( 'middle_name', $user->ID ) ); ?>" class="regular-text" /><br />
+        <span class="description"><?php _e("Enter your middle name", "ndp"); ?></span>
+      </td>
+      <td>
+        <select name="gender" id="gender">
+          <option value="Male" <?php selected( 'Male', get_the_author_meta( 'gender', $user->ID ) ); ?>><?php _e('Male', 'ndp'); ?></option>
+          <option value="Female" <?php selected( 'Female', get_the_author_meta( 'gender', $user->ID ) ); ?>><?php _e('Female', 'ndp'); ?></option>
+        </select>
+      </td>
+    </tr>
+  </table>
+<?php }
+
+add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_user_profile_fields' );
+
+function save_extra_user_profile_fields( $user_id ) {
+    if ( empty( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'update-user_' . $user_id ) ) {
+        return;
+    }
+
+    if ( !current_user_can( 'edit_user', $user_id ) ) {
+        return false;
+    }
+    update_user_meta( $user_id, 'middle_name', $_POST['middle_name'] );
+    update_user_meta( $user_id, 'day_of_birth', $_POST['day_of_birth'] );
+    update_user_meta( $user_id, 'month_of_birth', $_POST['month_of_birth'] );
+    update_user_meta( $user_id, 'year_of_birth', $_POST['year_of_birth'] );
+    update_user_meta( $user_id, 'gender', $_POST['gender'] );
+}
+
+
+remove_action( 'llms_acces_plan_content', 'llms_template_access_plan_title', 10 );
+
+
+add_filter( 'llms_get_form_fields', 'llms_get_form_fields_handler', 10, 3);
+function llms_get_form_fields_handler($fields, $location, $args) {
+    //Аутентификация на странице курса
+    if (preg_match('/course\//', $_SERVER['REQUEST_URI'])) {
+        foreach ($fields as $key => $field) {
+            $fields[$key]['required'] = false;
+        }
+    }
+
+    //dashboard/edit-account/
+    if ($_SERVER['REQUEST_URI'] == '/dashboard/edit-account/' && !empty($_REQUEST)) {
+        $value = $_REQUEST['middle_name'] ?? '';
+        $field = ( new LLMS_Form_Field(
+            [
+                'id'             => 'middle_name',
+                'name'           => 'middle_name',
+                'type'           => 'hidden',
+                'value'          => $value,
+                'data_store_key' => 'middle_name',
+            ]
+        ) );
+        $fields[] = $field->get_settings();
+
+        $value = $_REQUEST['day_of_birth'] ?? '';
+        $field = ( new LLMS_Form_Field(
+            [
+                'id'             => 'day_of_birth',
+                'name'           => 'day_of_birth',
+                'type'           => 'hidden',
+                'value'          => $value,
+                'data_store_key' => 'day_of_birth',
+            ]
+        ) );
+        $fields[] = $field->get_settings();
+
+        $value = $_REQUEST['month_of_birth'] ?? '';
+        $field = ( new LLMS_Form_Field(
+            [
+                'id'             => 'month_of_birth',
+                'name'           => 'month_of_birth',
+                'type'           => 'hidden',
+                'value'          => $value,
+                'data_store_key' => 'month_of_birth',
+            ]
+        ) );
+        $fields[] = $field->get_settings();
+
+        $value = $_REQUEST['year_of_birth'] ?? '';
+        $field = ( new LLMS_Form_Field(
+            [
+                'id'             => 'year_of_birth',
+                'name'           => 'year_of_birth',
+                'type'           => 'hidden',
+                'value'          => $value,
+                'data_store_key' => 'year_of_birth',
+            ]
+        ) );
+        $fields[] = $field->get_settings();
+
+        $value = $_REQUEST['gender'] ?? '';
+        $field = ( new LLMS_Form_Field(
+            [
+                'id'             => 'gender',
+                'name'           => 'gender',
+                'type'           => 'hidden',
+                'value'          => $value,
+                'data_store_key' => 'gender',
+            ]
+        ) );
+        $fields[] = $field->get_settings();
+    }
+
+    return $fields;
+}
+
+function get_initials_of_current_user() {
+    // Получаем текущего пользователя
+    $current_user = wp_get_current_user();
+
+    if ( !($current_user instanceof WP_User) ) {
+        return '';
+    }
+
+    // Получаем имя и фамилию
+    $first_name = $current_user->user_firstname;
+    $last_name = $current_user->user_lastname;
+
+    // Вычисляем инициалы
+    $initials = '';
+    if ( !empty($first_name) ) {
+        $initials .= mb_substr($first_name, 0, 1);
+    }
+    if ( !empty($last_name) ) {
+        $initials .= mb_substr($last_name, 0, 1);
+    }
+
+    return $initials;
+}
+
+
+function get_minute_ending_uk($number) {
+    // Проверка текущего языка с помощью WPML
+    $current_language = apply_filters('wpml_current_language', NULL);
+
+    if ($current_language === 'en') {
+        return $number == 1 ? ' minute' : ' minutes';
+    }
+
+    $last_digit = $number % 10;
+    if ($number >= 11 && $number <= 19) {
+        return ' хвилин';
+    } elseif ($last_digit == 1) {
+        return ' хвилина';
+    } elseif ($last_digit >= 2 && $last_digit <= 4) {
+        return ' хвилини';
+    } else {
+        return ' хвилин';
+    }
+}
+function get_user_applications() {
+    global $wpdb;
+    $current_user = wp_get_current_user();
+    $user_id = $current_user->ID;
+    $table_name = $wpdb->prefix . 'applications';
+    $users_of_municipality_table = $wpdb->prefix . 'users_of_municipality';
+
+    // Получаем ID муниципалитета пользователя
+    $user_municipality_id = $wpdb->get_var($wpdb->prepare("SELECT municipality_id FROM $users_of_municipality_table WHERE user_id = %d", $user_id));
+
+    if ($user_municipality_id) {
+        // Пользователь принадлежит к муниципалитету, фильтруем заявки по муниципалитету, заявки без муниципалитета (NULL) и заявки с municipality_id равным 0
+        $query = $wpdb->prepare("SELECT * FROM $table_name WHERE user_id = %d AND (municipality_id = %d OR municipality_id IS NULL OR municipality_id = 0) ORDER BY id DESC", $user_id, $user_municipality_id);
+    } else {
+        // Пользователь не принадлежит ни к одному муниципалитету, получаем все его заявки
+        $query = $wpdb->prepare("SELECT * FROM $table_name WHERE user_id = %d ORDER BY id DESC", $user_id);
+    }
+
+    $applications = $wpdb->get_results($query);
+
+    return $applications;
+}
+
+
+//Applications in dashboard
+function my_applications_dashboard_tabs( $tabs ) {
+
+    // save the signout tab
+    $signout = $tabs['signout'];
+    // remove the signout tab
+    unset( $tabs['signout'] );
+
+    /**
+     * Add custom Tabs below
+     */
+    // Advanced Custom tab with content displayed on the Dashboard as an endpoint
+    // NOTE: you'll need to FLUSH PERMALINKS after adding a custom endpoint, if you don't the endpoint will 404!
+    // 		 how to flush permalinks: https://lifterlms.com/docs/how-to-flush-wordpress-rewrite-rules-or-permalinks/
+    $tabs['applications'] = array(
+        'content' => 'lifterlms_template_student_dashboard_applications', // this should be a callable function that outputs your content
+        'endpoint' => 'applications', // endpoint slug (eg: http://mysite.com/my-courses/my-endpoint)
+        'nav_item' => true, // will add the endpoint to LifterLMS section on WP menu admin pages for use on WP nav menus
+        'title' => __( 'Applications', 'ndp' ),
+    );
+
+    // restore the signout tab
+    $tabs['signout'] = $signout;
+
+    return $tabs;
+
+}
+add_filter( 'llms_get_student_dashboard_tabs', 'my_applications_dashboard_tabs', 10, 1 );
+
+if ( ! function_exists( 'lifterlms_template_student_dashboard_applications' ) ) {
+
+    /**
+     * Template for Applications section on dashboard index
+     *
+     * @return void
+     */
+    function lifterlms_template_student_dashboard_applications() {
+
+        llms_get_template(
+            'myaccount/view-applications.php'
+        );
+
+    }
+}
+
+//Requests in dashboard
+function my_requests_dashboard_tabs( $tabs ) {
+
+    // save the signout tab
+    $signout = $tabs['signout'];
+    // remove the signout tab
+    unset( $tabs['signout'] );
+
+    /**
+     * Add custom Tabs below
+     */
+    // Advanced Custom tab with content displayed on the Dashboard as an endpoint
+    // NOTE: you'll need to FLUSH PERMALINKS after adding a custom endpoint, if you don't the endpoint will 404!
+    // 		 how to flush permalinks: https://lifterlms.com/docs/how-to-flush-wordpress-rewrite-rules-or-permalinks/
+    $tabs['requests'] = array(
+        'content' => 'lifterlms_template_student_dashboard_requests', // this should be a callable function that outputs your content
+        'endpoint' => 'requests', // endpoint slug (eg: http://mysite.com/my-courses/my-endpoint)
+        'nav_item' => false, // will add the endpoint to LifterLMS section on WP menu admin pages for use on WP nav menus
+        'title' => __( 'Requests', 'ndp' ),
+    );
+
+    // restore the signout tab
+    $tabs['signout'] = $signout;
+
+    return $tabs;
+
+}
+add_filter( 'llms_get_student_dashboard_tabs', 'my_requests_dashboard_tabs', 10, 1 );
+
+if ( ! function_exists( 'lifterlms_template_student_dashboard_requests' ) ) {
+
+    /**
+     * Template for Requests section on dashboard index
+     *
+     * @return void
+     */
+    function lifterlms_template_student_dashboard_requests() {
+
+        llms_get_template(
+            'myaccount/view-requests.php'
+        );
+
+    }
+}
+
+//Municipality in dashboard
+function my_municipality_dashboard_tabs( $tabs ) {
+
+    // save the signout tab
+    $signout = $tabs['signout'];
+    // remove the signout tab
+    unset( $tabs['signout'] );
+
+    /**
+     * Add custom Tabs below
+     */
+    $tabs['municipalities'] = array(
+        'content' => 'lifterlms_template_student_dashboard_municipality', // this should be a callable function that outputs your content
+        'endpoint' => 'municipalities', // endpoint slug (eg: http://mysite.com/my-courses/my-endpoint)
+        'nav_item' => false, // will add the endpoint to LifterLMS section on WP menu admin pages for use on WP nav menus
+        'title' => __( 'Municipality', 'ndp' ),
+    );
+
+    // restore the signout tab
+    $tabs['signout'] = $signout;
+
+    return $tabs;
+
+}
+add_filter( 'llms_get_student_dashboard_tabs', 'my_municipality_dashboard_tabs', 10, 1 );
+
+if ( ! function_exists( 'lifterlms_template_student_dashboard_municipality' ) ) {
+
+    /**
+     * Template for Municipality section on dashboard index
+     *
+     * @return void
+     */
+    function lifterlms_template_student_dashboard_municipality() {
+
+        llms_get_template(
+            'myaccount/view-municipality.php'
+        );
+
+    }
+}
+
+//Requests in dashboard
+function my_surveys_dashboard_tabs( $tabs ) {
+
+    // save the signout tab
+    $signout = $tabs['signout'];
+    // remove the signout tab
+    unset( $tabs['signout'] );
+
+    /**
+     * Add custom Tabs below
+     */
+    $tabs['surveys'] = array(
+        'content' => 'lifterlms_template_student_dashboard_surveys', // this should be a callable function that outputs your content
+        'endpoint' => 'surveys', // endpoint slug (eg: http://mysite.com/my-courses/my-endpoint)
+        'nav_item' => false, // will add the endpoint to LifterLMS section on WP menu admin pages for use on WP nav menus
+        'title' => __( 'Surveys', 'ndp' ),
+    );
+
+    // restore the signout tab
+    $tabs['signout'] = $signout;
+
+    return $tabs;
+}
+add_filter( 'llms_get_student_dashboard_tabs', 'my_surveys_dashboard_tabs', 10, 1 );
+
+if ( ! function_exists( 'lifterlms_template_student_dashboard_surveys' ) ) {
+
+    /**
+     * Template for Requests section on dashboard index
+     *
+     * @return void
+     */
+    function lifterlms_template_student_dashboard_surveys() {
+
+        llms_get_template(
+            'myaccount/surveys.php'
+        );
+
+    }
+}
+
+
+/**
+ * Регистрация кастомного типа постов для сертификатов
+ */
+function register_user_certificate_post_type() {
+    register_post_type('custom_certificate',
+        array(
+            'public' => true,
+            'exclude_from_search' => false,
+            'show_in_admin_bar'   => false,
+            'show_in_nav_menus'   => false,
+            'publicly_queryable'  => false,
+            'has_archive' => false,
+            'supports' => false,
+            'capability_type' => 'post',
+        )
+    );
+}
+add_action('init', 'register_user_certificate_post_type');
+
+
+function customAdminScripts() {
+    global $current_screen;
+
+    if ($current_screen->base == 'admin_page_llms-course-builder'): ?>
+    <style>
+        .llms-quiz-questions {
+            overflow: visible!important;
+        }
+    </style>
+    <?php endif;
+    //export quizzes
+    if ($current_screen->base == 'lifterlms_page_llms-reporting' && !empty($_GET['tab']) && $_GET['tab'] == 'quizzes'): ?>
+    <?php
+        $allCourses = getAllCourses(['fields'=>'']);
+    ?>
+    <style>
+        .llms-table-export {display: flex;flex-wrap: wrap;align-items: flex-end;}
+        .llms-table-export .courses-list {margin-left: 10px;max-width: 400px;}
+        .llms-table-export .courses-list select {max-width: 100%;}
+    </style>
+    <script>
+        jQuery(document).ready(function ($) {
+            function addExportButton() {
+                let button = '<button class="llms-button-export-all-quizzes llms-button-primary small" name="llms-table-export" style="margin-left:10px"><span class="dashicons dashicons-download"></span> <?php _e( 'Export all data', 'ndp' ); ?></button>';
+                !$('.llms-button-export-all-quizzes').length && $('.llms-gb-table-quizzes').find('tfoot .llms-table-export button.llms-button-primary').after(button);
+                let select = `
+<div class="courses-list">
+    <p><?php echo __("Select course/survey", "ndp");?></p>
+    <select id="quizzesByCourseSelect">
+        <option selected value>
+            <?php foreach ($allCourses as $cours): ?>
+        <option value="<?php echo $cours->ID; ?>"><?php echo $cours->post_title; ?></option>
+        <?php endforeach; ?>
+    </select>
+</div>`;
+                !$('#quizzesByCourseSelect').length && $('.llms-gb-table-quizzes').find('tfoot .llms-button-export-all-quizzes').after(select);
+            }
+            addExportButton();
+            $( document ).on( "ajaxComplete", function(event, xhr, settings) {
+                if (settings && settings.hasOwnProperty('data') && /action=get_admin_table_data&handler=Quizzes/.test(settings.data)) {
+                    addExportButton()
+                }
+            } );
+        })
+    </script>
+    <?php endif;
+    //duplicate municipality messages by email
+    $duplicateEmail = get_option('duplicate_messages_by_email', '');
+    if ($current_screen->base == 'toplevel_page_wp_municipality_events'): ?>
+        <style>
+            .messages-email-wrapper {margin-bottom: 20px}
+            .messages-email {margin-right: 10px}
+            .save-messages-email {display: block; margin-top: 5px}
+        </style>
+        <script>
+        jQuery(document).ready(function ($) {
+            $('#crudiator_form').length && $('#crudiator_form').before(
+                '<div class="messages-email-wrapper"><p><?php _e( 'Duplicate by email', 'ndp' ); ?></p><input type="text" class="messages-email" value="<?php echo $duplicateEmail; ?>"><input type="checkbox" class="email-duplicate" <?php if (!empty($duplicateEmail)){ ?> checked <?php } ?>><button class="save-messages-email"><?php _e( 'Save', 'ndp' ); ?></button></div>'
+            );
+            $('.email-duplicate').on('change', function() {
+                let email = $('.messages-email').val().trim();
+                if ($(this).is(':checked')) {
+                    if (!/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.(?!ru)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)) {
+                        alert("<?php _e( 'Not correct email', 'ndp' ); ?>"); $('.email-duplicate').prop('checked', false); return
+                    }
+                } else {$('.messages-email').val("");}
+            })
+            $('.save-messages-email').on('click', function() {
+                let email = $('.messages-email').val().trim();
+                let duplicateEmailChecked = $('.email-duplicate').is(':checked');
+                if (duplicateEmailChecked) {
+                    if (!/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.(?!ru)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(email)) {
+                        alert("<?php _e( 'Not correct email', 'ndp' ); ?>"); $('.email-duplicate').prop('checked', false); return
+                    }
+                }
+                let data = { action: 'duplicateMunicipalityEmail', email: email, duplicateEmailChecked: duplicateEmailChecked };
+                $.ajax({
+                    type: 'POST',
+                    url: ajaxurl,
+                    data: data,
+                    success: function(response) {
+                        if (response && response.hasOwnProperty('message') && response['message'] === 'ok') {
+                            alert("<?php _e( 'Saved', 'ndp' ); ?>");
+                        }
+                    }
+                })
+            })
+        })
+        </script>
+    <?php endif;
+    if (!current_user_can('install_plugins') || $current_screen->base != 'toplevel_page_wp_posts' || $current_screen->parent_base != 'wp_posts') return; ?>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.btn-approve').on('click', function(event) {
+                let $target = $(event.target);
+                let approved = 'no';
+                if ($target.is('.btn-approve-yes')) {
+                    approved = 'yes';
+                }
+                let post_id = '';
+                let id = $target.closest('tr').attr('data-id');
+                if (id) {
+                    id = id.replace(/[\[\]]*/g,'');
+                }
+                if (!id) return;
+
+                post_id = id;
+
+                $.ajax({
+                    type: 'POST',
+                    url: ajaxurl,
+                    data: {
+                        action: 'certificateApproveHandler',
+                        post_id: post_id,
+                        approved: approved,
+                    },
+                    success: function (response) {
+                        if (response && response.hasOwnProperty('message') && response['message']) {
+                            $target.closest('tr').find('td[data-colname="approved"]').text(response['message'])
+                        }
+                    }
+                })
+            });
+
+            $('.btn-delete').on('click', function(event) {
+                if (!confirm("Delete?")) return;
+
+                let $target = $(event.target);
+                let post_id = '';
+                let id = $target.closest('tr').attr('data-id');
+                if (id) {
+                    id = id.replace(/[\[\]]*/g,'');
+                }
+                if (!id) return;
+
+                post_id = id;
+
+                $.ajax({
+                    type: 'POST',
+                    url: ajaxurl,
+                    data: {
+                        action: 'certificateDeleteHandler',
+                        post_id: post_id,
+                    },
+                    success: function (response) {
+                        if (response && response.hasOwnProperty('message') && response['message'] === 'ok') {
+                            $target.closest('tr').remove();
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+    <?php
+}
+
+function certificateApproveHandler() {
+    if (!current_user_can('install_plugins')) return;
+
+    $post_id = sanitize_text_field($_POST['post_id']);
+    $approved = sanitize_text_field($_POST['approved']);
+    if (!$post_id || !$approved) return;
+
+    wp_update_post(array(
+        'ID'    =>  $post_id,
+        'comment_status'   =>  $approved
+    ));
+
+    wp_send_json(['message' => $approved]);
+}
+function certificateDeleteHandler() {
+    if (!current_user_can('install_plugins')) return;
+
+    $post_id = sanitize_text_field($_POST['post_id']);
+    if (!$post_id) return;
+
+    $deleted = wp_delete_post($post_id, true);
+    if ($deleted) {
+        wp_send_json(['message' => 'ok']);
+    }
+    die();
+}
+
+add_action('admin_footer', 'customAdminScripts');
+add_action('wp_ajax_certificateApproveHandler', 'certificateApproveHandler');
+add_action('wp_ajax_certificateDeleteHandler', 'certificateDeleteHandler');
+
+
+add_filter("crudiator_custom_column_wp_posts_post_content", function ($value, $item) {
+
+    $button = "<button type='button' class='btn-approve btn-approve-yes' data-id='".$item['ID']."'>".__('Yes', 'ndp')."</button>";
+    $button .= "<button type='button' class='btn-approve btn-approve-no' data-id='".$item['ID']."'>".__('No', 'ndp')."</button>";
+
+    return $button;
+
+}, 10, 2);
+
+add_filter("crudiator_custom_column_wp_posts_to_ping", function ($value, $item) {
+
+    $button = "<button type='button' class='btn-delete' data-id='".$item['ID']."'>".__('Delete', 'ndp')."</button>";
+
+    return $button;
+
+}, 10, 2);
+
+add_filter("crudiator_detail_custom_column_wp_posts_post_content_filtered", function ($value, $item) {
+
+    $content = '';
+    $certData = get_post_meta($item['ID'], 'custom_certificate_data', true);
+    foreach ($certData as $key => $data) {
+        $content .= '<p class="cert-data">' . $key . ' - ' . $data . '</p>';
+    }
+
+    return $content;
+
+}, 10, 2);
+
+add_filter("crudiator_custom_column_wp_posts_post_excerpt", function ($value, $item) {
+
+    $certData = get_post_meta($item['ID'], 'custom_certificate_data', true);
+    $pdfLink = '';
+    if ($certData && is_array($certData) && !empty($certData['pdf_url']) && filter_var($certData['pdf_url'], FILTER_VALIDATE_URL) !== FALSE) {
+        $pdfLink = '<a href="'.$certData['pdf_url'].'" download>'.__('Download', 'ndp')."</a>";
+    }
+
+    return $pdfLink;
+
+}, 10, 2);
+
+
+
+function add_categories_to_attachments() {
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+}
+add_action( 'init' , 'add_categories_to_attachments' );
+
+
+function wporg_simple_role_caps() {
+    // Gets the simple_role role object.
+    $role = get_role( 'engineer' );
+
+    // Add a new capability.
+    $role->add_cap( 'delete_requests', true );
+    $role->add_cap( 'reject_requests', true );
+    $role->add_cap( 'edit_requests', true );
+    $role->add_cap( 'read_requests', true );
+    $role->add_cap( 'read', true );
+}
+
+// Add simple_role capabilities, priority must be after the initial role definition.
+add_action( 'init', 'wporg_simple_role_caps', 11 );
+
+
+//запросы оператоту представителей муниципалитета с пагинацией
+function get_municipality_requests($args = []) {
+    global $wpdb;
+    if (!current_user_can('read_requests') ) return [];
+
+    $requestsArray = [];
+    $table_name = $wpdb->prefix . 'municipality_requests';
+    $query             = "SELECT * FROM {$table_name}";
+    if (!empty($args) && !empty($args['where'])) {
+        $query .= " " . $args['where'];
+    }
+    $total_query     = "SELECT COUNT(1) FROM (${query}) AS combined_table";
+    $total             = $wpdb->get_var( $total_query );
+    $items_per_page = 7;
+    $page             = isset( $_GET['page'] ) ? abs( (int) $_GET['page'] ) : 1;
+    if (!empty($args['page'])) {
+        $page = (int)$args['page'];
+    }
+    $offset         = ( $page * $items_per_page ) - $items_per_page;
+    $requests         = $wpdb->get_results( $query . " ORDER BY `received` DESC" );
+    if (!empty($args['parseRequests']) && $args['parseRequests']) {
+        foreach ($requests as $key => $request) {
+            $requests[$key]->received = date( 'd.m.Y', strtotime( $request->received ) );
+            $requests[$key]->due_to = !empty($request->due_to) && !preg_match('/0000/', $request->due_to)? date( 'd.m.Y', strtotime( $request->due_to ) ) : '';
+            $requests[$key]->link = llms_get_endpoint_url('requests', '', llms_get_page_url('myaccount')) . '?id=' . $request->id;
+        }
+    }
+    if (!empty($args['translate']) && $args['translate']) {//может понадобиться в пагинации
+        foreach ($requests as $key => $request) {
+            $requests[$key]->notTranslatedStatus = $requests[$key]->status;
+            $requests[$key]->status = __($requests[$key]->status, 'ndp');
+            $requests[$key]->type = __($requests[$key]->type, 'ndp');
+            $requests[$key]->assigned = __($requests[$key]->assigned, 'ndp');
+        }
+    }
+    if (!empty($args['template']) && $args['template']) {//вместе с вёрсткой
+        ob_start();
+        foreach ($requests as $key => $request) {
+            get_template_part('templates/tr-operator-request', '', [
+                'request' => $request,
+            ]);
+        }
+        $html = ob_get_clean();
+        if ($html) {
+            $requests = $html;
+        }
+    }
+
+    $totalPage         = ceil($total / $items_per_page);
+    $pagination = '';
+    if($totalPage > 1) {
+        if (!empty($args['pathname'])) {
+            $base = $args['pathname'];
+            $orig_req_uri = $_SERVER['REQUEST_URI'];
+
+            //admin-ajax.php/page/ issue
+            // Overwrite the REQUEST_URI variable
+            $_SERVER['REQUEST_URI'] = $base;
+        }
+
+        $pagination = '<nav class="pagination">' . paginate_links([
+                'base' => add_query_arg('page', '%#%'),
+                'format' => '',
+                'prev_text' => is_rtl() ? '<span><i class="arrow arrow-right"></i></span>' : '<span><i class="arrow arrow-left"></i></span>',
+                'next_text' => is_rtl() ? '<span><i class="arrow arrow-left"></i></span>' : '<span><i class="arrow arrow-right"></i></span>',
+                'total' => $totalPage,
+                'current' => $page
+            ]) . '</nav>';
+
+        if (!empty($args['pathname'])) {
+            // Restore the original REQUEST_URI - in case anything else would resort on it
+            $_SERVER['REQUEST_URI'] = $orig_req_uri;
+        }
+    }
+    if (!empty($requests)) {
+        $requestsArray['requests'] = $requests;
+        $requestsArray['pagination'] = $pagination;
+    }
+
+    return $requestsArray;
+}
+
+function get_current_user_role() {
+    if(is_user_logged_in()) {
+        $user = wp_get_current_user();
+        $role = (array) $user->roles;
+        return $role[0];
+    }
+    else {
+        return false;
+    }
+}
+
+function ajax_find_user_by_edrpou() {
+    global $wpdb;
+    $edrpouCode = $_POST['edrpouCode'];
+    $user_id = get_user_id_by_edrpou_code($edrpouCode);
+
+    // Сначала проверяем наличие пользователя в таблице wp_users_of_municipality
+    $user_municipality = $wpdb->get_row(
+        $wpdb->prepare("SELECT * FROM wp_users_of_municipality WHERE user_id = %d", $user_id),
+        ARRAY_A
+    );
+
+    // Новая проверка наличия пользователя как head_user в таблице wp_municipalities
+    $municipality = $wpdb->get_row(
+        $wpdb->prepare("SELECT * FROM wp_municipalities WHERE head_user = %d", $user_id),
+        ARRAY_A
+    );
+
+    // Если пользователь найден в wp_users_of_municipality или как head_user в wp_municipalities
+    if ($user_municipality || $municipality) {
+            wp_send_json_success(array('error' => true));
+        wp_die();
+    }
+
+    // Если в wp_users_of_municipality нет, то ищем в стандартных пользователях WP
+    $user_query = new WP_User_Query(array(
+        'meta_key' => 'edrpouCode',
+        'meta_value' => $edrpouCode
+    ));
+
+    $users = $user_query->get_results();
+
+    if (!empty($users)) {
+        wp_send_json_success(array('email' => $users[0]->user_email));
+    } else {
+        wp_send_json_success(array('error' => false));
+    }
+
+    wp_die();
+}
+
+
+function get_new_jwt_token($code, $state, $uuid = 0) {
+    $user_id = get_user_id_from_uuid($uuid);
+    if(!$uuid){
+        $user_id=false;
+    }
+    // Получение refresh_token и запрос на обновление токена
+    if ($user_id) {
+        $refresh_token = get_user_meta($user_id, 'refresh_token', true);
+        $response = wp_remote_get(GOV_UA_REFRESH_TOKEN, array(
+            'headers' => array('refreshToken' => $refresh_token),
+            'sslverify' => FALSE
+        ));
+
+        if (is_wp_error($response)) {
+            // Обработка ошибки запроса
+            return $response;
+        }
+
+        $body = wp_remote_retrieve_body($response);
+        $data = json_decode($body, true);
+
+        // Проверка и обновление refresh_token
+        if (isset($data['refresh_token'])) {
+            update_user_meta($user_id, 'refresh_token', $data['refresh_token']);
+        }
+
+        return $data;
+    } else {
+        $token_response = wp_remote_get(GOV_UA_AUTH_TOKEN."?code={$code}&state={$state}", [
+                'sslverify' => FALSE
+        ]);
+//        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/J.txt',print_r($token_response,true));
+        if (is_wp_error($token_response)) {
+            // Обработка ошибки запроса
+            return $token_response;
+        }
+
+        $body = wp_remote_retrieve_body($token_response);
+        $data = json_decode($body, true);
+
+//        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/J2.txt',print_r($data,true));
+
+        return $data;
+    }
+}
+
+// Функция для получения user_id по uuid
+function get_user_id_from_uuid($uuid) {
+    global $wpdb;
+
+    // Предполагаем, что uuid сохраняется в таблице usermeta
+    $user_id = $wpdb->get_var($wpdb->prepare(
+        "SELECT user_id FROM $wpdb->usermeta WHERE meta_key = 'uuid' AND meta_value = %s",
+        $uuid
+    ));
+
+    return $user_id ?: null;
+}
+add_action('rest_api_init', function () {
+    register_rest_route('redirect/v1', '/redirect/', array(
+        'methods' => 'GET',
+        'callback' => 'redirectDia',
+    ));
+});
+
+function redirectDia(WP_REST_Request $request) {
+    $state = wp_generate_password(32,false);
+    $cookieName = '901a6b96dbc8033f4d411c6e0fb53113'; // Название cookie
+    setcookie($cookieName, $state, time() + (86400 * 30), "/");
+    wp_redirect(GOV_UA_URL . '?state='.$state.'&redirect_url=b01f93bdd9b79b4f0ae07e44847c64bb', 301);
+    exit;
+}
+
+function get_user_data($jwt_token) {
+//    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/TOKEN_PROFILE.txt',$jwt_token);
+    $user_response = wp_remote_get(GOV_UA_USERS_PROFILE, array(
+        'headers' => array(
+            'Authorization' => 'Bearer ' . $jwt_token
+        )
+    ));
+
+    if (!is_wp_error($user_response)) {
+        $body = wp_remote_retrieve_body($user_response);
+
+//        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/user_info2.txt',$body);
+        return json_decode($body, true); // Возвращает данные пользователя
+    } else {
+        // Обработка ошибки
+        return null;
+    }
+}
+
+
+
+//function my_delete_user_action($user_id) {
+//    return;
+//    // Получение refresh token для пользователя
+//    $refresh_token = get_user_meta($user_id, 'refresh_token', true);
+//    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test_us.txt',$refresh_token);
+//    // Запрос на обновление токена
+//    $response = wp_remote_get(GOV_UA_REFRESH_TOKEN, array(
+//        'headers' => array(
+//            'refreshToken' =>$refresh_token
+//        )
+//    ));
+//    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test_us2.txt',print_r($response,true));
+//    if (is_wp_error($response)) {
+//        // Обработка ошибки при запросе на обновление токена
+//        $error_message = $response->get_error_message();
+//        // Действия в случае ошибки
+//    } else {
+//        // Получение тела ответа и декодирование JSON
+//        $body = wp_remote_retrieve_body($response);
+//        $data = json_decode($body, true);
+//
+//        // Проверка наличия JWT токена в ответе
+//        if (isset($data['jwt_token'])) {
+//            $jwt_token = $data['jwt_token'];
+//
+//            // Отправка запроса на удаление пользователя
+//            $delete_response = wp_remote_request(GOV_UA_USERS_DELETE, array(
+//                'method' => 'DELETE',
+//                'headers' => array(
+//                    'Authorization' => 'Bearer ' . $jwt_token
+//                )
+//            ));
+//
+//            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/ttt.txt',print_r($delete_response,true));
+//
+//            // Проверка ответа от API
+//            if (is_wp_error($delete_response)) {
+//                // Обработка ошибки при запросе на удаление
+//                $delete_error_message = $delete_response->get_error_message();
+//                // Действия в случае ошибки
+//            } else {
+//                // Здесь можно добавить действия в случае успешного удаления, если необходимо
+//            }
+//        }
+//    }
+//}
+//
+//// Подключение функции к хуку удаления пользователя
+//add_action('delete_user', 'my_delete_user_action');
+
+add_action('wp_ajax_update_edrpou_code', 'update_edrpou_code_handler');
+add_action('wp_ajax_nopriv_update_edrpou_code', 'update_edrpou_code_handler');
+
+function update_edrpou_code_handler() {
+    global $wpdb; // Объявляем глобальную переменную для работы с базой данных
+    $user_id = get_current_user_id();
+    $edrpou_code = sanitize_text_field($_POST['edrpou_code']); // Санитизация входных данных
+
+    // Проверка, что пользователь залогинен и код не пуст
+    if ($user_id > 0 && !empty($edrpou_code)) {
+        // Проверка на уникальность edrpou_code
+        $exists = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM $wpdb->usermeta WHERE meta_key = 'edrpouCode' AND meta_value = %s AND user_id != %d", $edrpou_code, $user_id));
+
+        if ($exists > 0) {
+            // Если edrpou_code не уникален
+            wp_send_json_error(array('message' => __('A user with this TIN already exists','ndp'))); // Используем wp_send_json_error для отправки сообщения об ошибке
+        } else {
+            // Если уникален, обновляем
+            update_user_meta($user_id, 'edrpouCode', $edrpou_code);
+            wp_send_json_success(array('message' =>  __('TIN Code updated successfully.','ndp'))); // Используем wp_send_json_success для отправки подтверждения об успешном обновлении
+        }
+    } else {
+        wp_send_json_error(array('message' => 'Error updating TIN Code. User not logged in or empty code.','ndp')); // Обработка случая, когда пользователь не залогинен или код пуст
+    }
+
+    wp_die(); // Завершаем выполнение скрипта
+}
+
+
+function addInvitedRequestToOperatorAndApprove(WP_User $user, array $invitedUser, string $email='') {
+    if (empty($invitedUser)) return;
+    if(!empty($invitedUser[0])){
+        $invitedUser=$invitedUser[0];
+    }
+
+    $user_id = $user->ID;
+    update_user_meta( $user_id, 'user_profile_type', 'Representative' );
+    municipality_add_request([
+        'user_id' => $user_id,
+        'type' => 'Invitation',
+        'status'=>'Approved',
+        'email' => $email,
+    ]);
+    $invitedUUID = !empty($invitedUser['textInvite'])? $invitedUser['textInvite'] : '';
+    invitationToMunicipality($user, $invitedUUID);
+
+    //если из дии пришел другой email
+    if ($email && $email != $invitedUser['user_email']) {
+        $params = [
+            'user_email' => $invitedUser['user_email'],
+        ];
+        if (!empty($invitedUser['textInvite'])) {
+            $params['invite'] = $invitedUser['textInvite'];
+        }
+        if (!empty($email)) {
+            $currentUser = wp_get_current_user();
+            change_invited_representatives($invitedUser['from_email'], $params, [
+                'user_email' => $email!==null ? $email :$currentUser->user_email,
+                'invited_email' => $invitedUser['user_email'],
+            ]);
+        }
+    }
+
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'municipality_events';
+    $wpdb->update( $table_name,
+        [
+            'text' => '',//uuid
+        ],
+        [
+            'from_email' => $invitedUser['from_email'],
+            'to_email' => $invitedUser['to_email'],
+            'eventType' => 'invite to municipality'
+        ]
+    );
+
+
+    $wpdb->delete($table_name, ['to_email' => $params['to_email']]);
+
+}
+function get_user_id_by_edrpou_code($edrpouCode) {
+    $user_query = new WP_User_Query(array(
+        'meta_key' => 'edrpouCode',
+        'meta_value' => $edrpouCode,
+        'number' => 1,  // предполагаем, что edrpouCode уникален для каждого пользователя
+        'fields' => 'ID' // возвращаем только ID пользователя
+    ));
+
+    $users = $user_query->get_results();
+
+    if (!empty($users)) {
+        // Возвращаем первый найденный ID пользователя
+        return $users[0];
+    }
+
+    return null; // Возвращаем null, если пользователь не найден
+}
+function authDia()
+{
+    // Проверка, была ли функция уже вызвана
+
+
+    // Остальная логика функции...
+
+    // Установка cookie на короткий период (например, на 5 минут)
+
+//    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/test.txt',print_r($_GET,true));
+    $isDia = isset($_GET['dia']) ? $_GET['dia'] : false;
+    $code = isset($_GET['code']) ? $_GET['code'] : false;
+    $uuid = isset($_GET['uuid']) ? $_GET['uuid'] : false;
+    $state =  isset($_GET['state']) ? $_GET['state'] : false; // Ваше состояние
+
+// 	 if (isset($_COOKIE['authDiaCalled'])) {
+//         $uuid=false;
+//     }
+
+//    if(!isset($_COOKIE['901a6b96dbc8033f4d411c6e0fb53113'])) return;
+//    if($_COOKIE['901a6b96dbc8033f4d411c6e0fb53113']!=$state) return;
+
+
+    if ($isDia && $code) {
+        if($uuid){
+            $data = get_new_jwt_token($code,$state,$uuid);
+
+        }else{
+            $data =get_new_jwt_token($code,$state,0);
+        }
+
+        setcookie('authDiaCalled', '1', time() + 60, '/');
+//        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/jwt_actual.txt',print_r($data,true),FILE_APPEND);
+
+        $jwt_token =$data['token'];
+        $refresh_token =$data['refresh_token'];
+
+        if (isset($_SESSION) && !empty($_SESSION['invite'])) {
+            $invitedUser = get_invited_representatives('', '', ['invite' => $_SESSION['invite']]);
+
+//            unset($_SESSION['invite']);
+        }
+
+        $userDataUpdated = false;//если уже были обновлены данные в create_or_authenticate_wp_user
+
+        if($uuid){
+
+            $user_data = get_user_data($jwt_token);
+            if (!empty($invitedUser)) {
+                $user_data['invitedUser'] = $invitedUser;
+            }
+            $user_data['uuid']= $uuid;
+            $create_user_data = create_or_authenticate_wp_user($user_data);
+
+            if (is_array($create_user_data)) {
+                $userDataUpdated = true;
+                $user_id = $create_user_data['user_id'];
+            } else {
+                $user_id = $create_user_data;
+            }
+
+        }else{
+            $user_data = get_user_data($jwt_token);
+            if (!empty($invitedUser)) {
+                $user_data['invitedUser'] = $invitedUser;
+            }
+            $create_user_data = create_or_authenticate_wp_user($user_data);
+            if (is_array($create_user_data)) {
+                $userDataUpdated = true;
+                $user_id = $create_user_data['user_id'];
+            } else {
+                $user_id = $create_user_data;
+            }
+        }
+
+//        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/jwt.txt',print_r($data,true));
+//        file_put_contents($_SERVER['DOCUMENT_ROOT'].'/user.txt',print_r($user_data,true));
+
+
+        update_user_meta($user_id, 'refresh_token', $refresh_token);
+
+        if (!$userDataUpdated && !is_wp_error($user_id)) {
+            if(isset($user_data['date_of_birth'])){
+                $date_birth = explode('.',$user_data['date_of_birth']);
+            }
+
+            if(!isset($user_data['email'])){
+                $user_data['email']= $user_data['uuid']."@noreply.com";
+            }
+            if (isset($user_data['uuid'])) {
+                update_user_meta($user_id, 'uuid', $user_data['uuid']);
+            }
+
+            if (isset($data['name'])) {
+                update_user_meta($user_id, 'first_name', $data['name']);
+            }
+
+            if (isset($data['lastname'])) {
+                update_user_meta($user_id, 'last_name', $data['lastname']);
+            }
+
+            if (isset($data['middleName'])) {
+                update_user_meta($user_id, 'middle_name', $data['middleName']);
+            }
+//        Это DRFO Которое в базе как edrpou но по факту есь ИНН Клиента (логика этого поля менялась в процесси, костыль чтобы не менять код
+            if (isset($data['edrpouCode'])) {
+                update_user_meta($user_id, 'edrpou_code', $data['edrpouCode']); // ЕДРПОУ
+                if (isset($_SESSION)) {
+                    $_SESSION['edrpou_code'] = $data['edrpouCode'];
+                }
+            }
+            if (isset($data['drfoCode'])) {
+                update_user_meta($user_id, 'edrpouCode', $data['drfoCode']);   // ИНН
+                if (isset($_SESSION)) {
+                    $_SESSION['edrpouCode'] = $data['drfoCode'];
+                }
+            }
+
+            if (isset($user_data['phone'])) {
+                update_user_meta($user_id, 'llms_phone', $user_data['phone']);
+            }
+
+            if (isset($date_birth[0])) {
+                update_user_meta($user_id, 'day_of_birth', $date_birth[0]);
+            }
+
+            if (isset($date_birth[1])) {
+                update_user_meta($user_id, 'month_of_birth', $date_birth[1]);
+            }
+
+            if (isset($date_birth[2])) {
+                update_user_meta($user_id, 'year_of_birth', $date_birth[2]);
+            }
+
+            if (isset($user_data['gender'])) {
+                update_user_meta($user_id, 'gender', $user_data['gender']);
+            }
+            update_user_meta($user_id, 'llms_billing_country', 'UA');
+        }
+
+        if (!is_wp_error($user_id)) {
+            $user = get_user_by('id',$user_id);
+            // Аутентификация пользователя
+            wp_clear_auth_cookie();
+            if(isset($user->user_login)){
+                $login = $user->user_login;
+            }else{
+                $login= $user_data['uuid']."@noreply.com";
+            }
+//            file_put_contents($_SERVER['DOCUMENT_ROOT'].'/nor.txt',$login);
+            if ($user && !is_wp_error($user)) {
+                wp_set_current_user($user->ID);
+                wp_set_auth_cookie($user->ID);
+
+                // wp_authenticate не требуется, если выше установлены cookie
+                // Если все же нужна, используйте ее осторожно
+                wp_authenticate($user->user_login, $user->user_pass);
+            }
+
+            if(isset($_GET['uuid'])){
+
+                header('Location: ' . '/register-step-1/');
+            }
+            unset($_COOKIE['old_url']);
+
+
+            if(isset($_COOKIE['old_url'])){
+                $url_Red = $_COOKIE['old_url'];
+                unset($_COOKIE['old_url']);
+                wp_redirect($url_Red);
+                exit;
+            }
+            header('Location: ' . '/dashboard');
+
+
+        } else {
+
+            echo 'Ошибка при создании или аутентификации пользователя: ' . $user_id->get_error_message();
+
+        }
+    }
+}
+
+
+unset($_COOKIE['old_url']);
+
+function create_or_authenticate_wp_user($data) {
+
+//    file_put_contents($_SERVER['DOCUMENT_ROOT'].'/user_info.txt',print_r($data,true));
+
+    if(empty($data['email'])){
+        $email= $data['uuid']."@noreply.com";
+    }else{
+        $email = $data['email'];
+    }
+
+    if(isset($data['uuid'])){
+        $uuid = $data['uuid'];
+    }else{
+        $uuid=false;
+    }
+    $user_id =get_user_id_from_uuid($uuid);
+    $user = get_user_by('id', $user_id);
+
+
+    if (!$user) {
+
+        // Создание нового пользователя, если он не существует
+        if (!empty($data['invitedUser'])) {
+            $invitedUser = $data['invitedUser'];
+            if (!empty($invitedUser) && is_array($invitedUser)) {
+                $invitedUser = $invitedUser[0];
+                if (is_array($invitedUser) && !empty($invitedUser['date']) && checkInviteDateExpired($invitedUser['date'])) {
+                    $invitedUser = null;
+                }
+            }
+            if (!empty($invitedUser) && is_array($invitedUser)) {
+                if(empty($data['email'])){
+                    $email = !empty($invitedUser['user_email'])? $invitedUser['user_email'] : $email;
+                }
+                if (empty($data['name']) && !empty($invitedUser['first_name'])) {
+                    $data['name'] = $invitedUser['first_name'];
+                }
+                if (empty($data['lastname']) && !empty($invitedUser['last_name'])) {
+                    $data['lastname'] = $invitedUser['last_name'];
+                }
+                if (empty($data['phone']) && !empty($invitedUser['llms_phone'])) {
+                    $data['phone'] = $invitedUser['llms_phone'];
+                }
+                if (empty($data['edrpouCode']) && !empty($invitedUser['edrpou_code'])) {
+                    $data['edrpouCode'] = $invitedUser['edrpou_code'];
+                }
+                if (empty($data['drfoCode']) && !empty($invitedUser['edrpouCode'])) {
+                    $data['drfoCode'] = $invitedUser['edrpouCode'];
+                }
+            }
+        }
+
+        $password = wp_generate_password();
+        $user_id = wp_create_user($email, $password, $email);
+        $user = get_user_by('email', $email);
+        $user_id = $user->ID;
+        if (is_wp_error($user_id)) {
+            return $user_id;
+        }
+
+        // Обновление основных данных пользователя
+        wp_update_user([
+            'ID' => $user_id,
+            'first_name' =>isset( $data['first_name']) ?  $data['first_name'] : 'Empty',
+            'last_name' => isset( $data['last_name']) ?  $data['first_name'] : 'Empty'
+        ]);
+
+
+        if (!empty($invitedUser)) {
+            update_user_meta($user_id, 'invite', $invitedUser['textInvite']);
+
+            if(is_user_edrpouCode_matched($user_id, $invitedUser['textInvite'])){
+                addInvitedRequestToOperatorAndApprove($user, $invitedUser, $email);
+                $_SESSION['show_notify']=false;
+            }else{
+                $_SESSION['show_notify'] =true;
+                wp_enqueue_script('error', get_template_directory_uri() . '/assets/js/error.js', array('jquery'), '1.0', true);
+                wp_enqueue_style('error', get_template_directory_uri() . '/assets/css/error.css');
+            }
+
+        }
+
+        if(isset($data['date_of_birth'])){
+            $date_birth = explode('.',$data['date_of_birth']);
+        }
+
+        // Сохранение дополнительных метаданных пользователя
+        if (isset($uuid)) {
+            update_user_meta($user_id, 'uuid', $uuid);
+
+        }
+        if(isset($data['refresh_token'])){
+            update_user_meta($user_id, 'refresh_token', $data['refresh_token']);
+        }
+
+        if (isset($data['name'])) {
+            update_user_meta($user_id, 'first_name', $data['name']);
+        }
+
+        if (isset($data['lastname'])) {
+            update_user_meta($user_id, 'last_name', $data['lastname']);
+        }
+
+        if (isset($data['middleName'])) {
+            update_user_meta($user_id, 'middle_name', $data['middleName']);
+        }
+
+        if (isset($data['edrpouCode'])) {
+            update_user_meta($user_id, 'edrpou_code', $data['edrpouCode']);// ЕДРПОУ
+            if (isset($_SESSION)) {
+                $_SESSION['edrpou_code'] = $data['edrpouCode'];
+            }
+        }
+        if (isset($data['drfoCode'])) {
+            update_user_meta($user_id, 'edrpouCode', $data['drfoCode']);// ИНН
+            if (isset($_SESSION)) {
+                $_SESSION['edrpouCode'] = $data['drfoCode'];
+            }
+        }
+        if (isset($data['phone'])) {
+            update_user_meta($user_id, 'llms_phone', $data['phone']);
+        }
+
+        if (isset($date_birth[0])) {
+            update_user_meta($user_id, 'day_of_birth', $date_birth[0]);
+        }
+
+        if (isset($date_birth[1])) {
+            update_user_meta($user_id, 'month_of_birth', $date_birth[1]);
+        }
+
+        if (isset($date_birth[2])) {
+            update_user_meta($user_id, 'year_of_birth', $date_birth[2]);
+        }
+
+        if (isset($data['gender'])) {
+            update_user_meta($user_id, 'gender', $data['gender']);
+        }
+
+        update_user_meta($user_id, 'llms_billing_country', 'UA');
+        $data['user_id'] =$user_id;
+        $data['password'] =$password;
+        return $data;
+    } else {
+        // Возвращаем ID существующего пользователя
+
+        return $user->ID;
+    }
+}
+
+
+
+if(!is_user_logged_in()) {
+    add_action('init', 'authDia');
+}
+if(!isset($_SESSION['showCount'])){
+    $_SESSION['showCount']=15;
+}
+
+
+if (!isset($_SESSION['invite']) AND isset($_GET['invite'])) {
+    $_SESSION['invite'] = $_GET['invite'];
+}
+
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+
+function new_loop_shop_per_page( $cols ) {
+    // $cols содержит текущее количество товаров на странице
+    return $_SESSION['showCount']; // Возвращаем новое количество товаров на странице
+}
+if(is_user_logged_in()){
+
+    if(isset($_GET['uuid'])){
+        header('Location: ' . '/dashboard/');
+        die;
+    }
+    if(isset($_GET['code'])){
+        header('Location: ' . '/dashboard/');
+        die;
+    }
+
+
+    unset($_COOKIE['901a6b96dbc8033f4d411c6e0fb53113']);
+    $user = wp_get_current_user();
+
+
+    $status= get_user_meta($user->ID,'verify_end');
+
+    if(empty($status) || !$status){
+        $currentUrlPath = $_SERVER['REQUEST_URI'];
+        if(strpos($currentUrlPath, 'logout') === false){
+            if (strpos($currentUrlPath, 'dashboard') !== false) {
+                // Ваш код, когда в URL есть 'dashboard'
+                $get_type = get_user_meta($user->ID, 'user_profile_type');
+                if(is_user_logged_in()){
+                    if(empty($get_type)){
+                        header('Location: ' . '/register-step-1/');
+                        die;
+                    } else {
+                        header('Location: ' . '/register-step-2/');
+                        die;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+global $wpdb;
+add_filter("crudiator_before_delete_{$wpdb->prefix}posts", 'checkCrudiatorPostHandler', 10, 1);
+add_filter("crudiator_before_bulk_delete_{$wpdb->prefix}posts", 'checkCrudiatorPostHandler', 10, 1);
+add_filter("crudiator_before_update_{$wpdb->prefix}posts", 'checkCrudiatorPostHandler', 10, 1);
+function checkCrudiatorPostHandler($pre_delete_data) {
+    if (!current_user_can('install_plugins')) {
+        return __('Error', 'ndp');
+    }
+    return $pre_delete_data;  // validation ok.
+}
+add_filter("crudiator_before_delete_{$wpdb->prefix}municipality_requests", 'checkCrudiatorMunicipalityRequestHandler', 10, 1);
+add_filter("crudiator_before_bulk_delete_{$wpdb->prefix}municipality_requests", 'checkCrudiatorMunicipalityRequestHandler', 10, 1);
+add_filter("crudiator_before_update_{$wpdb->prefix}municipality_requests", 'checkCrudiatorMunicipalityRequestHandler', 10, 1);
+
+
+$translate=  __('Request successfully approved', 'ndp');
+function checkCrudiatorMunicipalityRequestHandler($pre_data) {
+    if (!current_user_can('edit_requests')) {
+        return __('Error', 'ndp');
+    }
+    global $wpdb;
+
+    $action = current_action();
+    if ($action == "crudiator_before_update_{$wpdb->prefix}municipality_requests" && !empty($_GET['id'])) {
+        $table_name = $wpdb->prefix . 'municipality_requests';
+        $id = is_array($_GET['id'])? (int)$_GET['id'][0] : (int)$_GET['id'];
+        $currentUser = wp_get_current_user();
+        $wpdb->update( $table_name,
+            [
+                'assigned' => 'Admin',
+                'operator_id' => $currentUser->ID,
+            ],
+            [ 'id' => $id ]
+        );
+    }
+    return $pre_data;  // validation ok.
+}
+
+//Получение муниципалитета
+function head_of_municipality(int $user_id=null, int $municipality_id=null) {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . 'municipalities';
+    $sql = "SELECT * FROM {$table_name} WHERE 1=1";
+    if ($user_id) {
+        $sql .= " AND `head_user`={$user_id}";
+    }
+    if ($municipality_id) {
+        $sql .= " AND id={$municipality_id}";
+    }
+    return $wpdb->get_results($sql, ARRAY_A);
+}
+function get_applications_with_engineer($args = []) {
+    global $wpdb; // Используем глобальную переменную для работы с базой данных WordPress
+
+    // Запрос к базе данных для получения заявок с непустым apply_engineer и сортировкой по дате подачи по убыванию
+    $and = "";
+    if (!empty($args) && !empty($args['where'])) {
+        $and .= " AND (" . $args['where']." )";
+    }
+    $query = "SELECT * FROM {$wpdb->prefix}applications WHERE status!='draft' {$and} ORDER BY id DESC";
+
+    // Выполнение запроса
+    $results = $wpdb->get_results($query, ARRAY_A);
+
+    // Проверяем, есть ли результаты
+    if (!empty($results)) {
+        // Возвращаем результаты в формате JSON
+        return $results;
+    } else {
+        // Если результатов нет, возвращаем false
+        return false;
+    }
+}
+
+// Вызов функции и вывод результатов
+
+//является ли представитель муниципалитета
+function representative_of_municipality(int $user_id, int $municipality_id=null) {
+    $representative = wp_cache_get('representative_'.$user_id);
+    if (false === $representative) {
+        global $wpdb;
+
+        $table_name = $wpdb->prefix . 'users_of_municipality';
+        $sql = "SELECT * FROM {$table_name} WHERE `user_id`={$user_id}";
+        if ($municipality_id) {
+            $sql .= " AND municipality_id={$municipality_id}";
+        }
+        $representative = $wpdb->get_results($sql, ARRAY_A);
+        wp_cache_set('representative_'.$user_id, $representative);
+    }
+
+    return $representative;
+}
+
+function is_user_edrpouCode_matched($current_user_id, $municipality_event_id) {
+    global $wpdb;
+    // Получаем edrpouCode текущего пользователя
+    $current_user_edrpouCode = get_user_meta($current_user_id, 'edrpouCode', true);
+
+    // Получаем данные события из таблицы wp_municipality_events
+    $table_name = $wpdb->prefix . 'municipality_events';
+    $municipality_event = $wpdb->get_row(
+        $wpdb->prepare("SELECT * FROM {$table_name} WHERE text = %s", $municipality_event_id),
+        ARRAY_A
+    );
+
+    // Проверяем, есть ли данные события
+    if ($municipality_event && !empty($municipality_event['data'])) {
+        // Десериализуем данные события
+        $event_data = maybe_unserialize($municipality_event['data']);
+
+        // Проверяем соответствие edrpouCode
+        if (isset($event_data['edrpouCode']) && $event_data['edrpouCode'] === $current_user_edrpouCode) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * representatives_of_municipality_all_data($user_id)
+ * representatives_of_municipality_all_data($user_id, [
+'municipality_id' => $municipality['id'],
+'limit' => 10,
+]);
+ * @param int $user_id
+ * @param array $args
+ * @return array|object|stdClass[]|null
+ */
+function representatives_of_municipality_all_data(int $user_id, array $args = []) {
+    global $wpdb;
+
+    $and = "";
+    if (!empty($args) && !empty((int)$municipality_id = $args['municipality_id'])) {
+        $and = " and m.id={$municipality_id} ";
+    }
+    $limit = "";
+    if (!empty($args) && !empty($args['limit'])) {
+        $limit = "limit {$args['limit']} ";
+    }
+    $offset = "";
+    if (!empty($args) && !empty($args['offset'])) {
+        $offset = ", {$args['offset']}";
+    }
+
+    $sql = "select m.id,m.name,m.edr,m.head_user,wujt.position,wu.ID as user_id,wu.user_login,wu.user_email,
+(select um1.meta_value from {$wpdb->prefix}usermeta um1 where um1.user_id=wu.ID and um1.meta_key='first_name') as first_name,
+(select um2.meta_value from {$wpdb->prefix}usermeta um2 where um2.user_id=wu.ID and um2.meta_key='last_name') as last_name,
+(select um2.meta_value from {$wpdb->prefix}usermeta um2 where um2.user_id=wu.ID and um2.meta_key='middle_name') as middle_name,
+(select um3.meta_value from {$wpdb->prefix}usermeta um3 where um3.user_id=wu.ID and um3.meta_key='llms_phone') as llms_phone,
+(select um4.meta_value from {$wpdb->prefix}usermeta um4 where um4.user_id=wu.ID and um4.meta_key='edrpou_code') as edrpou_code,
+(select um5.meta_value from {$wpdb->prefix}usermeta um5 where um5.user_id=wu.ID and um5.meta_key='llms_billing_country') as country,
+(select um6.meta_value from {$wpdb->prefix}usermeta um6 where um6.user_id=wu.ID and um6.meta_key='year_of_birth') as year_of_birth,
+(select um7.meta_value from {$wpdb->prefix}usermeta um7 where um7.user_id=wu.ID and um7.meta_key='month_of_birth') as month_of_birth,
+(select um8.meta_value from {$wpdb->prefix}usermeta um8 where um8.user_id=wu.ID and um8.meta_key='day_of_birth') as day_of_birth,
+(select um9.meta_value from {$wpdb->prefix}usermeta um9 where um9.user_id=wu.ID and um9.meta_key='user_organization') as user_organization,
+(select um10.meta_value from {$wpdb->prefix}usermeta um10 where um10.user_id=wu.ID and um10.meta_key='edrpouCode') as tin 
+from {$wpdb->prefix}municipalities m
+inner join {$wpdb->prefix}users_of_municipality wuom on m.id = wuom.municipality_id
+inner join {$wpdb->prefix}users_job_title wujt on wuom.position_id = wujt.id
+inner join {$wpdb->prefix}users wu on wuom.user_id = wu.ID
+where m.head_user={$user_id} {$and} {$limit}{$offset}";
+
+    return $wpdb->get_results($sql, ARRAY_A);
+}
+
+//Приглашённые главой муниципалитета
+function get_invited_representatives(string $email='', string $invitedEmail='', array $args=[]) {
+    $fromEmail = "";
+    if ($email && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $fromEmail = " AND `from_email`='{$email}'";
+    }
+    $toEmail = "";
+    if ($invitedEmail && filter_var($invitedEmail, FILTER_VALIDATE_EMAIL)) {
+        $toEmail = " AND `to_email`='{$invitedEmail}'";
+    }
+    $inviteCode = "";//uuid приглашения
+    if (!empty($args) && !empty($args['invite'])) {
+        $inviteArg = $args['invite'];
+        $inviteCode = " AND `text`='{$inviteArg}'";
+    }
+    $inviteEvent = get_data_from_table('municipality_events', [
+        'where' => " WHERE 1=1 {$inviteCode} {$fromEmail} {$toEmail} AND `eventType`='invite to municipality' ORDER BY id DESC",
+    ]);
+    if (empty($inviteEvent)) return [];
+
+    $invitedRepresentatives = [];
+    foreach ($inviteEvent as $invite) {
+        $invite = (array)$invite;
+        $data = unserialize($invite['data']);
+        $data = is_array($data)? $data : [];
+//        if (!empty($invite['text'])) { //uuid приглашения
+//            $data['invited'] = true;
+//        }
+
+        if (!empty($args) && !empty($args['user_id']) && !empty($data['user_id']) && $data['user_id'] != $args['user_id']) continue;
+        if (!empty($args) && !empty($args['user_email']) && !empty($data['user_email']) && $data['user_email'] != $args['user_email']) continue;
+        if (!empty($args) && !empty($args['edrpou_code']) && !empty($data['edrpou_code']) && $data['edrpou_code'] != $args['edrpou_code']) continue;
+        if (!empty($args) && !empty($args['edrpouCode']) && !empty($data['edrpouCode']) && $data['edrpouCode'] != $args['edrpouCode']) continue;
+
+        if (!empty($args['user_id'])) {
+            update_user_meta($args['user_id'],'invite',$invite['text']);
+        }
+
+        if (!empty($data) && is_array($data)) {
+            $data['textInvite'] = $invite['text'];
+            $data['from_email'] = $invite['from_email'];
+            $data['to_email'] = $invite['to_email'];
+            $data['eventType'] = $invite['eventType'];
+            $data['date'] = $invite['date'];
+            $invitedRepresentatives[] = $data;
+        }
+    }
+    return $invitedRepresentatives;
+}
+
+/**
+ * @param string $email тот кто пригласил
+ * @param array $args выбираются записи приглашения по этим значениям
+ * @param array $changeArgs новые значения
+ * @return bool
+ */
+function change_invited_representatives(string $email, array $args=[], array $changeArgs=[]) {
+    global $wpdb;
+
+    $invitedUser = get_invited_representatives($email, '', $args);
+    if (!empty($args['user_email']) && !empty($invitedUser)) {
+        $invitedUser = $invitedUser[0];
+        foreach ($changeArgs as $key => $arg) {
+            $invitedUser[$key] = $arg;
+        }
+        $table_name = $wpdb->prefix . 'municipality_events';
+        if ($wpdb->update( $table_name,
+            [
+                'data' => serialize($invitedUser),
+            ],
+            [
+                'from_email' => $email,
+                'to_email' => $args['user_email'],
+                'eventType' => 'invite to municipality'
+            ]
+        )) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//Состояние подачи заявки в муниципалитет
+function add_representative_of_municipality(int $municipality_id=null) {
+    $user = wp_get_current_user();
+    $representative = representative_of_municipality($user->ID, $municipality_id);
+    $municipalityAdd = get_user_meta( $user->ID, 'user_profile_type', true );
+    if (empty($representative) && !empty($municipalityAdd) && $municipalityAdd == 'Representative') {
+        return true;
+    }
+    return false;
+}
+
+//запись события в таблице municipality_events
+function add_municipality_event(string $text, string $eventType, WP_User $user, $toEmail=null, string $eventData=null) {
+    global $wpdb;
+    if (!empty($text) && !empty($eventType) && $user) {
+        $table_name = $wpdb->prefix . 'municipality_events';
+        $data = [
+            'text' => $text,
+            'from_email' => $user->user_email,
+            'eventType' => $eventType,
+            'date' => date('Y-m-d H:i:s'),
+        ];
+        if (!empty($toEmail) && filter_var($toEmail, FILTER_VALIDATE_EMAIL)) {
+            $data['to_email'] = $toEmail;
+        }
+        if (!empty($eventData)) {
+            $data['data'] = $eventData;
+        }
+        return $wpdb->insert($table_name, $data);
+    }
+}
+
+
+//Добавление запроса муниципалитета на проверку оператором
+function municipality_add_request(array $params=[]) {
+    global $wpdb;
+    date_default_timezone_set("Europe/Kiev");
+
+    $table_name = $wpdb->prefix . 'municipality_requests';
+    $currentUser = wp_get_current_user();
+    $user_id = $currentUser? $currentUser->ID : null;
+    if (!empty($params['user_id'])) {
+        $user_id = (int)$params['user_id'];
+    }
+    if (!$user_id) return;
+
+    $sql = "SELECT * FROM {$table_name} WHERE `user_id`={$user_id} AND (`type`='Registration' OR `type`='Invitation')";
+    $result = $wpdb->get_results($sql, ARRAY_A);
+    if ($result) return;
+
+    $allowerStatuses = ['Await processing', 'Approved', 'Rejected', 'Cancelled'];
+    if (!empty($params['status']) && !in_array($params['status'], $allowerStatuses)) {
+        $params['status'] = '';
+    }
+    $status = !empty($params['status'])? $params['status'] : 'Await processing';
+    $type = !empty($params['type'])? $params['type'] : 'Registration';
+    $assigned = isset($params['assigned'])? $params['assigned'] : 'Automatically';
+    $email = !empty($params['email'])? $params['email'] : $currentUser->user_email;
+
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'status' => $status,
+            'received' => date("Y-m-d H:i:s"),
+            'due_to' => date("Y-m-d H:i:s", strtotime('+7 days')),
+            'type' => $type,
+            'assigned' => $assigned,
+            'user_id' => $user_id,
+            'email' => $email,
+        ),
+        array('%s', '%s', '%s', '%s', '%s', '%d')
+    );
+    $insert_id = $wpdb->insert_id;
+
+    $wpdb->insert(
+        $wpdb->prefix ."municipality_requests_clone",
+        array(
+            'status' => $status,
+            'received' => date("Y-m-d H:i:s"),
+            'due_to' => date("Y-m-d H:i:s", strtotime('+7 days')),
+            'type' => $type,
+            'assigned' => $assigned,
+            'user_id' => $user_id,
+            'email' => $email,
+        ),
+        array('%s', '%s', '%s', '%s', '%s', '%d')
+    );
+    return $insert_id? $insert_id : $result;
+}
+
+function get_data_from_table(string $table, array $args = []) {
+    global $wpdb;
+
+    $table_name = $wpdb->prefix . $table;
+    $sql = "SELECT * FROM {$table_name}";
+    if (!empty($args) && !empty($args['where'])) {
+        $sql .= " " . $args['where'];
+    }
+    return $wpdb->get_results($sql);
+}
+
+
+function register_step1_register_endpoint() {
+    register_rest_route('register/v1', '/step1/', array(
+        'methods' => 'POST',
+        'callback' => 'handle_form_submission',
+        'permission_callback' => 'check_nonce_permission'
+    ));
+}
+
+
+add_action('rest_api_init', 'register_step1_register_endpoint');
+
+// Функция обработки отправленных данных
+function handle_form_submission($request) {
+    // Получение данных из запроса
+    $data = $request->get_params();
+    $user_id = get_current_user_id();
+    if($data['account-type']=="Personal"){
+        update_user_meta( $user_id, 'user_profile_type', '' );
+        update_user_meta( $user_id, 'step1', '1' );
+        $data['redirect'] = "/register-step-2";
+    }else{
+        update_user_meta( $user_id, 'edrpou_code', $data['tin']);
+        update_user_meta( $user_id, 'edr', $data['tin'] );
+        update_user_meta( $user_id, 'user_profile_type', 'Representative' );
+        municipality_add_request();
+        $data['redirect'] = "/register-step-2";
+    }
+
+    // Возвращаем ответ
+    return new WP_REST_Response(array('message' => 'Данные формы успешно обработаны', 'data' => $data), 200);
+}
+function register_update_password_endpoint() {
+    register_rest_route('custom/v1', '/update-password/', array(
+        'methods' => 'POST',
+        'callback' => 'update_user_password',
+        'permission_callback' => 'check_nonce_permission'
+    ));
+}
+add_action('rest_api_init', 'register_update_password_endpoint');
+
+function loginDiaUser(){
+
+    if(isset($_COOKIE['7f4b7fbdc641bb3d81f300b63696ed60'])){
+        $creds = array(
+            'user_login'    => wp_get_current_user()->user_login,
+            'user_password' => $_COOKIE['7f4b7fbdc641bb3d81f300b63696ed60'],
+            'remember'      => true
+        );
+        unset($_COOKIE['7f4b7fbdc641bb3d81f300b63696ed60']);
+        wp_signon($creds, false);
+
+    }
+
+}
+add_action('init','loginDiaUser');
+// Функция обработки запроса на обновление пароля
+
+// Функция для обновления пароля пользователя
+function update_wp_user_password($new_password, $user_id) {
+    // Хеширование и обновление пароля
+    wp_set_password($new_password, $user_id);
+}
+
+// Функция проверки nonce
+function check_nonce_permission($request) {
+    $nonce = $request->get_header('X-WP-Nonce');
+
+    // Проверка nonce
+    if (!wp_verify_nonce($nonce, 'wp_rest')) {
+        return new WP_Error('invalid_nonce', 'Invalid nonce', array('status' => 401));
+    }
+
+    return true;
+}
+
+function update_user_password($request) {
+    $permission = check_nonce_permission($request);
+    if (is_wp_error($permission)) {
+        return $permission;
+    }
+
+    $user_id = get_current_user_id();
+    $data = $request->get_json_params();
+    $password = $data['password'];
+    $confirm_password = $data['confirm_password'];
+    $email = isset($data['email']) ? $data['email'] : false;
+
+    // Проверка совпадения паролей
+    if ($password !== $confirm_password) {
+        return new WP_Error('password_mismatch', 'Passwords do not match', array('status' => 400));
+    }
+
+    // Обновление электронной почты
+    if ($email) {
+        $update_result = wp_update_user(array('ID' => $user_id, 'user_email' => $email));
+        if (is_wp_error($update_result)) {
+            return $update_result;
+        }
+    }
+
+    // Обновление пароля пользователя
+    $update_result = wp_set_password($password, $user_id);
+    if (is_wp_error($update_result)) {
+        return $update_result;
+    }
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'municipality_requests';
+    $update_email_result = $wpdb->update(
+        $table_name,
+        array('email' => $email), // новые данные
+        array('user_id' => $user_id) // условия для обновления
+    );
+
+    // Нет необходимости в очистке и установке cookie, если это не требуется для логики работы вашего приложения
+
+    update_user_meta($user_id, 'verify_end', 1);
+    // Очистка всех сессий пользователя
+    wp_clear_auth_cookie();
+
+// Установка текущего пользователя и инициализация новой сессии
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id);
+
+    return new WP_REST_Response(array('message' => 'Password updated successfully'), 200);
+}
+
+
+// попап сообщения
+function enqueue_custom_script() {
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
+}
+//add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+
+
+add_filter('date_i18n', 'date_ukr_months', 11, 2 );
+
+/**
+ * Перевод месяца и недели в дате.
+ * Функция для фильтра date_i18n.
+ * @param string $date       Дата в принятом формате
+ * @param string $req_format Формат передаваемой даты
+ * @return date в украинском формате
+ */
+function date_ukr_months( $date, $req_format ){
+    // в формате есть "строковые" неделя или месяц
+    if( ! preg_match('/[FMlS]/', $req_format ) )
+        return $date;
+
+    $current_lang = apply_filters( 'wpml_current_language', 'uk');
+    if ($current_lang == 'uk') {
+        $replace = array (
+            'Січень'=>'Січня', 'Лютий'=>'Лютого', 'Березень'=>'Березня', 'Квітень'=>'Квітня', 'Травень'=>'Травня', 'Червень'=>'Червня', 'Липень'=>'Липня', 'Серпень'=>'Серпня', 'Вересень'=>'Вересня', 'Жовтень'=>'Жовтня', 'Листопад'=>'Листопада', 'Грудень'=>'Грудня',
+
+            'Січ'=>'Січ.', 'Лют'=>'Лют.', 'Бер'=>'Бер.', 'Квіт'=>'Квіт.', 'Кві'=>'Квіт.', 'Трав'=>'Трав.', 'Тра'=>'Трав.', 'Черв'=>'Черв.', 'Чер'=>'Черв.', 'Лип'=>'Лип.', 'Серп'=>'Серп.', 'Сер'=>'Серп.', 'Вер'=>'Вер.', 'Жов'=>'Жов.', 'Лист'=>'Лист.', 'Лис'=>'Лист.', 'Груд'=>'Груд.', 'Гру'=>'Груд.',
+
+//            'January'=>'Січня', 'February'=>'Лютого', 'March'=>'Березня', 'April'=>'Квітня', 'May'=>'Травня', 'June'=>'Червня', 'July'=>'Липня', 'August'=>'Серпня', 'September'=>'Вересня', 'October'=>'Жовтня', 'November'=>'Листопада', 'December'=>'Грудня',
+            'January'=>'Січень', 'February'=>'Лютий', 'March'=>'Березень', 'April'=>'Квітень', 'May'=>'Травень', 'June'=>'Червень', 'July'=>'Липень', 'August'=>'Серпень', 'September'=>'Вересень', 'October'=>'Жовтень', 'November'=>'Листопад', 'December'=>'Грудень',
+
+            'Jan'=>'Січ.', 'Feb'=>'Лют.', 'Mar'=>'Бер.', 'Apr'=>'Квіт.', 'May'=>'Трав', 'Jun'=>'Черв', 'Jul'=>'Лип', 'Aug'=>'Серп.', 'Sep'=>'Вер.', 'Oct'=>'Жов.', 'Nov'=>'Лист.', 'Dec'=>'Груд.',
+
+            'Sunday'=>'Неділя', 'Monday'=>'Понеділок', 'Tuesday'=>'Вівторок', 'Wednesday'=>'Середа', 'Thursday'=>'Четвер', 'Friday'=>'П’ятниця', 'Saturday'=>'Субота',
+
+            'Sun'=>'Нед.', 'Mon'=>'Пон.', 'Tue'=>'Вівт.', 'Wed'=>'Сер.', 'Thu'=>'чет.', 'Fri'=>'П’ят.', 'Sat'=>'суб.', 'th'=>'', 'st'=>'', 'nd'=>'', 'rd'=>'',
+        );
+        $date = strtr( $date, $replace );
+
+        if( function_exists('mb_ucfirst') ) $date = mb_ucfirst( $date );
+    }
+
+    return $date;
+}
+
+
+add_action('init', 'cloneAdminRoleToEditor');
+function cloneAdminRoleToEditor()
+{
+//    $editor_caps = array ('moderate_comments' => true, 'manage_categories' => true, 'manage_links' => true, 'upload_files' => true, 'unfiltered_html' => true, 'edit_posts' => true, 'edit_others_posts' => true, 'edit_published_posts' => true, 'publish_posts' => true, 'edit_pages' => true, 'read' => true, 'level_7' => true, 'level_6' => true, 'level_5' => true, 'level_4' => true, 'level_3' => true, 'level_2' => true, 'level_1' => true, 'level_0' => true, 'edit_others_pages' => true, 'edit_published_pages' => true, 'publish_pages' => true, 'delete_pages' => true, 'delete_others_pages' => true, 'delete_published_pages' => true, 'delete_posts' => true, 'delete_others_posts' => true, 'delete_published_posts' => true, 'delete_private_posts' => true, 'edit_private_posts' => true, 'read_private_posts' => true, 'delete_private_pages' => true, 'edit_private_pages' => true, 'read_private_pages' => true, 'aioseo_page_analysis' => true, 'aioseo_page_general_settings' => true, 'aioseo_page_advanced_settings' => true, 'aioseo_page_schema_settings' => true, 'aioseo_page_social_settings' => true, 'wpseo_bulk_edit' => true, 'wpseo_edit_advanced_metadata' => true, 'wpseo_manage_redirects' => true,);
+
+    global $wp_roles;
+    if ( ! isset( $wp_roles ) )
+        $wp_roles = new WP_Roles();
+
+    $admin_role = $wp_roles->get_role('administrator');
+    $editor_role = $wp_roles->get_role('editor');
+
+    $admin_caps = array_keys( $admin_role->capabilities );
+
+    if( !$editor_role->has_cap( 'manage_options' ) ) {
+        foreach ( $admin_caps as $cap ) {
+            $editor_role->add_cap( $cap ); //clone capabilities to new user role
+        }
+    }
+}
+
+/**
+ * Удаление staging из ссылок
+ */
+add_action( 'save_post_course', 'update_content_url_on_save', 10, 3);
+add_action( 'save_post_lesson', 'update_content_url_on_save', 10, 3);
+add_action( 'save_post_news', 'update_content_url_on_save', 10, 3);
+add_action( 'save_post_cases', 'update_content_url_on_save', 10, 3);
+add_action( 'save_post_knowledge-base', 'update_content_url_on_save', 10, 3);
+function update_content_url_on_save($post_id, $post=null, $update=false) {
+
+    if ( wp_is_post_revision($post_id)){
+        return;
+    }
+
+    if (!$post) return;
+
+    $content = $post->post_content;
+    $type = get_post_type($post);
+
+    // Remove the action
+    remove_action( 'save_post_'.$type, 'update_content_url_on_save' );
+
+    // Perform any update that uses the save_post hook
+    $content2 = preg_replace('/(https?::?\/\/ndp\.loc|https?::?\/\/staging-ndp\.netvision\.pro)/', '', $content);
+    $post->post_content = $content2;
+    wp_update_post( (array) $post );
+
+    // Add it back again
+    add_action( 'save_post_'.$type, 'update_content_url_on_save' );
+}
+
+
+add_action('wpml_new_duplicated_terms', 'change_duplicated_post_status_to_private', 10, 2);
+
+function change_duplicated_post_status_to_private($duplicated_post_ids, $do_not_use) {
+    foreach ($duplicated_post_ids as $post_id) {
+        // Проверка, чтобы не менять статус оригинального поста
+        $original_post_id = get_post_meta($post_id, '_icl_lang_duplicate_of', true);
+        if ($original_post_id) {
+            wp_update_post(array(
+                'ID'          => $post_id,
+                'post_status' => 'private'
+            ));
+        }
+    }
+}
+
+
+function my_custom_breadcrumb_output($output) {
+    $current_language = ICL_LANGUAGE_CODE; // Текущий язык
+
+    // Названия для разных языков
+    $title_en = 'Solutions';
+    $title_uk = 'Рішення';
+
+    // Находим и заменяем название в HTML хлебных крошек
+    if ($current_language == 'en') {
+        $output = str_replace('Shop', $title_en, $output);
+    } elseif ($current_language == 'uk') {
+        $output = str_replace('Shop', $title_uk, $output);
+    }
+
+    $output = str_replace('Головна', __('Home', 'wordpress-seo'), $output);
+    $output = str_replace('Home', 'Main page', $output);
+    $output = str_replace('News', __('News', 'ndp'), $output);
+    $output = str_replace('Knowledge base', __('Knowledge base', 'ndp'), $output);
+    $output = str_replace('Cases', __('Cases', 'ndp'), $output);
+    $output = str_replace('Register step 1', __('Register step 1', 'ndp'), $output);
+    $output = str_replace('Register step 2', __('Register step 2', 'ndp'), $output);
+    $output = str_replace('Dashboard', __('Dashboard', 'ndp'), $output);
+    $output = str_replace('Survey', __('Survey', 'ndp'), $output);
+
+    return $output;
+}
+add_filter('wpseo_breadcrumb_output', 'my_custom_breadcrumb_output');
+
+
+add_filter( 'wpseo_breadcrumb_links', 'yoast_seo_breadcrumb_append_link' );
+function yoast_seo_breadcrumb_append_link( $links ) {
+
+    $current_language = defined('ICL_LANGUAGE_CODE')? ICL_LANGUAGE_CODE : 'ua'; // Текущий язык
+    $urlsArray = [//список уже существующих страниц в админке и их url
+        'uk' => [
+            'solutions' => ['url' => 'marketplace', 'title' => 'Рішення'],
+            'categories' => ['url' => 'categories', 'title' => 'Категорії'],
+            'vendors' => ['url' => 'vendors-list', 'title' => 'Постачальники'],
+            'knowledge-base' => ['url' => 'knowledge-base', 'title' => __('Knowledge Base','ndp')],
+            'cases' => ['url' => 'cases', 'title' => __('Cases','ndp')],
+            'news' => ['url' => 'news', 'title' => __('News','ndp')],
+        ],
+        'en' => [
+            'solutions' => ['url' => 'solutions', 'title' => 'Solutions'],
+            'categories' => ['url' => 'categories', 'title' => 'Categories'],
+            'vendors' => ['url' => 'vendors-list', 'title' => 'Vendors list'],
+            'knowledge-base' => ['url' => 'knowledge-base', 'title' => __('Knowledge Base','ndp')],
+            'cases' => ['url' => 'cases', 'title' => __('Cases','ndp')],
+            'news' => ['url' => 'news', 'title' => __('News','ndp')],
+        ],
+    ];
+
+    if (!empty($urlsArray[$current_language])) {
+        $home_url = apply_filters( 'wpml_home_url', get_option( 'home' ) );
+        $home_url = rtrim($home_url,"/").'/';
+        $solutionsUrl = $urlsArray[$current_language]['solutions']['url'];
+        $solutionsTitle = $urlsArray[$current_language]['solutions']['title'];
+        $solutions[] = array(
+            'url' => $home_url . $solutionsUrl,
+            'text' => $solutionsTitle,
+        );
+        $categoriesUrl = $urlsArray[$current_language]['categories']['url'];
+        $categoriesTitle = $urlsArray[$current_language]['categories']['title'];
+        $categories[] = array(
+            'url' => $home_url . $categoriesUrl,
+            'text' => $categoriesTitle,
+        );
+        $vendorsUrl = $urlsArray[$current_language]['vendors']['url'];
+        $vendorsTitle = $urlsArray[$current_language]['vendors']['title'];
+        $vendors[] = array(
+            'url' => $home_url . $vendorsUrl,
+            'text' => $vendorsTitle,
+        );
+        $knowledgeUrl = $urlsArray[$current_language]['knowledge-base']['url'];
+        $knowledgeTitle = $urlsArray[$current_language]['knowledge-base']['title'];
+        $knowledge[] = array(
+            'url' => $home_url . $knowledgeUrl,
+            'text' => $knowledgeTitle,
+        );
+        $casesUrl = $urlsArray[$current_language]['cases']['url'];
+        $casesTitle = $urlsArray[$current_language]['cases']['title'];
+        $cases[] = array(
+            'url' => $home_url . $casesUrl,
+            'text' => $casesTitle,
+        );
+        $newsUrl = $urlsArray[$current_language]['news']['url'];
+        $newsTitle = $urlsArray[$current_language]['news']['title'];
+        $news[] = array(
+            'url' => $home_url . $newsUrl,
+            'text' => $newsTitle,
+        );
+
+        if (is_page('categories')) {
+            array_splice( $links, 1, -2, $solutions );
+        } elseif ( is_product_category() ) {
+            array_splice( $links, 1, -2, $solutions );
+            array_splice( $links, 2, -2, $categories );
+        } elseif (is_page('vendors-list')) {
+            array_splice( $links, 1, -2, $solutions );
+        } elseif (is_tax('sp_smart_brand')) {
+            array_splice( $links, 1, -2, $solutions );
+            array_splice( $links, 2, -2, $vendors );
+        } elseif (is_product()) {
+            global $product;
+            $productID = $product->get_id();
+            $brands = get_the_terms($productID, 'sp_smart_brand' );
+            $brand_url = '';
+            $brand_name = '';
+            if ($brands && ! is_wp_error($brands)) {
+                $brand_name = $brands[0]->name;
+                $brand_url = $home_url . 'product-brands/'.$brands[0]->slug;
+                $brand[] = array(
+                    'url' => $brand_url,
+                    'text' => $brand_name,
+                );
+            }
+            array_splice( $links, 1, -2, $solutions );
+            array_splice( $links, 2, -2, $vendors );
+            if ($brand_url && $brand_name) {
+                array_splice( $links, 3, -1, $brand );
+            }
+        } elseif (is_tax()) {
+            $queriedObject = get_queried_object();
+            $allowedTypes = ['news_category', 'cases_category', 'knowledge-base_category'];
+            if ($queriedObject instanceof \WP_Term && in_array($queriedObject->taxonomy, $allowedTypes)) {
+                $taxonomy = $queriedObject->taxonomy;
+                $urlArray = [];
+                if ($taxonomy == 'news_category') {
+                    $urlArray = $news;
+                } elseif ($taxonomy == 'cases_category') {
+                    $urlArray = $cases;
+                } elseif ($taxonomy == 'knowledge-base_category') {
+                    $urlArray = $knowledge;
+                }
+                if (!empty($urlArray)) {
+                    array_splice( $links, 1, -2, $urlArray );
+                }
+            }
+        } elseif (is_page('comparison')) {
+            array_splice( $links, 1, -2, $solutions );
+        } elseif (is_page('cart')) {
+            array_splice( $links, 1, -2, $solutions );
+        } elseif (is_llms_account_page() && is_user_logged_in()) {
+            $endpointSlug  = LLMS_Student_Dashboard::get_current_tab( 'slug' );
+            if ($endpointSlug != 'dashboard') {
+                $endpoints = [
+                    'applications' => __('Applications', 'ndp'),
+                    'requests' => __('Requests', 'ndp'),
+                    'surveys' => __('Surveys', 'ndp'),
+                    'view-courses' => __('My courses', 'ndp'),
+                    'view-certificates' => __('Certificates', 'ndp'),
+                    'notifications' => __('Notifications', 'ndp'),
+                    'municipalities' => __('Municipality', 'ndp'),
+                    'edit-account' => __('Profile settings', 'ndp'),
+                ];
+
+                if (!empty($links[1]) && !empty($links[1]['url']) && !empty($endpoints[$endpointSlug])) {
+                    $links[0]['url'] = $home_url . 'dashboard';
+                    $links[0]['text'] = $links[1]['text'];
+                    $links[1]['url'] = '';
+                    $links[1]['text'] = $endpoints[$endpointSlug];
+                }
+            }
+        }
+    }
+
+    foreach ($links as $k => $link) {
+        if (preg_match('/(Page)(\s[0-9]+)/', $link['text'], $text)) {
+            if ($text && count($text) > 2) {
+                $pageText = __('Page', 'ndp');
+                $links[$k]['text'] = $pageText . $text[2];
+            }
+        }
+        if ($k == (count($links)-1) && preg_match('/^[A-Za-z\s_-]+$/', trim($link['text']) )) {
+            $links[$k]['text'] = __($link['text'], 'ndp');
+        }
+    }
+
+    return $links;
+}
+
+add_filter( 'wpseo_breadcrumb_output_class', 'wpseo_breadcrumb_output_class_handler' );
+function wpseo_breadcrumb_output_class_handler($class) {
+    $class = 'breadcrumb_wrap';
+    return $class;
+}
+
+//survey checkbox
+function my_acf_load_field_survey( $field ) {
+    if (isset($_GET['survey'])) {
+        $field['default_value'] = 1;
+    }
+    return $field;
+}
+add_filter('acf/load_field/name=type', 'my_acf_load_field_survey');
+
+function custom_attribute_terms_endpoint() {
+    register_rest_route('custom/v1', '/products/attributes/(?P<attribute_id>\d+)/terms', array(
+        'methods' => 'GET',
+        'callback' => 'custom_attribute_terms_callback',
+    ));
+}
+
+add_action('rest_api_init', 'custom_attribute_terms_endpoint');
+
+function custom_attribute_terms_callback($data) {
+    $attribute_id = $data['attribute_id'];
+    // Спробуйте отримати дані з кешу
+    $cached_data = get_transient('custom_attribute_terms_' . $attribute_id);
+
+    if (false === $cached_data) {
+        // Кеш не знайдений, викликаємо оригінальний ендпойнт
+
+        $original_endpoint_url = home_url('/wp-json/wc/v3/products/attributes/' . $attribute_id . '/terms?consumer_key=ck_6e501b96e57f757b7edf38326614b06d3aab6627&consumer_secret=cs_591ee22a9565d16cdef72615a76e43fbb9f1178a');
+
+        // $original_endpoint_url = 'https://staging-ndp.netvision.pro//wp-json/wc/v3/products/attributes/' . $attribute_id . '/terms?consumer_key=ck_6e501b96e57f757b7edf38326614b06d3aab6627&consumer_secret=cs_591ee22a9565d16cdef72615a76e43fbb9f1178a';
+
+        $response = wp_remote_get($original_endpoint_url, array('timeout' => 120));
+
+        if (!is_wp_error($response)) {
+            $body = wp_remote_retrieve_body($response);
+
+            // Зберігаємо дані в кеші на 1 годину
+            set_transient('custom_attribute_terms_' . $attribute_id, $body, 60 * 60);
+
+            return rest_ensure_response(json_decode($body));
+        } else {
+            // Обробляємо помилку
+            return rest_ensure_response(array('error' => $response->get_error_message()));
+        }
+    } else {
+        // Повертаємо дані з кешу
+        return rest_ensure_response(json_decode($cached_data));
+    }
+}
+
+
+function get_municipality_data() {
+    // Убедитесь, что функции WordPress доступны
+    if (!function_exists('is_user_logged_in')) {
+        return false;
+    }
+
+    // Проверяем, авторизован ли пользователь
+    if (!is_user_logged_in()) {
+        return false;
+    }
+
+    // Получаем ID текущего пользователя
+    $user_id = get_current_user_id();
+    $organization = get_user_meta($user_id, 'user_organization', true);
+
+    // Подключаемся к глобальной переменной базы данных WordPress
+    global $wpdb;
+
+    // Ищем пользователя в таблице wp_municipalities
+    $municipality = $wpdb->get_row($wpdb->prepare("SELECT * FROM wp_municipalities WHERE head_user = %d", $user_id), ARRAY_A);
+
+
+    // Если пользователь найден в wp_municipalities
+    if ($municipality) {
+        $municipality['user_organization'] = $organization;
+        return json_encode($municipality);
+    }
+
+    // Если нет, ищем в wp_users_of_municipality
+    $user_municipality = $wpdb->get_row($wpdb->prepare("SELECT * FROM wp_users_of_municipality WHERE user_id = %d", $user_id), ARRAY_A);
+
+    // Если пользователь найден в wp_users_of_municipality
+    if ($user_municipality) {
+        $user_municipality['user_organization'] = $organization;
+        $edr = get_user_meta($user_id, 'edrpou_code', true);
+        $user_municipality['edr'] = $edr;
+
+        $head_user = $wpdb->get_row($wpdb->prepare("SELECT * FROM wp_municipalities WHERE id = %d", $user_municipality['municipality_id']), ARRAY_A);
+        $user_municipality['head_user'] = $head_user['head_user'];
+        $user_municipality['id'] = $head_user['id'];
+
+        $user_municipality['user_organization'] =get_user_meta($head_user['head_user'], 'user_organization', true);
+        return json_encode($user_municipality);
+    }
+
+    // Обработка случая, когда пользователь не найден в обеих таблицах
+    // Можно вернуть сообщение об ошибке или false
+    return json_encode(array('error' => 'User not found in any municipality'));
+}
+
+
+function quiz_dequeue_unnecessary_scripts() {
+    global $current_screen;
+    //переопределение llms-quiz.js для необязательных ответов в survey
+    if (is_singular('llms_quiz')) {
+        wp_dequeue_script( 'llms-quiz' );
+        wp_deregister_script( 'llms-quiz' );
+        wp_enqueue_script('llms-quiz', get_template_directory_uri() . '/assets/js/llms-quiz.js', array('jquery', 'llms', 'wp-mediaelement'), _S_VERSION, true);
+
+        wp_dequeue_script( 'llms-aq' );
+        wp_deregister_script( 'llms-aq' );
+        wp_enqueue_script('llms-aq', get_template_directory_uri() . '/assets/js/llms-aq.js', array('jquery','llms-quill','llms-quiz','jquery-ui-sortable','llms-codemirror','jquery-touch-punch'), _S_VERSION, true);
+    } elseif (is_admin() && $current_screen->base == 'lifterlms_page_llms-reporting' && !empty($_GET['tab']) && $_GET['tab'] == 'quizzes') {
+        //export quizzes
+        wp_dequeue_script( 'llms-admin-tables' );
+        wp_deregister_script( 'llms-admin-tables' );
+        wp_enqueue_script('llms-admin-tables', get_template_directory_uri() . '/assets/js/llms-admin-tables.js', array('jquery'), _S_VERSION, true);
+    }
+}
+add_action( 'wp_print_scripts', 'quiz_dequeue_unnecessary_scripts' );
+
+
+add_action('wp_ajax_find_user_by_edrpou', 'ajax_find_user_by_edrpou');
+add_action('wp_ajax_nopriv_find_user_by_edrpou', 'ajax_find_user_by_edrpou');
+
+function deleteInvite($text){
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'municipality_events';
+    $wpdb->delete( $table_name, [
+        'text' => $text,
+    ] );
+
+    return true;
+}
+add_action('template_redirect', 'custom_redirect_my_account');
+function custom_redirect_my_account() {
+    if (is_page('my-account-2')) {
+        wp_redirect(home_url('/dashboard'));
+        exit;
+    }
+}
+
+//выход из лк без подтверждения
+add_action('check_admin_referer', 'logout_without_confirm', 10, 2);
+function logout_without_confirm($action, $result)
+{
+    if ($action == "log-out" && !isset($_GET['_wpnonce'])) {
+        $redirect_to = isset($_REQUEST['redirect_to']) ? $_REQUEST['redirect_to'] : home_url();
+        $location = str_replace('&amp;', '&', wp_logout_url($redirect_to));
+        header("Location: $location");
+        die;
+    }
+}
+
+/**
+ * Redirect operator
+ * @param    string   $url      default LLMS login url
+ * @param    int      $user_id  WP User ID of the user who logged in
+ * @return   string
+ */
+function my_llms_student_dashboard_login_redirect( $url, $user_id ) {
+    $userData = get_userdata($user_id);
+    if ($userData && !empty($userData->roles) && in_array( 'operator', $userData->roles, true )) {
+        $url = llms_get_endpoint_url( 'requests', '', llms_get_page_url( 'myaccount' ) );
+    }
+    return $url;
+}
+add_filter( 'lifterlms_login_redirect', 'my_llms_student_dashboard_login_redirect', 999, 2 );

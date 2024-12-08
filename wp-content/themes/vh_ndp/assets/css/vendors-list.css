@@ -1,0 +1,121 @@
+.container {
+  max-width: 1152px;
+}
+.breadcrumb {
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.breadcrumb-block {
+  margin-bottom: 0;
+}
+.breadcrumb * + *::before {
+  content: "·";
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+} 
+.vendors {
+  margin-top: 0;
+}
+.vendor-bg{
+  padding-top: 32px;
+  padding-bottom: 64px;
+  border-top: 1px solid #C5C6D0;
+  background: #F5F5F6;
+}
+.vendors__title {
+  color: #131316;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin-bottom: 40px;
+}
+.vendors-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(355px, 3fr));
+  gap: 24px;
+  position: relative;
+}
+/* .vendors-block::after {
+  content: '';
+  display: block;
+  width: 150vw;
+  height: 2500px;
+  position: absolute;
+  border-top: 1px solid #C5C6D0;
+  background: #F5F5F6;
+  top: -32px;
+  left: -32vw;
+  z-index: -1;
+} */
+.vendors-block__item {
+  padding: 16px;
+  border-radius: 12px;
+  background: #FFF;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+}
+.vendors-block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  height: 48px;
+}
+.vendors-block__title {
+  color: #131316;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Количество строк, после которых текст будет обрезан */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.vendors-block__image {
+  max-width: 120px;
+}
+.vendors-block__image img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.vendors-block__category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.vendors-block__category__item {
+  border-radius: 8px;
+  background: #DCE2F9;
+  padding: 6px 12px;
+  transition: background 0.3s ease;
+}
+.vendors-block__category__item:hover {
+  background: #ABB6FD;
+  transition: background 0.3s ease;
+}
+.vendors-block__category__item span {
+  color: #151B2C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+@media ( max-width: 767px) {
+  .vendor-bg{
+    padding-bottom: 48px;
+  }
+  .vendors__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .vendors-block::after {
+    top: -16px;
+  }
+}
+.vendors-block__item {
+  min-height: 166px;
+}

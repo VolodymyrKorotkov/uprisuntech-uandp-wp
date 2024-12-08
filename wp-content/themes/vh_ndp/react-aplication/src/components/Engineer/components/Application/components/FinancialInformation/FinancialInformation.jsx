@@ -1,0 +1,21 @@
+import React from 'react'
+import I18n from '../../../../../I18n/I18n'
+import ListFinancialInformation from '../../../../../Commercial/components/FinancialInformation/ListFinancialInformation'
+import global from '../../../../../../App.module.scss'
+
+function FinancialInformation({data}) {
+  return (
+    <div className={global.card}>
+      <div className={global.header}>
+        <div className={global.row}>
+          <div className={global.title}><I18n text={'Financial information'} /></div>
+        </div>
+      </div>
+      <div className={global.body}>
+        <ListFinancialInformation financialInformation={data || {}} />
+      </div>
+    </div>
+  )
+}
+
+export default FinancialInformation

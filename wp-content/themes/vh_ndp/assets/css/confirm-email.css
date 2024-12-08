@@ -1,0 +1,200 @@
+.confirm-email {
+  background: #F5F5F6;
+  padding: 160px 0;
+}
+.confirm-email__block {
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  margin: auto;
+  overflow: hidden;
+  min-width: 400px;
+}
+.confirm-email__header {
+  padding-top: 24px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #FBF8FD;
+  border-bottom: 1px solid #E4E2E6;
+}
+.confirm-email__title {
+  color: #131316;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px; 
+  margin-bottom: 16px;
+  text-align: center;
+}
+.confirm-email__text {
+  color: #1B1B1F;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; 
+}
+.confirm-email__form {
+  padding: 20px;
+  row-gap: 16px;
+}
+.confirm-email__form-block {
+  column-gap: 12px;
+}
+.confirm-email__form .mdc-text-field__input {
+  height: 18px;
+  text-align: center;
+  font-size: 24px;
+}
+.mdc-text-field__input::placeholder {
+  display: block;
+  font-size: 24px; 
+  color: #131316;
+}
+.confirm-email__form .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: #2A59BD;
+}
+.confirm-email__form .mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading, .mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--invalid:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: #b00020;
+}
+.confirm-email__form .mdc-floating-label {
+  left: 40%;
+}
+.confirm-email__form .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch,.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: #2A59BD;
+}
+.confirm-email__form .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__leading, .confirm-email__form .mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-notched-outline__notch {
+  border-color: #2A59BD;
+}
+.confirm-email__form .mdc-notched-outline__notch .mdc-floating-label::after {
+  display: none;
+}
+.confirm-email__form .error-icon {
+  background: #fff;
+  color: #b00020;
+  display: none;
+  text-align: right;
+  margin-right: 16px;
+  margin-top: 14px;
+}
+.confirm-email__form-button {
+  border: none;
+  background-color: #2A59BD;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; 
+  padding: 14px 20px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: opacity 0.3s ease
+}
+.confirm-email__form-button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease
+}
+.confirm-email__resend {
+  display: flex;
+  justify-content: center;
+  column-gap: 4px;
+}
+.confirm-email__resend span {
+  color: #77777A;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+}
+.confirm-email__error-message {
+  display: none;
+  color: #BA1A1A;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+}
+@media ( max-width: 992px) {
+  .confirm-email {
+    padding: 80px 0;
+  }
+}
+@media ( max-width: 576px) {
+  .confirm-email {
+    padding-top: 16px;
+  }
+  .confirm-email__block {
+    min-width: 350px;
+  }
+  .confirm-email .mdc-text-field.mdc-text-field--outlined {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .confirm-email__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+  }
+}
+.confirm-email__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.confirm-email__success-image {
+  width: 126px;
+  height: 126px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: #EEF0FF;
+  margin-bottom: 20px;
+}
+.confirm-email__success-title {
+  color: #131316;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; 
+  margin-bottom: 12px;
+}
+.confirm-email__success-subtitle {
+  max-width: 360px;
+  text-align: center;
+  color: #77777A;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; 
+  margin-bottom: 20px;
+}
+.confirm-email__success-button {
+  border: none;
+  background-color: #2A59BD;
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; 
+  padding: 14px 54px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: opacity 0.3s ease
+}
+.confirm-email__success-button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease
+}
+@media ( max-width: 576px) {
+  .confirm-email__success-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .confirm-email__success-button {
+    width: 100%;
+  }
+}

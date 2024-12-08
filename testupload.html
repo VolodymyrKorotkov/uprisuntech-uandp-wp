@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест завантаження PDF</title>
+</head>
+<body>
+
+<input type="file" id="fileInput" accept=".pdf">
+
+<script>
+    let fileInput = document.querySelector("#fileInput");
+
+    fileInput.addEventListener("change", function() {
+        let file = fileInput.files[0];
+
+        if (file) {
+            let formData = new FormData();
+            formData.append("file", file);
+
+            fetch('upload.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log("Файл завантажено: ", data.path);
+                    } else {
+                        console.error("Помилка: ", data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Помилка при відправці: ", error);
+                });
+        }
+    });
+</script>
+
+</body>
+</html>

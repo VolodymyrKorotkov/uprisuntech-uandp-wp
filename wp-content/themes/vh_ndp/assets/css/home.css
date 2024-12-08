@@ -1,0 +1,1379 @@
+.btn.btn-outline-primary {
+  border: 1px solid #2a59bd;
+  color: #2a59bd;
+  -webkit-box-shadow: 0px 1px 3px 1px transparent, 0px 1px 2px 0px transparent;
+  box-shadow: 0px 1px 3px 1px transparent, 0px 1px 2px 0px transparent;
+  -webkit-transition: opacity 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-box-shadow 0.3s ease;
+  -o-transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.btn.btn-outline-primary:hover {
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  background-color: #dae2ff;
+}
+.btn.btn-outline-link {
+  color: #2a59bd;
+}
+.btn.btn-outline-link:hover {
+  background-color: rgba(103, 80, 164, 0.08);
+}
+
+.home-video-block{
+  margin-top: 40px;
+}
+
+.green-solution-ukraine {
+  display: flex;
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+.green-solution-ukraine .green-solution-ukraine-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  margin-right: 56px;
+  position: relative;
+  z-index: 5;
+}
+.green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-label {
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: #151b2c;
+  background-color: #dce2f9;
+  margin-bottom: 16px;
+}
+.green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-title {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+}
+.green-solution-ukraine .green-solution-ukraine-left p {
+  margin: 32px 0px;
+  padding: 0;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #151b2c;
+}
+.green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions {
+  display: flex;
+  align-items: center;
+}
+.green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions .btn + .btn {
+  margin-left: 16px;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth {
+  z-index: 5;
+  position: relative;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-images {
+  position: relative;
+  display: flex;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-images img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-images .green-solution-ukraine-rigth-images-text {
+  position: absolute;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  color: white;
+  z-index: 2;
+  bottom: 0;
+  padding: 24px;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block {
+  border-radius: 24px;
+  padding: 24px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-color: #dae2ff;
+  position: relative;
+  overflow: hidden;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-avatars {
+  height: 30px;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block img {
+  margin-bottom: 16px;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-text.long {
+  max-width: 420px;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-text {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  color: #151b2c;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-text svg {
+  margin-left: 12px;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block:hover {
+  background-color: #b2c5ff;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block:hover .green-solution-ukraine-rigth-block-text {
+  color: #2a59bd;
+}
+.green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block:hover .green-solution-ukraine-rigth-block-text svg {
+  width: 84px;
+  height: 16px;
+  fill: #2a59bd;
+  color: #2a59bd;
+}
+.financing-page-leasing-platform-in-numbers {
+  display: flex;
+  padding: 112px 0px;
+  position: relative;
+  z-index: 5;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  z-index: 5;
+  position: relative;
+  padding-right: 1px;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-title span {
+  border-radius: 50px;
+  background-color: #dce2f9;
+  padding: 2px 10px;
+}
+.financing-page-leasing-platform-in-numbers .col-lg-7 {
+  display: flex;
+  flex-direction: row;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item {
+  background-color: #eef0ff;
+  border-radius: 24px;
+  padding: 12px 20px;
+  padding-bottom: 16px;
+  min-height: 156px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item .financing-page-leasing-platform-in-numbers-item-title {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  color: #2a59bd;
+  display: flex;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item .financing-page-leasing-platform-in-numbers-item-title span {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item .financing-page-leasing-platform-in-numbers-item-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg2 {
+  background-color: #dae2ff;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg3 {
+  background-color: #2a59bd;
+}
+.financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg3 .financing-page-leasing-platform-in-numbers-item-title, .financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-item.bg3 .financing-page-leasing-platform-in-numbers-item-text {
+  color: white;
+}
+.about-platform {
+  display: flex;
+}
+.about-platform .about-platform-block {
+  padding: 64px 48px;
+  padding-bottom: 52px;
+  padding-right: 80px;
+  background-color: #f5f5f6;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.about-platform .about-platform-block .about-platform-block-left {
+  max-width: 308px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 128px;
+}
+.about-platform .about-platform-block .about-platform-block-left .about-platform-block-left-label {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  padding-right: 12px;
+  background-color: #dce2f9;
+  border-radius: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: #151b2c;
+}
+.about-platform .about-platform-block .about-platform-block-left .about-platform-block-left-label .about-platform-block-left-label-point {
+  width: 8px;
+  height: 8px;
+  background-color: #2a59bd;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.about-platform .about-platform-block .about-platform-block-left p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 16px;
+}
+.about-platform .about-platform-block .about-platform-block-rigth {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about-platform .about-platform-block .about-platform-block-rigth .btn {
+  display: flex;
+  flex-direction: row;
+  margin-left: -16px;
+}
+.about-platform .about-platform-block .about-platform-block-rigth .btn svg {
+  margin-left: 8px;
+}
+.about-platform .about-platform-block .about-platform-block-rigth .about-platform-block-rigth-text {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  max-width: 536px;
+  margin-bottom: 8px;
+}
+.about-platform .about-platform-block .about-platform-block-rigth .about-platform-block-rigth-text span {
+  color: #2a59bd;
+}
+.energy-efficiency-leasing-presentation {
+  display: flex;
+  padding: 112px 0px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-title {
+  text-align: center;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin-bottom: 80px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-title span {
+  border-radius: 50px;
+  background-color: #dce2f9;
+  padding: 2px 10px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content.mr-r-56 {
+  margin-right: 56px;
+  max-width: 536px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content.mr-l-56 {
+  margin-left: 56px;
+  max-width: 519px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content .energy-efficiency-leasing-presentation-content-title {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 32px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content .energy-efficiency-leasing-presentation-content-item {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content .energy-efficiency-leasing-presentation-content-item + .energy-efficiency-leasing-presentation-content-item {
+  margin-top: 16px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content .energy-efficiency-leasing-presentation-content-item .energy-efficiency-leasing-presentation-content-item-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #dae2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+.energy-efficiency-leasing-presentation .mr-top-80 {
+  margin-top: 80px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .energy-efficiency-leasing-presentation-content-img-left {
+  position: absolute;
+  left: -24px;
+  width: 184px;
+  height: 180px;
+  padding: 24px 16px 16px 16px;
+  border-radius: 20px;
+  background-color: #dae2ff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .energy-efficiency-leasing-presentation-content-img-left .svg-bg {
+  position: absolute;
+  top: -3px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .energy-efficiency-leasing-presentation-content-img-left p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 15px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .energy-efficiency-leasing-presentation-content-img-bottom {
+  position: absolute;
+  left: 48px;
+  bottom: -24px;
+  width: 210px;
+  padding: 24px 16px 16px 16px;
+  border-radius: 20px;
+  background-color: #dae2ff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .energy-efficiency-leasing-presentation-content-img-bottom p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 12px;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .img-mobile {
+  display: none;
+  max-width: calc(100% - 24px);
+}
+.create-aplication {
+  background-color: #f5f5f6;
+  padding: 80px 0px;
+  display: flex;
+}
+.create-aplication .col-md-12 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.create-aplication .create-aplication-icon {
+  border-radius: 100px;
+  border: 1px solid #b2c5ff;
+  padding: 10px 14px;
+  color: #2a59bd;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.create-aplication .create-aplication-title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  margin-bottom: 24px;
+  max-width: 724px;
+  text-align: center;
+}
+.create-aplication .create-aplication-title span {
+  color: #2a59bd;
+}
+.create-aplication .create-aplication-action {
+  position: relative;
+}
+.create-aplication .create-aplication-action img {
+  position: absolute;
+  bottom: -10px;
+  right: -120px;
+}
+.ticker-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ticker-block .ticker-bg {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+}
+.ticker {
+  overflow: hidden;
+  width: 100%;
+  padding: 17px 0px;
+  background-color: #dae2ff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.ticker.long .ticker-title .ticker-title-item {
+  min-width: 375px;
+  animation: title_long 6s infinite linear;
+}
+.ticker .ticker-title {
+  width: 2500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 33;
+  position: relative;
+}
+.ticker .ticker-title .ticker-title-item {
+  display: flex;
+  align-items: center;
+  margin-right: 28px;
+  min-width: 322px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: #2a59bd;
+  animation: title 6s infinite linear;
+}
+.ticker .ticker-title .ticker-title-item img {
+  margin-right: 28px;
+}
+@keyframes title_long {
+  0% {
+    transform: translateX(0);
+ }
+  100% {
+    transform: translateX(-403px);
+ }
+}
+@keyframes title {
+  0% {
+    transform: translateX(0);
+ }
+  100% {
+    transform: translateX(-348px);
+ }
+}
+.home-roadmap {
+  display: flex;
+  padding-top: 112px;
+  overflow: hidden;
+  position: relative;
+}
+.home-roadmap .home-roadmap-block {
+  padding: 112px 124px;
+  border-radius: 24px;
+  background-color: #dae2ff;
+  position: relative;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-bg {
+  width: calc(100% + 124px);
+  position: relative;
+  margin-top: -112px;
+  padding-bottom: 112px;
+  right: 0;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-bg img {
+  border-top-right-radius: 24px;
+  position: absolute;
+  right: 0;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-title {
+  margin-bottom: 64px;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item-left {
+  display: none;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-lable {
+  margin-bottom: 23px;
+  border-radius: 8px;
+  background-color: #2a59bd;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  color: white;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img {
+  height: 95px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img .home-roadmap-block-item-img-bg {
+  position: relative;
+  width: 0px;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img .home-roadmap-block-item-img-bg .home-roadmap-block-item-img-bg-point {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #2a59bd;
+  margin-left: 13px;
+  position: absolute;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img .home-roadmap-block-item-img-bg .home-roadmap-block-item-img-bg-point.first {
+  width: 32px;
+  height: 32px;
+  margin-top: -10px;
+  margin-left: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img .home-roadmap-block-item-img-bg .home-roadmap-block-item-img-bg-left {
+  position: absolute;
+  right: -20px;
+  height: 35px;
+  top: 0;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img .home-roadmap-block-item-img-bg .home-roadmap-block-item-img-bg-rigth {
+  position: absolute;
+  left: 19px;
+  height: 35px;
+  top: 0;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img .home-roadmap-block-item-img-line {
+  border-left: 2px dashed #2a59bd;
+  height: 39px;
+  margin-left: 17px;
+  margin-bottom: 17px;
+}
+.home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.home-block-header {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-block-header .home-block-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  padding: 0;
+  margin: 0;
+}
+.home-block-header .home-block-title span {
+  color: #2a59bd;
+}
+.home-block-header .btn_link {
+  padding: 14px 12px;
+  padding-left: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 100px;
+  color: #2a59bd;
+  display: flex;
+  align-items: center;
+}
+.home-block-header .btn_link svg {
+  margin-left: 8px;
+}
+.home-block-header .btn_link:hover {
+  background-color: rgba(103, 80, 164, 0.08);
+}
+.financing-from-market-leaders-items {
+  flex-direction: column;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation.disabled {
+  display: none;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-prev {
+  margin-right: 16px;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-next {
+  margin-left: 16px;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-next, .financing-from-market-leaders-items .vendors__slider__navigation .owl-prev {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation .owl-next:hover, .financing-from-market-leaders-items .vendors__slider__navigation .owl-prev:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.financing-from-market-leaders-items .vendors__slider__navigation__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation__dots .owl-dot {
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #c5c6d0;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation__dots .owl-dot + .owl-dot {
+  margin-left: 12px;
+}
+.financing-from-market-leaders-items .vendors__slider__navigation__dots .owl-dot.active {
+  background-color: #2a59bd;
+}
+.home-case-block-items {
+  flex-direction: column;
+}
+.home-case-block-items .cases__slider__navigation {
+  margin-top: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.home-case-block-items .cases__slider__navigation .owl-prev {
+  margin-right: 16px;
+}
+.home-case-block-items .cases__slider__navigation .owl-next {
+  margin-left: 16px;
+}
+.home-case-block-items .cases__slider__navigation .owl-next, .home-case-block-items .cases__slider__navigation .owl-prev {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home-case-block-items .cases__slider__navigation .owl-next:hover, .home-case-block-items .cases__slider__navigation .owl-prev:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.home-case-block-items .cases__slider__navigation__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-case-block-items .cases__slider__navigation__dots .owl-dot {
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #c5c6d0;
+}
+.home-case-block-items .cases__slider__navigation__dots .owl-dot + .owl-dot {
+  margin-left: 12px;
+}
+.home-case-block-items .cases__slider__navigation__dots .owl-dot.active {
+  background-color: #2a59bd;
+}
+.more-post-items-block-items {
+  flex-direction: column;
+}
+.more-post-items-block-items .more_post__slider__navigation {
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.more-post-items-block-items .more_post__slider__navigation .owl-prev {
+  margin-right: 16px;
+}
+.more-post-items-block-items .more_post__slider__navigation .owl-next {
+  margin-left: 16px;
+}
+.more-post-items-block-items .more_post__slider__navigation .owl-next, .more-post-items-block-items .more_post__slider__navigation .owl-prev {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.more-post-items-block-items .more_post__slider__navigation .owl-next:hover, .more-post-items-block-items .more_post__slider__navigation .owl-prev:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.more-post-items-block-items .more_post__slider__navigation__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.more-post-items-block-items .more_post__slider__navigation__dots .owl-dot {
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #c5c6d0;
+}
+.more-post-items-block-items .more_post__slider__navigation__dots .owl-dot + .owl-dot {
+  margin-left: 12px;
+}
+.more-post-items-block-items .more_post__slider__navigation__dots .owl-dot.active {
+  background-color: #2a59bd;
+}
+.home-last-news-block-items {
+  flex-direction: column;
+}
+.home-last-news-block-items .news__slider__navigation {
+  margin-top: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.home-last-news-block-items .news__slider__navigation .owl-prev {
+  margin-right: 16px;
+}
+.home-last-news-block-items .news__slider__navigation .owl-next {
+  margin-left: 16px;
+}
+.home-last-news-block-items .news__slider__navigation .owl-next, .home-last-news-block-items .news__slider__navigation .owl-prev {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home-last-news-block-items .news__slider__navigation .owl-next:hover, .home-last-news-block-items .news__slider__navigation .owl-prev:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.home-last-news-block-items .news__slider__navigation__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-last-news-block-items .news__slider__navigation__dots .owl-dot {
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #c5c6d0;
+}
+.home-last-news-block-items .news__slider__navigation__dots .owl-dot + .owl-dot {
+  margin-left: 12px;
+}
+.home-last-news-block-items .news__slider__navigation__dots .owl-dot.active {
+  background-color: #2a59bd;
+}
+.home-partners-items {
+  flex-direction: column;
+}
+.home-partners-items .partners__slider__navigation {
+  margin-top: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.home-partners-items .partners__slider__navigation .owl-prev {
+  margin-right: 16px;
+}
+.home-partners-items .partners__slider__navigation .owl-next {
+  margin-left: 16px;
+}
+.home-partners-items .partners__slider__navigation .owl-next, .home-partners-items .partners__slider__navigation .owl-prev {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home-partners-items .partners__slider__navigation .owl-next:hover, .home-partners-items .partners__slider__navigation .owl-prev:hover {
+  background-color: rgba(73, 69, 79, 0.08);
+}
+.home-partners-items .partners__slider__navigation__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-partners-items .partners__slider__navigation__dots .owl-dot {
+  z-index: 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #c5c6d0;
+}
+.home-partners-items .partners__slider__navigation__dots .owl-dot + .owl-dot {
+  margin-left: 12px;
+}
+.home-partners-items .partners__slider__navigation__dots .owl-dot.active {
+  background-color: #2a59bd;
+}
+.home-vendor {
+  display: flex;
+  padding: 112px 0px;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items {
+  display: flex;
+  width: 100%;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .owl-item + .owl-item {
+  border-left: 1px solid #efedf1;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor {
+  width: 100%;
+  padding: 32px 20px;
+  padding-top: 40px;
+  display: flex;
+  height: 50vh;
+  min-height: 215px;
+  max-height: 258px;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor:first-child {
+  border-bottom: 1px solid #efedf1;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor .financing-from-market-leaders-item-vendor-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor .financing-from-market-leaders-item-vendor-block .financing-from-market-leaders-item-vendor-block-image {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor::before {
+  content: "";
+  padding-top: 100%;
+  float: left;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor img {
+  filter: grayscale(100%);
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor .financing-from-market-leaders-item-vendor-text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #919094;
+  text-align: center;
+  margin: 20px 0px;
+  word-wrap: break-word;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor:hover img {
+  filter: none;
+}
+.home-vendor .financing-from-market-leaders .financing-from-market-leaders-items .financing-from-market-leaders-item .financing-from-market-leaders-item-vendor:hover .financing-from-market-leaders-item-vendor-text {
+  color: #131316;
+}
+.home-case {
+  display: flex;
+  padding-top: 112px;
+  padding-bottom: 56px;
+  background-color: #f5f5f6;
+}
+.home-case .owl-stage {
+  display: flex;
+}
+.home-case .owl-stage .owl-item {
+  min-height: 100%;
+  flex: 1;
+}
+
+.home-last-news .owl-stage {
+  display: flex;
+}
+.home-last-news .owl-stage .owl-item {
+  min-height: 100%;
+  flex: 1;
+}
+
+.home-last-news {
+  display: flex;
+  padding-bottom: 112px;
+  padding-top: 56px;
+  background-color: #f5f5f6;
+}
+.more-post-items {
+  display: flex;
+  padding-bottom: 0px;
+  padding-top: 80px;
+  background-color: #f5f5f6;
+}
+.more-post-items .owl-stage {
+  display: flex;
+}
+.more-post-items .owl-stage .owl-item {
+  min-height: 100%;
+  flex: 1;
+}
+.home-partners {
+  padding-top: 56px;
+  padding-bottom: 112px;
+  display: flex;
+}
+.home-partners .home-partners-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  margin-bottom: 40px;
+}
+.home-partners .home-partners-items {
+  display: flex;
+  width: 100%;
+}
+.home-partners .home-partners-items .owl-item + .owl-item {
+  border-left: 1px solid #efedf1;
+}
+.home-partners .home-partners-items .home-partners-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-partners .home-partners-items .home-partners-item .home-partners-partner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+}
+.home-partners .home-partners-items .home-partners-item .home-partners-partner + .home-partners-partner {
+  border-top: 1px solid #efedf1;
+}
+.home-partners .home-partners-items .home-partners-item .home-partners-partner:before {
+  content: "";
+  padding-top: 100%;
+  float: left;
+}
+.home-partners .home-partners-items .home-partners-item .home-partners-partner img {
+  filter: grayscale(100%);
+  max-width: 100%;
+  max-height: 100%;
+}
+.home-partners .home-partners-items .home-partners-item .home-partners-partner:hover img {
+  filter: none;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions {
+    flex-direction: column;
+    width: 100%;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions .btn {
+    width: 100%;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions .btn + .btn {
+    margin-left: 0px;
+    margin-top: 16px;
+ }
+}
+@media (max-width: 767.98px) {
+  .news__slider__navigation, .cases__slider__navigation, .partners__slider__navigation {
+    display: flex !important;
+ }
+
+ .home-video-block{
+  margin-top: 20px;
+ }
+
+  .ticker-block .ticker-bg {
+    left: -150px;
+ }
+ .ticker-block .ticker-bg.hide-mobile {
+  display: none;
+ }
+  .green-solution-ukraine {
+    display: flex;
+    padding-top: 16px;
+    padding-bottom: 16px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left {
+    margin-right: 0px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-label {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 12px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-title {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-title img {
+    max-height: 32px;
+    margin-bottom: -5px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left p {
+    margin: 16px 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions {
+    flex-direction: column;
+    margin-bottom: 24px;
+    width: 100%;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions .btn {
+    width: 100%;
+ }
+  .green-solution-ukraine .green-solution-ukraine-left .green-solution-ukraine-left-actions .btn + .btn {
+    margin-left: 0px;
+    margin-top: 12px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-images .green-solution-ukraine-rigth-images-text {
+    padding: 16px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block {
+    padding: 24px;
+    padding-top: 40px;
+    height: auto;
+ }
+  .green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .bg {
+    width: 155px;
+    top: -20px;
+ }
+
+  .green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-text.long svg {
+    margin-bottom: -3px;
+  }
+  .green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-text.long {
+    max-width: 312px;
+  }
+  .green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+ }
+  .green-solution-ukraine .green-solution-ukraine-rigth .green-solution-ukraine-rigth-block .green-solution-ukraine-rigth-block-text svg {
+    width: 54px;
+ }
+  .financing-page-leasing-platform-in-numbers {
+    padding-top: 64px;
+    padding-bottom: 48px;
+ }
+  .financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 32px;
+    padding-right: 0px;
+ }
+  .financing-page-leasing-platform-in-numbers .col-lg-7 {
+    flex-direction: column;
+ }
+  .create-aplication {
+    padding: 48px 0px;
+ }
+  .create-aplication .create-aplication-icon {
+    margin-bottom: 12px;
+ }
+  .create-aplication .create-aplication-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 24px;
+ }
+  .create-aplication .create-aplication-action {
+    width: 100%;
+ }
+  .create-aplication .create-aplication-action .btn_bg_primary {
+    width: 100%;
+ }
+  .create-aplication .create-aplication-action img {
+    display: none;
+ }
+  .energy-efficiency-leasing-presentation {
+    padding: 48px 0px;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-title {
+    text-align: left;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 40px;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content {
+    padding-bottom: 24px;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content.mr-r-56 {
+    margin-right: 0px;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content.mr-l-56 {
+    margin-left: 0px;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content .energy-efficiency-leasing-presentation-content-title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 20px;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content .energy-efficiency-leasing-presentation-content-item {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    align-items: flex-start;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .energy-efficiency-leasing-presentation-content-img-left {
+    right: 0;
+    left: auto;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .img-desctop {
+    display: none;
+ }
+  .energy-efficiency-leasing-presentation .energy-efficiency-leasing-presentation-content-img .img-mobile {
+    display: block;
+ }
+  .energy-efficiency-leasing-presentation .mr-top-80 {
+    margin-top: 40px;
+    flex-direction: column-reverse;
+ }
+  .home-partners {
+    padding: 48px 0px;
+ }
+  .home-partners .home-partners-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 16px;
+ }
+  .home-case {
+    padding-top: 48px;
+    padding-bottom: 0;
+ }
+  .home-last-news, .home-vendor {
+    padding: 48px 0px;
+ }
+  .home-block-header {
+    margin-bottom: 16px;
+ }
+  .home-block-header .btn_link {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+ }
+  .home-block-header .home-block-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+ }
+}
+@media (max-width: 991.98px) {
+  .financing-page-leasing-platform-in-numbers .financing-page-leasing-platform-in-numbers-title {
+    margin-bottom: 32px;
+ }
+  .about-platform .about-platform-block {
+    padding: 20px 16px;
+    flex-direction: column;
+ }
+  .about-platform .about-platform-block .about-platform-block-left {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 32px;
+ }
+  .about-platform .about-platform-block .about-platform-block-left p {
+    margin-top: 12px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+ }
+  .about-platform .about-platform-block .about-platform-block-rigth .about-platform-block-rigth-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+ }
+  .home-roadmap {
+    padding-top: 48px;
+ }
+  .home-roadmap .home-roadmap-block {
+    padding: 48px 24px;
+    overflow: hidden;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-bg {
+    width: calc(100% + 24px);
+    margin-top: -48px;
+    padding-bottom: 48px;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-bg img {
+    right: -130px;
+    top: -30px;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+ }
+  .home-roadmap .home-roadmap-block .col-lg-3 {
+    flex-direction: row;
+    display: flex;
+ }
+  .home-roadmap .home-roadmap-block .col-lg-3 + .col-lg-3 {
+    margin-top: 32px;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-item-left {
+    display: block;
+    min-width: 82px;
+    position: relative;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-item-left .home-roadmap-block-item-left-point {
+    margin-top: 10px;
+    width: 12px;
+    height: 12px;
+    background-color: #2a59bd;
+    border-radius: 50%;
+    display: none;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-item-left .home-roadmap-block-item-left-point.first {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 222;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 0;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-item-left .home-roadmap-block-item-left-top {
+    position: absolute;
+    bottom: 55px;
+    z-index: 0;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-item-left .home-roadmap-block-item-left-down {
+    position: absolute;
+    top: 15px;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-lable {
+    margin-bottom: 12px;
+ }
+  .home-roadmap .home-roadmap-block .home-roadmap-block-item .home-roadmap-block-item-img {
+    display: none;
+ }
+}
+.home-partners .home-partners-items .home-partners-item .home-partners-partner img {
+  filter: grayscale(100%);
+  max-width: fit-content;
+  max-height: 126px;
+  transition: all 0.3s ease;
+}
+.pointMap {
+  display: none;
+  width: 12px;
+  height: 12px;
+  background-color: #2a59bd;
+  border-radius: 50%;
+  position: absolute;
+  top: -22px;
+  left: -6px;
+  margin-left: 25px;
+  z-index: 1;
+}
+.pointMap.active {
+  display: flex;
+  width: 12px;
+  height: 12px;
+}

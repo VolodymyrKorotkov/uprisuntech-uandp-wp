@@ -1,0 +1,92 @@
+.filter {
+  display: flex;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+  > div {
+    flex-grow: 1;
+    min-width: 30%;
+    max-width: 30%;
+    &:last-child {
+      flex-grow: 0;
+      min-width: auto;
+      margin-left: auto;
+    }
+  }
+  @media (max-width: 767px) {
+    display: block;
+    > div {
+      min-width: none;
+      margin-bottom: 12px;
+    }
+    .filter {
+      &_btn {
+        margin-top: 0;
+      }
+    }
+  }
+  &_head {
+    font-size: 14px;
+    line-height: 1.42;
+    color: #77777A;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  &_labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  &_label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: #DCE2F9;
+    padding: 3px 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background .3s ease;
+    cursor: pointer;
+    &:hover {
+      background: #CDD2E8;
+    }
+    &:active {
+      background: #C4CAE0;
+    }
+    svg {
+      display: block;
+    }
+  }
+  &_delete {
+    padding: 4px;
+    flex-shrink: 0;
+    padding-right: 0;
+  }
+  &_btn {
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.42;
+    text-decoration: none;
+    text-align: center;
+    padding: 6px 13px;
+    appearance: none;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+    background: #2A59BD;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-top: 29px;
+    &:hover {
+      background: #3B66C2;
+    }
+    &:active {
+      background: #446DC5;
+    }
+  }
+}

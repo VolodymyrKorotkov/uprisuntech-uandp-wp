@@ -1,0 +1,138 @@
+.UploadField{
+  position: relative;
+  .spinner{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color: white, $alpha: 0.6);
+    cursor: not-allowed;
+  }
+  .label{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #77777A;
+    position: relative;
+    z-index: 2;
+  }
+  .disabled{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: white, $alpha: 0.4);
+    z-index: 1;
+  }
+  .dropzone{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 16px 24px;
+    
+    .icon{
+      border: 6px solid #EEF0FF;
+      background: #DAE2FF;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .text{
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      margin-top: 12px;
+      span{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        color: #2A59BD;
+      }
+    }
+    .text2{
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      margin-top: 4px;
+    }
+    border-radius: 8px;
+    border: 2px dashed #C5C6D0;
+    background: #FFF;
+  }
+  .file{
+    border-radius: 8px;
+    border: 1px solid #4872D8;
+    background: #FEFBFF;
+    padding: 16px 24px;
+    position: relative;
+    .header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      .title{
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        color: #2A59BD;
+      }
+      .icon{
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 5px;
+        right: 5px;
+        &:hover{
+          background-color: #F1F0F1;
+        }
+      }
+    }
+    .size{
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      color: #919094;
+    }
+    .action{
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px; 
+      cursor: pointer;
+      color: #2A59BD;
+      margin-top: 4px;
+    }
+  }
+  .error{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    margin-top: 8px;
+    color: #BA1A1A;
+  }
+}

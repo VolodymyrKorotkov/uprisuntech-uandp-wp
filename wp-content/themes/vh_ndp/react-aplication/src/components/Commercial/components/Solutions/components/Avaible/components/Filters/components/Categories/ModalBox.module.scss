@@ -1,0 +1,64 @@
+
+
+.modal {
+    &_wrap {
+        border-bottom: 1px solid rgba(155, 165, 183, 0.40);
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+    &_box {
+        &:last-child {
+            .modal_wrap {
+                &:last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border-bottom: none;
+                }
+            }
+        }
+        :global {
+            .MuiFormLabel-root {
+                font-size: 16px;
+                font-weight: 600;
+                color: #131316 !important;
+                margin-bottom: 6px;
+                display: block;
+            }
+            .MuiFormControl-root {
+                display: block;
+                width: 100%;
+            }
+            .Mui-checked  {
+                svg {
+                    path {
+                        fill: #2A59BD;
+                    }
+                }
+            }
+            .MuiCheckbox-sizeMedium {
+                padding: 6px 9px;
+            }
+            .MuiSvgIcon-root {
+                path {
+                    fill: #C5C6D0;
+                }
+            }
+        }
+        .check {
+            &_link {
+                color: #2A59BD;
+                border-bottom: 1px solid transparent;
+                cursor: pointer;
+                transition: all .3s ease;
+                display: inline-block;
+                position: relative;
+                z-index: 2;
+                margin-top: 6px;
+                &:hover {
+                    border-bottom-color:#2A59BD;
+                }
+            }
+        }
+
+   }
+}

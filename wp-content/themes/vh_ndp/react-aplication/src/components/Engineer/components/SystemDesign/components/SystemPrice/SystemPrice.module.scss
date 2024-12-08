@@ -1,0 +1,18 @@
+.SystemPrice{
+  margin-bottom: 24px;
+  .actions{
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    button{
+      border-radius: 100px;
+      padding: 12px 14px;
+      color: #2A59BD;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 20px;
+      text-transform: none;
+    }
+  }
+}

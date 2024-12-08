@@ -1,0 +1,162 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: NDP Projects Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-27 21:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.4.3\n"
+"X-Domain: ndp-projects-plugin"
+
+#: ndp-projects.php:62
+msgid "Add New Category"
+msgstr ""
+
+#: ndp-projects.php:40
+msgid "Add new Project"
+msgstr ""
+
+#: ndp-projects.php:58 templates/projects.php:180
+msgid "All Categories"
+msgstr ""
+
+#: ndp-projects.php:45
+msgid "All Projects"
+msgstr ""
+
+#: templates/projects.php:243
+msgid "All status"
+msgstr ""
+
+#: templates/projects.php:212
+msgid "All tags"
+msgstr ""
+
+#: ndp-projects.php:51
+msgid "Categories"
+msgstr ""
+
+#: ndp-projects.php:57
+msgid "Category"
+msgstr ""
+
+#: templates/projects.php:104
+msgid "Data (ascending)"
+msgstr ""
+
+#: templates/projects.php:97 templates/projects.php:101
+msgid "Data (descending)"
+msgstr ""
+
+#: ndp-projects.php:59
+msgid "Edit Category"
+msgstr ""
+
+#: templates/single-project.php:49
+msgid "Home page"
+msgstr ""
+
+#: ndp-projects.php:46
+msgid "Insert into Project"
+msgstr ""
+
+#. Name of the plugin
+msgid "NDP Projects Plugin"
+msgstr ""
+
+#: ndp-projects.php:63
+msgid "New Category Name"
+msgstr ""
+
+#: ndp-projects.php:41
+msgid "New Project"
+msgstr ""
+
+#: templates/single-project.php:515
+msgid "No"
+msgstr ""
+
+#: ndp-projects.php:67
+msgid "No Categories found"
+msgstr ""
+
+#: ndp-projects.php:43
+msgid "No Projects found"
+msgstr ""
+
+#: ndp-projects.php:44
+msgid "No Projects found in trash"
+msgstr ""
+
+#: ndp-projects.php:65
+msgid "Parent Category"
+msgstr ""
+
+#: ndp-projects.php:66
+msgid "Parent Category:"
+msgstr ""
+
+#: ndp-projects.php:39
+msgid "Project"
+msgstr ""
+
+#: ndp-projects.php:29
+msgid "Projects"
+msgstr ""
+
+#. Description of the plugin
+msgid "Projects list, single project page for NDP."
+msgstr ""
+
+#: ndp-projects.php:64
+msgid "Search Categories"
+msgstr ""
+
+#: templates/projects.php:185
+msgid "Select category"
+msgstr ""
+
+#: templates/projects.php:248
+msgid "Select status"
+msgstr ""
+
+#: templates/projects.php:217
+msgid "Select tags"
+msgstr ""
+
+#: templates/projects.php:93
+msgid "Sort by"
+msgstr ""
+
+#: templates/single-project.php:288
+msgid "Status"
+msgstr ""
+
+#: ndp-projects.php:61
+msgid "Update Category"
+msgstr ""
+
+#. Author of the plugin
+msgid "uprisun.tech"
+msgstr ""
+
+#: ndp-projects.php:60
+msgid "View Category"
+msgstr ""
+
+#: ndp-projects.php:42
+msgid "View Project"
+msgstr ""
+
+#: templates/content-custom.php:258 templates/content-custom.php:324
+#: templates/single-project.php:443 templates/single-project.php:489
+msgid "Yes"
+msgstr ""

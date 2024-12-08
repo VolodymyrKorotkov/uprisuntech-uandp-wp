@@ -1,0 +1,108 @@
+.OperatingMode{
+  .tab{
+    margin: 0px 20px;
+    margin-top: 8px;
+    display: flex;
+    .item{
+      cursor: pointer;
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      &:hover{
+        background-color: rgba(29, 27, 32, 0.08);
+      }
+      &.active{
+        border-bottom: 2px solid #2A59BD;
+      }
+    }
+  }
+  .items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .item{
+      
+      .switch{
+        width: 52px;
+        height: 32px;
+        padding: 0px;
+        :global{
+          .MuiSwitch-switchBase {
+            padding: 0px;
+            margin: 5px;
+            transition-duration: 300ms;
+            &.Mui-checked {
+              transform: translateX(20px);
+              color: #fff;
+              & + .MuiSwitch-track {
+                background-color: #2A59BD;
+                opacity: 1;
+                border: 0;
+              }
+              &.Mui-disabled + .MuiSwitch-track {
+                opacity: 0.5;
+              }
+              .MuiSwitch-thumb{
+                background-color: #fff;
+              }
+            }
+            &.Mui-focusVisible .MuiSwitch-thumb{
+              color: #2A59BD;
+              border: 6px solid #fff;
+            }
+            &.Mui-disabled .MuiSwitch-thumb {
+              color: #E4E2E6;
+              
+            }
+            &.Mui-disabled + .MuiSwitch-track {
+              opacity: 0.7;
+            }
+          }
+          & .MuiSwitch-thumb {
+            box-sizing: border-box;
+            width: 22px;
+            height: 22px;
+            background-color: #757780;
+            
+          }
+          & .MuiSwitch-track {
+            border-radius: 16px;
+            background-color: #E9E9EA;
+            opacity: 1;
+            border: 2px solid #757780;
+            box-sizing: border-box;
+            // transition: theme.transitions.create(['background-color'], {
+            //   duration: 500,
+            // }),
+          }
+        }
+        
+      }
+      .text{
+        margin-top: 8px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+    
+  }
+  @media (max-width: 767px) {
+    .items{
+      justify-content: flex-start;
+      .item{
+        margin-top: 10px;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,26 @@
+image: atlassian/default-image:2
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Deploy PROD
+          script:
+            - pipe: atlassian/ssh-run:0.7.1
+              variables:
+                SSH_USER: $SERVER_NAME_PROD
+                SERVER: $SERVER_HOST_PROD
+                PORT: $SERVER_PORT_PROD
+                MODE: 'script'
+                COMMAND: 'myscript_master.sh'
+    staging:   
+      - step:
+          name: Deploy DEV
+          script:
+            - pipe: atlassian/ssh-run:0.7.1
+              variables:
+                SSH_USER: $SERVER_NAME_DEV
+                SERVER: $SERVER_HOST_DEV
+                PORT: $SERVER_PORT_DEV
+                MODE: 'script'
+                COMMAND: 'myscript_staging.sh'

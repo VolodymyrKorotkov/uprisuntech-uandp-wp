@@ -1,0 +1,16 @@
+.idea
+/ndp.loc.zip
+/wp-content/uploads/
+/wp-content/backups-dup-lite/
+#/wp-content/plugins/wordpress-seo/
+/NDP.pub
+/NDP
+.env
+/solarwiki
+/vendor
+
+# Project exclude paths
+/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/types/type-defs/cart.js
+/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/types/type-defs/contexts.js
+/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/types/type-defs/hooks.js
+/wp-content/plugins/woocommerce/packages/woocommerce-blocks/assets/js/types/type-defs/shipping.js

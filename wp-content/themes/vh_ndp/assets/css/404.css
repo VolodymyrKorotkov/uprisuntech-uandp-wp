@@ -1,0 +1,103 @@
+.page-not-found {
+  display: flex; 
+  padding-bottom: 96px;
+  flex-direction: column;
+}
+
+.page-not-found .page-not-found-container {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+.page-not-found .page-not-found-container .page-not-found-container-text {
+  margin-top: 16px;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 52px;
+  color: #131316;
+}
+.page-not-found .page-not-found-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.page-not-found .page-not-found-block .page-not-found-block-left {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  margin-right: 58px;
+}
+.page-not-found .page-not-found-block .page-not-found-block-left svg {
+  min-width: 1250px;
+}
+.page-not-found .page-not-found-block .page-not-found-block-rigth {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  margin-left: 58px;
+}
+.page-not-found .page-not-found-block .page-not-found-block-rigth svg {
+  min-width: 1250px;
+}
+.page-not-found .page-not-found-container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 68px;
+}
+.page-not-found .page-not-found-container2 .page-not-found-container-text {
+  text-align: center;
+  max-width: 550px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #77777a;
+  margin-bottom: 32px;
+}
+@media (max-width: 767.98px) {
+  .page-not-found {
+    display: flex;
+    padding-bottom: 48px;
+  }
+  .page-not-found .page-not-found-container {
+    margin-top: 84px;
+ }
+  .page-not-found .page-not-found-container svg {
+    width: 210px;
+    height: 82px;
+ }
+  .page-not-found .page-not-found-container .page-not-found-container-text {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+ }
+  .page-not-found .page-not-found-block .page-not-found-block-left {
+    justify-content: flex-end;
+    margin-right: 40px;
+ }
+  .page-not-found .page-not-found-block .page-not-found-block-rigth {
+    justify-content: flex-start;
+    margin-left: 40px;
+ }
+  .page-not-found .page-not-found-container2 .page-not-found-container-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+ }
+  .page-not-found .page-not-found-container2 .btn_bg_primary {
+    width: 100%;
+ }
+}
